@@ -65,11 +65,11 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Docs",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/vbartalis/vbartalis.github.io",
             label: "GitHub",
             position: "right",
           },
@@ -82,7 +82,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "PTI BSc",
                 to: "/docs/intro",
               },
             ],
@@ -91,16 +91,8 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "GitHub",
+                href: "https://github.com/vbartalis",
               },
             ],
           },
@@ -113,12 +105,16 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/vbartalis/vbartalis.github.io",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${
+          2022 === new Date().getFullYear()
+            ? new Date().getFullYear()
+            : 2022 + "-" + new Date().getFullYear()
+        } vbartalis, All Rights Reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
