@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Bartalis Vilmos",
+  tagline: "Welcome to my site! Üdvözöllek az oldalamon!",
   url: "https://vbartalis.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -114,7 +114,7 @@ const config = {
           2022 === new Date().getFullYear()
             ? new Date().getFullYear()
             : 2022 + "-" + new Date().getFullYear()
-        } vbartalis, All Rights Reserved.`,
+        } vbartalis. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
