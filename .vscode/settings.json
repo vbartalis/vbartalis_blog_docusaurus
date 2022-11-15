@@ -1,4 +1,9 @@
 {
-  "spellright.documentTypes": ["latex", "plaintext"],
-  "spellright.language": ["en", "hu"]
+  "spellright.documentTypes": ["latex", "plaintext", "mdx"],
+  "spellright.language": ["en", "hu"],
+  "spellright.parserByClass": {
+    "mdx": {
+      "parser": "markdown"
+    }
+  }
 }
