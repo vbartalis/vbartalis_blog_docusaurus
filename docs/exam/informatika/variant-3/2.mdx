@@ -27,8 +27,7 @@ jelentést és ezek csak ilyen értelemben használhatók. Nagyon gyakran a nyel
 elhatárolók lehetnek.
 
 :::tip Példa
-A C-ben többkarakteres szimbólumok a következők: ++, --, &&,
-/\*, \*/.
+A C-ben többkarakteres szimbólumok a következők: `++, --, &&, \*, */`.
 
 :::
 
@@ -47,17 +46,13 @@ folytatódhat. Arra való, hogy a program írója a saját programozói eszköze
 és ezután ezzel hivatkozzon rá a program szövegében bárhol.
 
 :::tip Példa
-A következők szabályos C azonosítók (a C-ben az \_ betű kategóriájú):
-
-- x
-- almafa
-- hallgato_azonosito
-- SzemelyNev
+A következők szabályos C azonosítók (a C-ben az '\_' betű kategóriájú):
+`x, almafa, hallgato_azonosito, SzemelyNev`
 
 A következő karaktersorozatok viszont nem azonosítók:
 
-- x+y a + nem megengedett karakter
-- 123abc betűvel kell kezdődnie
+- `x+y` itt a `+` nem egy megengedett karakter
+- `123abc` betűvel kell kezdődnie
 
 :::
 
@@ -67,12 +62,7 @@ Olyan karaktersorozat (általában azonosító jellegű felépítéssel), amelyn
 és ez a jelentés a programozó által nem megváltoztatható. Az alapszavak soha nem használhatók azonosítóként.
 
 :::tip Példa
-A C-ben például alapszavak a következők:
-
-- if
-- for
-- case
-- break
+A C-ben például alapszavak a következők: `if, for, case, break`
 
 :::
 
@@ -83,7 +73,7 @@ Olyan karaktersorozat, amelynek a nyelv tulajdonít jelentést, de ez az alapér
 A standard azonosító használható az eredeti értelemben, de a programozó saját azonosítóként is felhasználhatja.
 
 :::tip Példa
-A C-ben standard azonosító a NULL.
+A C-ben standard azonosító a `NULL`.
 
 :::
 
@@ -149,6 +139,7 @@ Az adattípusoknak két nagy csoportjuk van:
 
 :::tip Példa
 Egyszerű adattípus: Pl: _String_
+
 Összetett adattípus: Pl: _Tömb_
 
 :::
@@ -174,7 +165,7 @@ Másrészt viszont, ha a program szövegében meg akarjuk **változtatni** ezt a
 akkor nem kell annak valamennyi előfordulását megkeresni és átírni, hanem elegendő **egy helyen**,
 a deklarációs utasításban végrehajtani a módosítást.
 :::tip Példa
-final int myVariable = 2;
+`final int myVariable = 2;`
 
 :::
 
@@ -261,7 +252,7 @@ Az ugró (vagy feltétel nélküli vezérlésátadó) utasítás segítségével
 pontjáról egy adott címkével ellátott végrehajtható utasításra adhatjuk át a vezérlést.
 
 Általánosan használt alakja:
-GOTO címke
+`GOTO` címke
 :::
 
 :::info Elágaztató utasítások
@@ -302,38 +293,45 @@ A ciklusszervező utasítások lehetővé teszik, hogy a program egy adott pontj
   <div>
     <Tabs>
       <TabItem value="1" label="Feltételes ciklus" default>
-        Ennél a ciklusnál az ismétlődést egy feltétel igaz vagy hamis értéke szabályozza. A feltétel
-        maga vagy a fejben vagy a végben szerepel. Szemantikájuk alapján beszélünk{" "}
-        <b> kezdőfeltételes</b> és <b>végfeltételes</b> ciklusról.
+        Ennél a ciklusnál az ismétlődést egy feltétel igaz vagy hamis értéke
+        szabályozza. A feltétel maga vagy a fejben vagy a végben szerepel.
+        Szemantikájuk alapján beszélünk <b> kezdőfeltételes</b> és{" "}
+        <b>végfeltételes</b> ciklusról.
       </TabItem>
       <TabItem value="2" label="Előírt lépésszámú ciklus" default>
         Ennél a ciklusfajtánál az ismétlődésre vonatkozó információk (az ún.{" "}
-        <b>ciklusparaméterek</b>) a fejben vannak. Minden esetben tartozik hozzá egy változó, a{" "}
-        <b>ciklusváltozó</b>. A változó által felvett értékekre fut le a ciklusmag. A változó az
-        értékeit egy tartományból veheti föl. Ezt a tartományt a fejben adjuk meg <b>kezdő-</b> és{" "}
-        <b>végértékével</b>. A ciklusváltozó a tartománynak vagy minden elemét felveheti (beleértve
-        a kezdő- és végértéket is), vagy csak a tartományban szabályosan (ekvidisztánsan)
-        elhelyezkedő bizonyos értékeket. Ekkor meg kell adni a tartományban a felvehető elemek
-        távolságát meghatározó <b>lépésközt</b>. A változó az adott tartományt befuthatja
-        növekvőleg, illetve csökkenőleg, ezt határozza meg az <b>irány</b>.
+        <b>ciklusparaméterek</b>) a fejben vannak. Minden esetben tartozik hozzá
+        egy változó, a <b>ciklusváltozó</b>. A változó által felvett értékekre
+        fut le a ciklusmag. A változó az értékeit egy tartományból veheti föl.
+        Ezt a tartományt a fejben adjuk meg <b>kezdő-</b> és <b>végértékével</b>.
+        A ciklusváltozó a tartománynak vagy minden elemét felveheti (beleértve a
+        kezdő- és végértéket is), vagy csak a tartományban szabályosan (ekvidisztánsan)
+        elhelyezkedő bizonyos értékeket. Ekkor meg kell adni a tartományban a felvehető
+        elemek távolságát meghatározó <b>lépésközt</b>. A változó az adott tartományt
+        befuthatja növekvőleg, illetve csökkenőleg, ezt határozza meg az <b>
+          irány
+        </b>.
       </TabItem>
       <TabItem value="3" label="Felsorolásos ciklus" default>
-        A felsorolásos ciklus az előírt lépésszámú ciklus egyfajta általánosításának tekinthető. Van
-        ciklusváltozója, amely explicit módon megadott értékeket vesz fel, és minden felvett érték
-        mellett lefut a mag. A ciklusváltozót és az értékeket a fejben adjuk meg, ez utóbbiakat
-        kifejezéssel. A ciklusváltozó típusa általában tetszőleges. Nem lehet sem üres, sem végtelen
-        ciklus.
+        A felsorolásos ciklus az előírt lépésszámú ciklus egyfajta
+        általánosításának tekinthető. Van ciklusváltozója, amely explicit módon
+        megadott értékeket vesz fel, és minden felvett érték mellett lefut a
+        mag. A ciklusváltozót és az értékeket a fejben adjuk meg, ez utóbbiakat
+        kifejezéssel. A ciklusváltozó típusa általában tetszőleges. Nem lehet
+        sem üres, sem végtelen ciklus.
       </TabItem>
       <TabItem value="4" label="Végtelen ciklus" default>
-        A végtelen ciklus az a ciklusfajta, ahol sem a fejben, sem a végben nincs információ az
-        ismétlődésre vonatkozóan. Működését tekintve definíció szerint végtelen ciklus, üres ciklus
-        nem lehet. Használatánál a magban kell olyan utasítást alkalmazni, amelyik befejezteti a
-        ciklust. Nagyon hatékony lehet eseményvezérelt alkalmazások implementálásánál.
+        A végtelen ciklus az a ciklusfajta, ahol sem a fejben, sem a végben
+        nincs információ az ismétlődésre vonatkozóan. Működését tekintve
+        definíció szerint végtelen ciklus, üres ciklus nem lehet. Használatánál
+        a magban kell olyan utasítást alkalmazni, amelyik befejezteti a ciklust.
+        Nagyon hatékony lehet eseményvezérelt alkalmazások implementálásánál.
       </TabItem>
       <TabItem value="5" label="Összetett ciklus" default>
-        Az előző négy ciklusfajta kombinációiból áll össze. A ciklusfejben tetszőlegesen sok
-        ismétlődésre vonatkozó információ sorolható föl, szemantikájuk pedig szuperponálódik. Nagyon
-        bonyolult működésű ciklusok építhetők fel a segítségével.
+        Az előző négy ciklusfajta kombinációiból áll össze. A ciklusfejben
+        tetszőlegesen sok ismétlődésre vonatkozó információ sorolható föl,
+        szemantikájuk pedig szuperponálódik. Nagyon bonyolult működésű ciklusok
+        építhetők fel a segítségével.
       </TabItem>
     </Tabs>
   </div>
@@ -341,52 +339,348 @@ A ciklusszervező utasítások lehetővé teszik, hogy a program egy adott pontj
 
 :::
 
----
-
-<!--TODO-->
-
 ## Programegységek.
 
-## Paraméterkiértékelés, paraméterátadás.
+Az eljárásorientált programnyelvekben a program szövege többé-kevésbé független, szuverén
+részekre, ún. **programegységekre** tagolható.
+
+Az eljárásorientált nyelvekben az alábbi programegységek léteznek:
+
+- alprogram
+- blokk
+- csomag
+- taszk
+
+### Alprogramok
+
+Az alprogram az eljárásorientált nyelvekben a procedurális absztrakció első megjelenési
+formája, alapvető szerepet játszik ebben a paradigmában, sőt meghatározója annak. Az
+alprogram mint absztrakciós eszköz egy bemeneti adatcsoportot képez le egy kimeneti
+adatcsoportra úgy, hogy egy specifikáció megadja az adatok leírását, de semmit nem tudunk
+magáról a tényleges leképezésről.
+
+Ismerjük a specifikációt, de nem ismerjük az implementációt.
+
+Az alprogram, mint programozási eszköz az újrafelhasználás eszköze. Akkor alkalmazható, ha
+a program különböző pontjain ugyanaz a programrész megismétlődik. Ez az ismétlődő
+programrész kiemelhető, egyszer kell megírni, és a program azon pontjain, ahol ez a
+programrész szerepelt volna, csak hivatkozni kell rá - az alprogram az adott helyeken
+_meghívható_, _aktivizálható_.
+
+Az alprogram attól lesz absztrakciós eszköz, hogy a kiemelt programrészt _formális
+paraméterekkel_ látjuk el, vagyis _általánosabban_ írjuk meg, mint ahogyan az adott helyeken
+szerepelt volna.
+
+Formálisan az alprogram a következőképpen épül fel:
+
+- fej vagy specifikáció
+- törzs vagy implementáció
+- vég
+
+Az alprogram, mint programozási eszköz négy komponensből áll:
+
+- név
+- formális paraméter lista
+- törzs
+- környezet
+
+:::info
+A _név_ egy azonosító, amely mindig a fejben szerepel.
+
+A _formális paraméter lista_ is a specifikáció része. A formális paraméter listában azonosítók szerepelnek,
+ezek a törzsben saját programozási eszközök nevei lehetnek, és egy általános szerepkört írnak le, amelyet a hívás
+helyén konkretizálni kell az _aktuális paraméterek_ segítségével.
+
+A _törzsben_ deklarációs és végrehajtható utasítások szerepelnek
+
+Egy alprogram _környezete_ alatt a globális változók együttesét értjük.
+:::
+
+Az alprogramoknak két fajtája van: **eljárás** és **függvény**.
+
+:::info Eljárás
+Az eljárás olyan alprogram, amely valamilyen tevékenységet hajt végre. A hívás helyén ezen
+tevékenység eredményét használhatjuk fel. Az eljárás a hatását a paramétereinek vagy a
+környezetének megváltoztatásával illetve a törzsben elhelyezett végrehajtható utasítások által
+meghatározott tevékenység elvégzésével fejti ki.
+
+:::
+
+:::info Függvény
+A függvény olyan alprogram, amelynek az a feladata, hogy egyetlen értéket határozzon meg.
+Ez az érték általában tetszőleges típusú lehet. A függvény visszatérési értékének a típusa egy
+további olyan információ, amely hozzátartozik a függvény specifikációjához. A függvény
+visszatérési értékét mindig a neve hordozza, formálisan az közvetíti vissza a hívás helyére. A
+függvény törzsének végrehajtható utasításai a visszatérési érték meghatározását szolgálják.
+
+:::
+
+Híváskor a vezérlés átadódik az eljárásra.
+
+:::tip Példa
+Formálisan a hívás a következőképpen néz ki:
+
+`[alapszó] eljárásnév(aktuális_paraméter_lista)`
+
+:::
+
+Egy eljárás szabályosan befejeződhet a különböző nyelvekben, ha
+
+- elérjük a végét,
+- külön utasítással befejeztetjük, ez bárhol kiadható az eljárás törzsében.
+  Szabályos befejeződés esetén a program a hívást követő utasításon folytatódik.
+
+### Hívási lánc, rekurzió
+
+Egy programegység bármikor meghívhat egy másik programegységet, az egy újabb
+programegységet, és így tovább. Így kialakul egy hívási lánc. A hívási lánc első tagja mindig a
+főprogram. A hívási lánc minden tagja aktív, de csak a legutoljára meghívott programegység
+mőködik. Szabályos esetben mindig az utoljára meghívott programegység fejezi be legelőször
+a mőködését, és a vezérlés visszatér az őt meghívó programegységbe. A hívási lánc futás
+közben dinamikusan épül föl és bomlik le.
+
+Azt a szituációt, amikor egy aktív alprogramot hívunk meg, rekurziónak nevezzük
+
+### Másodlagos belépési pontok
+
+Egyes nyelvek megengedik, hogy egy alprogramot meghívni ne csak a fejen keresztül
+lehessen, hanem a törzsben ki lehessen alakítani ún. másodlagos belépési pontokat, így vagy a
+fejben megadott névvel vagy a másodlagos belépési pont nevével lehet hivatkozni az
+alprogramra.
 
 ### Paraméterkiértékelés
 
-Paraméterkiértékelés alatt értjük azt a folyamatot, amikor egy alprogram hívásánál egymáshoz rendelődnek a formális- és aktuális paraméterek, és meghatározódnak azok az információk, amelyek a paraméterátadásnál a kommunikációt szolgáltatják. A paraméterkiértékelésnél mindig a formális paraméter lista az elsődleges, ezt az alprogram specifikációja tartalmazza, egy darab van belőle. Aktuális paraméter lista viszont annyi lehet, ahányszor meghívjuk az alprogramot, ezeket rendeljük a formális paraméterlistához.
+Paraméterkiértékelés alatt értjük azt a folyamatot, amikor egy alprogram hívásánál egymáshoz
+rendelődnek a formális- és aktuális paraméterek, és meghatározódnak azok az információk,
+amelyek a paraméterátadásnál a kommunikációt szolgáltatják.
+
+A paraméterkiértékelésnél mindig a formális paraméter lista az elsődleges, ezt az alprogram
+specifikációja tartalmazza, egy darab van belőle. Aktuális paraméter lista viszont annyi lehet,
+ahányszor meghívjuk az alprogramot. Tehát az egymáshoz rendelésnél mindig a formális
+paraméter lista a meghatározó, mindig az aktuális paramétereket rendeljük a formálisakhoz.
 
 ### Paraméterátadás
 
-A paraméterátadás az alprogramok és más programegységek közötti kommunikáció egy formája. A paraméterátadásnál mindig van egy hívó, ez tetszőleges programegység és egy hívott, amelyik mindig alprogram. Kérdés, hogy melyik irányban és milyen információ mozog.
+A paraméterátadás az alprogramok és más programegységek közötti kommunikáció egy
+formája. A paraméterátadásnál mindig van egy hívó, ez tetszőleges programegység, és egy
+hívott, amelyik mindig alprogram. Kérdés, hogy melyik irányban és milyen információ mozog.
 
-**Érték szerinti** paraméterátadásnál a formális paramétereknek van címkomponensük a hívott alprogram területén. Az aktuális paraméternek rendelkeznie kell értékkomponenssel a hívó oldalon. Ez az érték meghatározódik a paraméterkiértékelés folyamán, majd átkerül a hívott alprogram területén lefoglalt címkomponensre. A formális paraméter kap egy kezdőértéket, és az alprogram ezzel az értékkel dolgozik a saját területén. Az információáramlás egyirányú, a hívótól a hívott felé irányul. A hívott alprogram semmit sem tud a hívóról, a saját területén dolgozik. Mindig van egy értékmásolás, és ez az érték tetszőleges bonyolultságú lehet.
+A nyelvek a következő paraméterátadási módokat ismerik:
 
-**Cím szerinti** paraméterátadásnál a formális paramétereknek nincs címkomponensük a hívott alprogram területén. Az aktuális paraméternek viszont rendelkeznie kell címkomponenssel a hívó területén. Paraméterkiértékeléskor meghatározódik az aktuális paraméter címe és átadódik a hívott alprogramnak, ez lesz a formális paraméter címkomponense. Tehát a meghívott alprogram a hívó területén dolgozik. Az információátadás kétirányú, az alprogram a hívó területéről átvehet értéket, és írhat is oda, átnyúl a hívó területre. Időben gyors, mert nincs értékmásolás, de veszélyes lehet, mert a hívott hozzáfér a hívó területén lévő információkhoz.
+- érték szerinti
+- cím szerinti
+- eredmény szerinti
+- érték-eredmény szerinti
+- név szerinti
+- szöveg szerinti
 
-**Eredmény szerinti** paraméterátadásnál a formális paraméternek van címkomponense a hívott alprogram területén, az aktuális paraméternek pedig lennie kell címkomponensének. Paraméterkiértékeléskor meghatározódik az aktuális paraméter címe és átadódik a hívott alprogramnak, azonban az alprogram a saját területén dolgozik, és csak működésének befejeztekor másolja át a formális paraméter értékét erre a címre. A kommunikáció egyirányú, a hívottól a hívó felé irányul. Van értékmásolás.
+Az **érték szerinti** paraméterátadás esetén a formális paramétereknek van címkomponensük a
+hívott alprogram területén. Az aktuális paraméternek rendelkeznie kell értékkomponenssel a
+hívó oldalon. Ez az érték meghatározódik a paraméterkiértékelés folyamán, majd átkerül a
+hívott alprogram területén lefoglalt címkomponensre. A formális paraméter kap egy
+kezdőértéket, és az alprogram ezzel az értékkel dolgozik a saját területén. Az
+információáramlás egyirányú, a hívótól a hívott felé irányul. A hívott alprogram semmit sem
+tud a hívóról, a saját területén dolgozik. Mindig van egy értékmásolás, és ez az érték
+tetszőleges bonyolultságú lehet. Ha egy egész adatcsoportot kell átmásolni, az hosszadalmas.
+Lényeges, hogy a két programegység egymástól függetlenül működik, és egymás működését
+az érték meghatározáson túl nem befolyásolják.
 
-**Érték-eredmény szerinti** paraméterátadásnál a formális paraméternek vancímkomponense a hívott területén és az aktuális paraméternek rendelkeznie kell érték- éscímkomponenssel. A paraméterkiértékelésnél meghatározódik az aktuális paraméter értéke éscíme és mindkettő átkerül a hívotthoz. Az alprogram a kapott értékkel, mint kezdőértékkelkezd el dolgozni a saját területén és a címet nem használja. Miután viszont befejeződik, normális paraméter értéke átmásolódik az aktuális paraméter címére. A kommunikáció kétirányú, kétszer van értékmásolás.
+:::info Paraméter
+Az aktuális paraméter kifejezés lehet.
 
-## Blokk.
+:::
 
-Olyan programegység, amely csak másik programegység belsejébe helyezkedhet el, külső szinten nem állhat. Formálisan van kezdete, törzse és vége. A kezdetet és a véget egy-egy speciális karaktersorozat vagy alapszó jelzi. A törzsben lehetnek deklarációs és végrehajtható utasítások, nyelvtől függően tetszőlegesen keverten vagy külön deklarációs és végrehajtható részekben. Nincs paramétere, egyes nyelvekben lehet neve. Ez általában a kezdet előtt álló címke. Bárhol elhelyezhető, ahol végrehajtható utasítás állhat.
+A **cím szerinti** paraméterátadásnál a formális paramétereknek nincs címkomponensük a hívott
+alprogram területén. Az aktuális paraméternek viszont rendelkeznie kell címkomponenssel a
+hívó területén. Paraméterkiértékeléskor meghatározódik az aktuális paraméter címe és
+átadódik a hívott alprogramnak, ez lesz a formális paraméter címkomponense. Tehát a
+meghívott alprogram a hívó területén dolgozik. Az információátadás kétirányú, az alprogram a
+hívó területéről átvehet értéket, és írhat is oda. Az alprogram átnyúl a hívó területre.
+Időben gyors, mert nincs értékmásolás, de veszélyes lehet, mivel a hívott alprogram hozzáfér a hívó
+területén lévő információkhoz, és szabálytalanul használhatja föl azokat.
 
-## Hatáskörkezelés, láthatóság.
+:::info Paraméter
+Az aktuális paraméter változó lehet.
 
-A hatáskör a nevekhez kapcsolódó fogalom. Egy név hatásköre alatt értjük a program szövegének azon részét, ahol az adott név ugyanazt a programozási eszközt hivatkozza, tehát jelentése, felhasználási módja, jellemzői azonosak.
+:::
 
-A **statikus hatáskörkezelés** fordítási időben történik, a fordítóprogram végzi. Alapja a programszöveg programegység szerkezete. Ha a fordító egy programegységben talál egy szabad nevet, akkor kilép a tartalmazó programegységbe, és megnézi, hogy a név ott lokális- e. Ha igen vége a folyamatnak, ha nem, akkor tovább lépked kifelé, amíg meg nem találja lokális névként, vagy el nem jut a legkülső szintre. Ha kiért a legkülső szintre, akkor vagy a mivel a programozónak kellett volna deklarálnia a nevet, ez fordítási hiba, vagy mivel ismeri az automatikus deklarációt a nyelv, a fordító hozzárendeli a névhez az attribútumokat. A név ilyenkor a legkülső szint lokális neveként értelmeződik.
+Az **eredmény szerinti** paraméterátadásnál a formális paraméternek van címkomponense a
+hívott alprogram területén, az aktuális paraméternek pedig lennie kell címkomponensének.
+Paraméterkiértékeléskor meghatározódik az aktuális paraméter címe, és átadódik a hívott
+alprogramnak, azonban az alprogram a saját területén dolgozik, és a futás közben nem
+használja ezt a címet. A működésének befejeztekor viszont átmásolja a formális paraméter
+értékét erre a címkomponensre. A kommunikáció egyirányú, a hívottól a hívó felé irányul.
+Van értékmásolás.
 
-A **dinamikus hatáskörkezelés** futási idejű tevékenység, a futtató rendszer végzi. Alapja a hívási lánc. Ha a futtató rendszer egy programegységben talál egy szabad nevet, akkor a hívási láncon keresztül kezd el visszalépkedni mindaddig, amíg meg nem találja lokális névként, vagy a hívási lánc elejére nem ér. Ez utóbbi esetben vagy futási hiba keletkezik, vagy automatikus deklaráció következik be. Dinamikus hatáskörkezelésnél egy név hatásköre az a programegység, amelyben deklaráltuk, és minden olyan programegység, amely ezen programegységből induló hívási láncban helyezkedik el, hacsak ott nem deklaráltuk újra a nevet.
+:::info Paraméter
+Az aktuális paraméter változó lehet.
+:::
+
+Az **érték-eredmény szerinti** paraméterátadásnál a formális paraméternek van címkomponense
+a hívott területén és az aktuális paraméternek rendelkeznie kell érték- és címkomponenssel. A
+paraméterkiértékelésnél meghatározódik az aktuális paraméter értéke és címe és mindkettő
+átkerül a hívotthoz. Az alprogram a kapott értékkel, mint kezdőértékkel kezd el dolgozni a
+saját területén és a címet nem használja. Miután viszont befejeződik, a formális paraméter
+értéke átmásolódik az aktuális paraméter címére. A kommunikáció kétirányú, kétszer van
+értékmásolás.
+
+:::info Paraméter
+Az aktuális paraméter változó lehet.
+
+:::
+
+**Név szerinti** paraméterátadásnál az aktuális paraméter egy, az adott szövegkörnyezetben
+értelmezhető tetszőleges szimbólumsorozat lehet. A paraméterkiértékelésnél rögzítődik az
+alprogram szövegkörnyezete, itt értelmezésre kerül az aktuális paraméter, majd a
+szimbólumsorozat a formális paraméter nevének minden előfordulását felülírja az alprogram
+szövegében, és ezután fut le az. Az információáramlás iránya az aktuális paraméter adott
+szövegkörnyezetbeli értelmezésétől függ.
+
+A **szöveg szerinti** paraméterátadás a név szerintinek egy változata, annyiban különbözik tőle,
+hogy a hívás után az alprogram elkezd működni, az aktuális paraméter értelmező
+szövegkörnyezetének rögzítése és a formális paraméter felülírása csak akkor következik be,
+amikor a formális paraméter neve először fordul elő az alprogram szövegében a végrehajtás
+folyamán.
+
+:::info Formális paraméterek
+Az alprogramok formális paramétereit három csoportra oszthatjuk:
+
+- _Input_ paraméterek: ezek segítségével az alprogram kap információt a hívótól (pl. érték
+  szerinti paraméterátadás).
+- _Output_ paraméterek: a hívott alprogram ad át információt a hívónak (pl. eredmény szerinti
+  paraméterátadás).
+- _Input-output_ paraméterek: az információ mindkét irányba mozog (pl. érték-eredmény
+  szerinti paraméterátadás).
+
+:::
+
+### Blokk.
+
+A blokk olyan programegység, amely csak másik programegység belsejében helyezkedhet el,
+külső szinten nem állhat.
+
+Formálisan a blokknak van _kezdete_, _törzse_ és _vége_. A kezdetet és a véget egy-egy speciális
+karaktersorozat vagy alapszó jelzi. A törzsben lehetnek deklarációs és végrehajtható
+utasítások. Ugyanúgy, mint az alprogramoknál, ezek az utasítások vagy tetszőlegesen
+keverhetők, vagy van külön deklarációs rész és végrehajtható rész. A blokknak nincs
+paramétere. A blokknak egyes nyelvekben lehet neve. Ez általában a kezdet előtt álló címke.
+
+A blokk bárhol elhelyezhető, ahol végrehajtható utasítás állhat.
+
+A blokkot az eljárásorientált nyelveknek csak egy része ismeri. Szerepe a nevek hatáskörének
+elhatárolásában van.
+
+### Hatáskör, láthatóság
+
+A hatáskör a nevekhez kapcsolódó fogalom. Egy név _hatásköre_ alatt értjük a _program
+szövegének azon részét_, ahol az adott név ugyanazt a programozási eszközt hivatkozza, tehát
+jelentése, felhasználási módja, jellemzői azonosak.
+
+:::info Láthatóság
+A hatáskör szinonimája a **láthatóság**.
+
+:::
+
+A _név_ hatásköre az eljárásorientált programnyelvekben a programegységekhez, illetve a
+fordítási egységekhez kapcsolódik.
+
+Egy programegységben deklarált nevet a programegység **lokális nevének** nevezzük. Azt a
+nevet, amelyet nem a programegységben deklaráltunk, de ott hivatkozunk rá, **szabad névnek**
+hívjuk.
+
+Azt a tevékenységet, mikor egy név hatáskörét megállapítjuk, **hatáskörkezelésnek** hívjuk.
+
+Kétféle hatáskörkezelést ismerünk, a **statikus** és a **dinamikus** hatáskörkezelést.
+
+#### Statikus hatáskörkezelés
+
+A **statikus** hatáskörkezelés fordítási időben történik, a fordítóprogram végzi. Alapja a
+programszöveg programegység szerkezete. Ha a fordító egy programegységben talál egy
+szabad nevet, akkor kilép a tartalmazó programegységbe, és megnézi, hogy a név ott lokális-e.
+Ha igen vége a folyamatnak, ha nem, akkor tovább lépked kifelé, egészen addig, amíg meg
+nem találja lokális névként, vagy el nem jut a legkülső szintre. Ha kiért a legkülső szintre,
+akkor két eset lehetséges:
+
+- A nyelvek egy része azt mondja, hogy a programozónak minden nevet deklarálni kell. Így,
+  ha egy név nem volt deklarálva, az fordítási hiba.
+- A nyelvek másik része ismeri az automatikus deklarációt, és a névhez a fordító
+  hozzárendeli az automatikus deklaráció szabályainak megfelelő attribútumokat. A név
+  ilyenkor tehát a legkülső szint lokális neveként értelmeződik.
+
+Statikus hatáskörkezelés esetén egy lokális név hatásköre az a programegység, amelyben
+deklaráltuk és minden olyan programegység, amelyet ez az adott programegység tartalmaz,
+hacsak a tartalmazott programegységekben a nevet nem deklaráltuk újra.
+
+A hatáskör befelé terjed, kifelé soha. Egy programegység a lokális neveit bezárja a külvilág
+elől. Azt a nevet, amely egy adott programegységben nem lokális név, de onnan látható,
+globális névnek hívjuk. A globális név, lokális név relatív fogalmak. Ugyanaz a név az egyik
+programegység szempontjából lokális, egy másikban globális, egy harmadikban pedig nem is
+látszik.
+
+#### Dinamikus hatáskörkezelés
+
+A dinamikus hatáskörkezelés futási idejű tevékenység, a futtató rendszer végzi. Alapja a
+hívási lánc. Ha a futtató rendszer egy programegységben talál egy szabad nevet, akkor a hívási
+láncon keresztül kezd el visszalépkedni mindaddig, amíg meg nem találja lokális névként,
+vagy a hívási lánc elejére nem ér. Ez utóbbi esetben vagy futási hiba keletkezik, vagy
+automatikus deklaráció következik be.
+
+Dinamikus hatáskörkezelésnél egy név hatásköre az a programegység, amelyben deklaráltuk,
+és minden olyan programegység, amely ezen programegységből induló hívási láncban
+helyezkedik el, hacsak ott nem deklaráltuk újra a nevet. Újradeklarálás esetén a hívási lánc
+további elemeiben az újradeklarált név látszik, nincs „lyuk a hatáskörben” szituáció.
+
+:::tip Példa
+Statikus hatáskörkezelés esetén a programban szereplő összes név hatásköre a forrásszöveg
+alapján egyértelműen megállapítható.
+
+Dinamikus hatáskörkezelésnél viszont a hatáskör futási időben változhat és más-más futásnál más-más lehet.
+
+:::
 
 ## Absztrakt adattípus.
 
-Az adattipus az értékek halmazából, és a műveletekből áll. Attól absztrakt, hogy nem ismerjük az adatokat tároló adatszerkezetet, sem pedig a műveletek algoritmusát, csak a specifikációjuk definiált. Absztrakt adattipus pl: Verem, Sor, Lista.
+Az absztrakt adattípus olyan adattípus, amely megvalósítja a **bezárást** vagy **információ rejtést**.
+
+Ez azt jelenti, hogy ezen adattípusnál nem ismerjük a reprezentációt és a műveletek
+implementációját. Az adattípus ezeket nem mutatja meg a külvilág számára. Az ilyen típusú
+programozási eszközök értékeihez csak szabályozott módon, a műveleteinek specifikációi
+által meghatározott interfészen keresztül férhetünk hozzá.
+
+:::info
+Tehát az értékeket véletlenül vagy
+szándékosan nem ronthatjuk el. Ez nagyon lényeges a biztonságos programozás
+szempontjából. Az absztrakt adattípus (angol rövidítéssel: ADT - Abstract Data Type) az
+elmúlt évtizedekben a programnyelvek egyik legfontosabb fogalmává vált és alapvetően
+befolyásolta a nyelvek fejlődését.
+
+:::
+
+:::tip Példa
+Verem, Sor, Lista.
+
+:::
 
 ## Kivételkezelés.
 
-A java kivételkezelésének célja a programfutás során keletkezett hibák kiszűrése és megfelelő kezelése.
+A kivételkezelési eszközrendszer azt teszi lehetővé, hogy az operációs rendszertől átvegyük a
+megszakítások kezelését, felhozzuk azt a program szintjére. A **kivételek** olyan események,
+amelyek megszakítást okoznak. A **kivételkezelés** az a tevékenység, amelyet a program végez,
+ha egy kivétel következik be. **Kivételkezelő** alatt egy olyan programrészt fogunk érteni, amely
+működésbe lép egy adott kivétel bekövetkezte után, reagálva az eseményre.
 
-https://arato.inf.unideb.hu/panovics.janos/programozas12009.pdf
+A kivételkezelés az eseményvezérlés lehetőségét teszi lehetővé a programozásban.
 
-```
+Egyes kivételek figyelése letiltható vagy engedélyezhető.
+Egy kivétel figyelésének letiltása a legegyszerűbb kivételkezelés. Ekkor az esemény hatására a
+megszakítás bekövetkezik, feljön programszintre, kiváltódik a kivétel, de a program nem vesz
+róla tudomást, fut tovább. Természetesen nem tudjuk, hogy ennek milyen hatása lesz a
+program további működésére, lehet, hogy az rosszul, vagy sehogy sem tudja folytatni
+munkáját.
 
-```
+A kivételeknek általában van **neve** (amely gyakran az eseményhez kapcsolódó üzenet szerepét
+játssza) és **kódja** (ami egy egész szám).
+
+## További információk
+
+- https://arato.inf.unideb.hu/panovics.janos/programozas12009.pdf
