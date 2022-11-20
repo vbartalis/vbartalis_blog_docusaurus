@@ -5,7 +5,9 @@ sidebar_position: 2
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# 2A. Tétel: Lexikális egységek
+# 2. Tétel: Lexikális egységek
+
+---
 
 ## Lexikális egységek.
 
@@ -99,6 +101,8 @@ a program szövegébe. A literáloknak két komponensük van: típus és érték
 önmagát definiálja. A literál felírási módja (mint speciális karaktersorozat) meghatározza
 mind a típust, mind az értéket.
 
+---
+
 ## Adattípusok
 
 Az adatabsztrakció első megjelenési formája az adattípus a programozási nyelvekben. Az
@@ -144,6 +148,8 @@ Egyszerű adattípus: Pl: _String_
 
 :::
 
+---
+
 ## Nevesített konstans
 
 A nevesített konstans olyan programozási eszköz, amelynek három komponense van:
@@ -169,6 +175,8 @@ a deklarációs utasításban végrehajtani a módosítást.
 
 :::
 
+---
+
 ## Változó
 
 A program végrehajtásakor az adatokat változók segítségével tároljuk.
@@ -193,6 +201,8 @@ A futási idő azon részét, amikor egy változó rendelkezik címkomponenssel,
 A változó **értékkomponense** mindig a címen elhelyezett bitkombinációként jelenik meg.
 A bitkombináció felépítését a típus által meghatározott reprezentáció dönti el.
 
+---
+
 ## Kifejezések
 
 A kifejezések szintaktikai eszközök. Arra valók, hogy a program egy adott pontján ott már ismert értékekből új értéket határozzunk meg.
@@ -210,6 +220,8 @@ A lehetséges esetek:
 - **prefix**, az operátor az operandusok előtt áll (\* 3 5)
 - **infix**, az operátor az operandusok között áll (3 \* 5)
 - **postfix**, az operátor az operandusok mögött áll (3 5 \*)
+
+---
 
 ## Utasítások
 
@@ -293,50 +305,46 @@ A ciklusszervező utasítások lehetővé teszik, hogy a program egy adott pontj
   <div>
     <Tabs>
       <TabItem value="1" label="Feltételes ciklus" default>
-        Ennél a ciklusnál az ismétlődést egy feltétel igaz vagy hamis értéke
-        szabályozza. A feltétel maga vagy a fejben vagy a végben szerepel.
-        Szemantikájuk alapján beszélünk <b> kezdőfeltételes</b> és{" "}
-        <b>végfeltételes</b> ciklusról.
+        Ennél a ciklusnál az ismétlődést egy feltétel igaz vagy hamis értéke szabályozza. A feltétel
+        maga vagy a fejben vagy a végben szerepel. Szemantikájuk alapján beszélünk{" "}
+        <b> kezdőfeltételes</b> és <b>végfeltételes</b> ciklusról.
       </TabItem>
       <TabItem value="2" label="Előírt lépésszámú ciklus" default>
         Ennél a ciklusfajtánál az ismétlődésre vonatkozó információk (az ún.{" "}
-        <b>ciklusparaméterek</b>) a fejben vannak. Minden esetben tartozik hozzá
-        egy változó, a <b>ciklusváltozó</b>. A változó által felvett értékekre
-        fut le a ciklusmag. A változó az értékeit egy tartományból veheti föl.
-        Ezt a tartományt a fejben adjuk meg <b>kezdő-</b> és <b>végértékével</b>
-        . A ciklusváltozó a tartománynak vagy minden elemét felveheti (beleértve
-        a kezdő- és végértéket is), vagy csak a tartományban szabályosan
-        (ekvidisztánsan) elhelyezkedő bizonyos értékeket. Ekkor meg kell adni a
-        tartományban a felvehető elemek távolságát meghatározó <b>lépésközt</b>.
-        A változó az adott tartományt befuthatja növekvőleg, illetve
-        csökkenőleg, ezt határozza meg az <b>irány</b>.
+        <b>ciklusparaméterek</b>) a fejben vannak. Minden esetben tartozik hozzá egy változó, a{" "}
+        <b>ciklusváltozó</b>. A változó által felvett értékekre fut le a ciklusmag. A változó az
+        értékeit egy tartományból veheti föl. Ezt a tartományt a fejben adjuk meg <b>kezdő-</b> és{" "}
+        <b>végértékével</b>. A ciklusváltozó a tartománynak vagy minden elemét felveheti (beleértve
+        a kezdő- és végértéket is), vagy csak a tartományban szabályosan (ekvidisztánsan)
+        elhelyezkedő bizonyos értékeket. Ekkor meg kell adni a tartományban a felvehető elemek
+        távolságát meghatározó <b>lépésközt</b>. A változó az adott tartományt befuthatja
+        növekvőleg, illetve csökkenőleg, ezt határozza meg az <b>irány</b>.
       </TabItem>
       <TabItem value="3" label="Felsorolásos ciklus" default>
-        A felsorolásos ciklus az előírt lépésszámú ciklus egyfajta
-        általánosításának tekinthető. Van ciklusváltozója, amely explicit módon
-        megadott értékeket vesz fel, és minden felvett érték mellett lefut a
-        mag. A ciklusváltozót és az értékeket a fejben adjuk meg, ez utóbbiakat
-        kifejezéssel. A ciklusváltozó típusa általában tetszőleges. Nem lehet
-        sem üres, sem végtelen ciklus.
+        A felsorolásos ciklus az előírt lépésszámú ciklus egyfajta általánosításának tekinthető. Van
+        ciklusváltozója, amely explicit módon megadott értékeket vesz fel, és minden felvett érték
+        mellett lefut a mag. A ciklusváltozót és az értékeket a fejben adjuk meg, ez utóbbiakat
+        kifejezéssel. A ciklusváltozó típusa általában tetszőleges. Nem lehet sem üres, sem végtelen
+        ciklus.
       </TabItem>
       <TabItem value="4" label="Végtelen ciklus" default>
-        A végtelen ciklus az a ciklusfajta, ahol sem a fejben, sem a végben
-        nincs információ az ismétlődésre vonatkozóan. Működését tekintve
-        definíció szerint végtelen ciklus, üres ciklus nem lehet. Használatánál
-        a magban kell olyan utasítást alkalmazni, amelyik befejezteti a ciklust.
-        Nagyon hatékony lehet eseményvezérelt alkalmazások implementálásánál.
+        A végtelen ciklus az a ciklusfajta, ahol sem a fejben, sem a végben nincs információ az
+        ismétlődésre vonatkozóan. Működését tekintve definíció szerint végtelen ciklus, üres ciklus
+        nem lehet. Használatánál a magban kell olyan utasítást alkalmazni, amelyik befejezteti a
+        ciklust. Nagyon hatékony lehet eseményvezérelt alkalmazások implementálásánál.
       </TabItem>
       <TabItem value="5" label="Összetett ciklus" default>
-        Az előző négy ciklusfajta kombinációiból áll össze. A ciklusfejben
-        tetszőlegesen sok ismétlődésre vonatkozó információ sorolható föl,
-        szemantikájuk pedig szuperponálódik. Nagyon bonyolult működésű ciklusok
-        építhetők fel a segítségével.
+        Az előző négy ciklusfajta kombinációiból áll össze. A ciklusfejben tetszőlegesen sok
+        ismétlődésre vonatkozó információ sorolható föl, szemantikájuk pedig szuperponálódik. Nagyon
+        bonyolult működésű ciklusok építhetők fel a segítségével.
       </TabItem>
     </Tabs>
   </div>
 </details>
 
 :::
+
+---
 
 ## Programegységek
 
@@ -637,6 +645,8 @@ Dinamikus hatáskörkezelésnél viszont a hatáskör futási időben változhat
 
 :::
 
+---
+
 ## Absztrakt adattípus
 
 Az absztrakt adattípus olyan adattípus, amely megvalósítja a **bezárást** vagy **információ rejtést**.
@@ -660,6 +670,8 @@ Verem, Sor, Lista.
 
 :::
 
+---
+
 ## Kivételkezelés
 
 A kivételkezelési eszközrendszer azt teszi lehetővé, hogy az operációs rendszertől átvegyük a
@@ -679,6 +691,8 @@ munkáját.
 
 A kivételeknek általában van **neve** (amely gyakran az eseményhez kapcsolódó üzenet szerepét
 játssza) és **kódja** (ami egy egész szám).
+
+---
 
 ## További információk
 
