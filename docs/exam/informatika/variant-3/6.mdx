@@ -1,0 +1,108 @@
+---
+sidebar_position: 6
+---
+
+# 6. Tétel: Szoftverfejlesztési módszertanok
+
+A módszertanok feladata, hogy meghatározzák, hogy a szoftver életciklus egyes lépései milyen sorrendben követik egymást, milyen dokumentumokat,
+szoftver termékeket kell előállítani és hogyan. Egy nagy szabálykönyvre emlékeztetnek, ami pontosan leírja, hogyan kell szoftvert „főzni”.
+Ha betartjuk a receptet, akkor egy átlagos minőségű szoftvert kapunk, de az átlagos minőség garantált.
+
+A szoftverfejlesztés életciklusában megjelenő általános feladatok a következők:
+
+1. Követelmények megfogalmazása - funkcionális specifikáció
+2. Rendszertervezés (design) - rendszerterv
+3. Kódolás, testreszabás és tesztelés
+4. Bevezetés
+
+A szoftverfolyamat modellje a szoftverfolyamat absztrakt reprezentációja. Minden egyes modell különböző speciális perspektívából reprezentál egy folyamatot,
+de ily módon csak részleges információval szolgálhat magáról a folyamatról. Ezek az általános modellek nem a szoftverfolyamat pontos, végleges leírásai,
+hanem valójában inkább hasznos absztrakciók, amelyet a szoftverfejlesztés különböző megközelítési módjainak megértéséhez használhatunk.
+Az irodalomban számos szoftverfejlesztési modell alakult ki az évek során és található meg, melyekből a legismertebb folyamatmodelleket fogjuk a továbbiakban tárgyalni.
+
+A modellek használata azonban korántsem kizárólagos. Sőt, talán ki is jelenthetjük, hogy kevés olyan vállalat van, aki csupán egy modellt használ folyamatainak leírásához.
+A gyakorlatban inkább előszeretettel alkalmaznak több fejlesztési modellt egyszerre, főként nagy, komplex rendszerek fejlesztésekor.
+Ebben az esetben legfőbb cél mindig az, hogy az adott fejlesztési környezet mellett a modellek a környezetre vetített előnyős tulajdonságaikat emeljék ki,
+és adoptálják az adott környezetre.
+
+## Hagyományos szoftverfejlesztési módszertanok
+
+### Vízesés modell (Waterfall Model)
+
+A szoftverfejlesztés történetének első publikált modellje, amely más tervezői modellekből származik.
+Az elnevezése onnan fakad, hogy a fejlesztésben felmerülő tevékenységeket jól elválasztható lépésekben, lépcsősen ábrázolja, ami alapján vízesésmodellként vált ismertté.
+
+![Process state](./img/6-waterfall.png)
+
+A modell alapvető szakaszai alapvető fejlesztési tevékenységekre képezhetők le. Ezek:
+
+1. Követelmények elemzése és meghozása
+2. Rendszer és szoftvertervezés
+3. Implementáció és egységteszt
+4. Integráció és rendszerteszt
+5. Működtetés és karbantartás
+
+:::info Követelmények elemzése és meghozása
+A rendszer szolgáltatásai, megszorításai és célja a rendszer felhasználóival történő konzultáció alapján alakul ki. Ezeket később részletesen kifejtik, és ezek szolgáltatják a rendszer specifikációt.
+
+:::
+
+:::info Rendszer és szoftvertervezés
+A rendszer tervezési folyamatában választódnak szét a hardver- és szoftverkövetelmények. Itt kell kialakítani a rendszer átfogó architektúráját. A szoftver tervezése az alapvető szoftverrendszer-absztrakciók, illetve a közöttük levő kapcsolatok azonosítását és leírását is magában foglalja.
+
+:::
+
+:::info Implementáció és egységteszt
+Ebben a szakaszban a szoftverterv programok, illetve programegységek halmazaként realizálódik. Az egységteszt azt ellenőrzi, hogy minden egység megfelel-e a specifikációjának.
+
+:::
+
+:::info Integráció és rendszerteszt
+Megtörténik a különálló programegységek, illetve programok integrálása és teljes rendszerként való tesztelése, hogy a rendszer megfelel-e a követelményeknek. A tesztelés után a szoftverrendszer átadható az ügyfélnek.
+
+:::
+
+:::info Működtetés és karbantartás
+Általában ez a szoftver életciklusának leghosszabb fázisa. Megtörtént a rendszertelepítés és megtörtént a rendszer gyakorlati használatbavétele. A karbantartásba beletartozik az olyan hibák javítása, amelyekre nem derült fény az életciklus korábbi szakaszaiban, a rendszeregységek implementációjának továbbfejlesztése, valamint a rendszer szolgáltatásainak továbbfejlesztése a felmerülő új követelményeknek megfelelően.
+
+:::
+
+A fázisok eredménye tulajdonképpen egy dokumentum. A modell fontos szabálya, hogy a következő fázis addig nem indulhat el, amíg az előző fázis be nem fejeződött.
+A gyakorlatban persze ezek a szakaszok kissé átfedhetik egymást. Maga a szoftverfolyamat nem egyszerű lineáris modell, hanem a fejlesztési tevékenységek iterációjának sorozata.
+Ez a vízesésmodellnél a visszacsatolásokban jelenik meg.
+
+A dokumentumok előállításának költségéből adódóan az iterációk költségesek, és jelentős átdolgozást igényelnek. Ezért megszokott, hogy már kisszámú iteráció után
+is befagyasztják az adott fejlesztési fázist, és a fejlesztést későbbi fázisokkal folytatják. A problémák feloldását későbbre halasztják, kihagyják vagy kikerülik azokat.
+A követelmények ilyen idő előtti befagyasztása oda vezethet, hogy a rendszer nem azt fogja tenni, mint amit a felhasználó akart.
+
+Az életciklus utolsó szakaszában a felhasználók használatba veszik a szoftvert. Ilyenkor derülnek ki az eredeti rendszerkövetelmények hibái és hiányosságai.
+Program és tervezési hibák kerülnek elő, továbbá felmerülhet új funkciók szükségessége is. Ezekből adódóan a rendszert át kell alakítani, amely néhány vagy
+akár az összes korábbi folyamatszakasz megismétlésével is járhat.
+
+A vízesésmodell legfőbb problémáját a projekt szakaszainak különálló részekké történő nem flexibilis partícionálása okozza. Egy komplex, bonyolult probléma
+megoldása nem végezhető el hatékonyan ezzel a megközelítéssel. A vízesésmodell csak akkor használható jól, ha már előre jól ismerjük a követelményeket,
+melyeket részletes és pontos specifikáció követ.
+
+### V-modell
+
+### Spirális fejlesztési modell
+
+### Prototípus alapú fejlesztés
+
+### Iteratív és inkrementális módszertanok
+
+### Gyors alkalmazásfejlesztés
+
+## Agilis szoftverfejlesztési módszertanok
+
+### Az agilis szoftverfejlesztés alapjai
+
+### Az agilis kiáltvány
+
+### Egy szabadon választott agilis módszertan részletes bemutatása
+
+## További információk
+
+https://gyires.inf.unideb.hu/KMITT/c12/ch02s03.html
+
+https://gyires.inf.unideb.hu/KMITT/c02/ch02.html

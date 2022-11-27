@@ -2,9 +2,9 @@
 sidebar_position: 5
 ---
 
-# 5. Tétel: Szoftverfejlesztés alapjai
+# 5. Tétel: Programozási technológiák
 
-## Verziókezelés, verziókezelő rendszerek.
+## Verziókezelés, verziókezelő rendszerek
 
 A **verziókezelő rendszer** (version control system, VCS), más néven revíziókezelő vagy forráskezelő rendszer, olyan szoftveres segédprogram, amely nyomon követi és kezeli a fájlrendszerben végzett módosításokat. A VCS ezenkívül együttműködési segédeszközöket is kínál a fájlrendszerben történt módosítások integrálására és más VCS-felhasználókkal való megosztására. Amikor fájlrendszer szintjén működik, a VCS nyomon követi a fájlokon és könyvtárakon végzett hozzáadási, törlési és módosítási műveleteket. Az adattár VCS-kifejezés, amely leírja, hogy a VCS nyomon követ egy fájlrendszert. Az egyedi forráskódfájlok esetében a VCS nyomon követi az adott fájl szövegsorain végzett hozzáadási, törlési és módosítási műveleteket. Az ágazat népszerű szoftveres VCS-megoldásai közé tartozik a Git, a Mercurial, az SVN és a Preforce.
 
@@ -26,7 +26,7 @@ A VCS-eszközök kétféle elsődleges távoliarchitektúra-típussal rendelkezn
 
 Az egyes architektúratípusok _előnyeinek_ és _hátrányainak_ mérlegelésekor a helyszínen kívüli _biztonsági mentés_ funkció az elsődleges szempont. A _központosított_ VCS egyetlen hibaponttal rendelkezik, amely a távoli központi VCS-példány. Ha ez a példány elveszik, hátrányt okozhat a produktivitásban és adatvesztést eredményezhet, majd pótolni kell a forráskód egy másik példányával. Ha ideiglenesen hozzáférhetetlenné válik, akkor a fejlesztők nem tudják kiadni, összefésülni vagy visszaállítani a kódot. Az _elosztott_ modellnél nem jelentkeznek ezek a buktatók, ugyanis mindegyik VCS-példány megőrzi a forráskód teljes másolatát. Ha a központosított modellnél leírt hibaesemények valamelyike bekövetkezik az elosztott modellnél, új VCS-példányt lehet használni a fő fejlesztési vonalon, így nem kerül sor komoly visszaesésre a produktivitásban.
 
-## Szoftvertesztelési alapfogalmak (tesztszintek, teszttípusok, teszttervezési módszerek).
+## Szoftvertesztelési alapfogalmak (tesztszintek, teszttípusok, teszttervezési módszerek)
 
 Tesztelésre azért van szükség, hogy a szoftver termékben meglévő hibákat még az üzembe helyezés előtt megtaláljuk, ezzel növeljük a termék minőségét, megbízhatóságát. Abban szinte biztosak lehetünk, hogy a szoftverben van hiba, hiszen azt emberek fejlesztik és az emberek hibáznak. Gondoljunk arra, hogy a legegyszerűbb programban, mondjuk egy szöveges menü kezelésben, mennyi hibát kellett kijavítani, mielőtt működőképes lett. Tehát abban szinte biztosak lehetünk, hogy tesztelés előtt van hiba, abban viszont nem lehetünk biztosak, hogy tesztelés után nem marad hiba. A tesztelés után azt tudjuk elmondani, hogy a letesztelt részekben nincs hiba, így nő a program megbízhatósága. Ez azt is mutatja, hogy a program azon funkcióit kell tesztelni, amiket a felhasználók legtöbbször fognak használni.
 
@@ -242,7 +242,7 @@ A tesztelőknek a munkájuk során megszerzett tapasztalatira épülő, a szakma
 
 Természetesen léteznek olyan teszt tervezési módszerek is, amelyek egyik fenti kategóriába sem sorolhatók be, azonban a gyakorlatban alkalmazott módszerek összefogására a jelen jegyzet szintjén ezek a kategóriák beváltak.
 
-## Objektum orientált tervezési alapelvek (GoF, SOLID).
+## Objektum orientált tervezési alapelvek (GoF, SOLID)
 
 Az objektum orientált tervezés alapelvei (object-oriented design principles) a tervezési mintáknál magasabb absztrakciós szinten írják le, milyen a „jó” program.
 A tervezési minták ezeket az alapelveket valósítják meg szintén még egy elég magas
@@ -460,7 +460,7 @@ A modell elválasztása a nézet komponenstől több nézetet is lehetővé tesz
 
 ![Process state](./img/5-mvc.png)
 
-### Tervezési minták.
+### Tervezési minták
 
 A tervezési minták középszintű minták, kisebb léptékűek az architekturális mintáknál.
 Alkalmazásuknak nincs hatása egy szoftverrendszer alapvető felépítésére, de nagyban meghatározhatják egy alrendszer felépítését.
@@ -493,7 +493,7 @@ Függőség befecskendezés (dependency injection), tároló (repository), több
 
 :::
 
-## Szabad és nem szabad szoftverek.
+## Szabad és nem szabad szoftverek
 
 ### Nem szabad szoftver
 
@@ -543,7 +543,7 @@ A kereskedelmi szoftverek többnyire nem szabadok, de számos kivétel van.
 
 :::
 
-## Szoftverlicencek, szabad és nyílt forrású licencek fajtái.
+## Szoftverlicencek, szabad és nyílt forrású licencek fajtái
 
 ### Szoftverlicenc
 

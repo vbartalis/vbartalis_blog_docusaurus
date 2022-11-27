@@ -26,7 +26,7 @@ Az objektumorientált paradigma alapfogalmai. Osztály, objektum, példányosít
 
 Operációs rendszerek fogalma, felépítése, osztályozásuk. Fájlok és fájlrendszerek. Speciális fájlok Unix alatt. Átirányítás, csővezetékek. Folyamatkezelés. Jelzések, szignálok. Ütemezett végrehajtás.
 
-### 5. Tétel: Szoftverfejlesztés alapjai
+### 5. Tétel: Programozási technológiák
 
 Verziókezelés, verziókezelő rendszerek. Szoftvertesztelési alapfogalmak (tesztszintek, teszttípusok, teszttervezési módszerek). Objektum orientált tervezési alapelvek (GoF, SOLID). Függőség-befecskendezés. Architekturális minták (MVC). Tervezési minták. Szabad és nem szabad szoftverek. Szoftverlicencek, szabad és nyílt forrású licencek fajtái.
 
