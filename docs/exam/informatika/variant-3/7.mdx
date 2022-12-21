@@ -1,0 +1,670 @@
+---
+sidebar_position: 7
+---
+
+import URISvg from "./img/7-URI.svg";
+
+# 7. Tétel: Web
+
+## A web működésének alapjai.
+
+A Web alapötlete eredetileg az alábbi
+sarokköveken alapul:
+
+- Erőforrások azonosítása globális azonosítókkal (URI-kkal)
+- Kliens-szerver modell
+- Hiperszöveg jelölőnyelv (HTML)
+
+:::info Világháló, Web (World Wide Web)
+
+Információs tér, melynek (erőforrásoknak nevezett) lényeges elemeit URI-k azonosítják.
+
+:::
+
+:::info Erőforrás (resource)
+Bármi, ami azonosítható egy URI-val.
+
+**Információ erőforrás**: Azzal a tulajdonsággal rendelkező erőforrás, hogy minden lényeges jellemzője továbbítható egy üzenetben.
+
+:::
+
+:::info Egységes erőforrás-azonosító (URI)
+A Weben használt globális azonosító.
+:::
+
+:::info Reprezentáció (representation)
+Erőforrás állapotról információkat kódoló adatok.
+:::
+
+:::info Tartalomegyeztetés (content negotiation)
+Egy erőforráshoz több reprezentáció kínálása és ezek közül a legmegfelelőbb kiválasztása, amikor egy reprezentációt kell szolgáltatni.
+:::
+
+:::info Hivatkozás-feloldás (dereferencing)
+Egy URI használata a hivatkozott erőforrás eléréséhez.
+:::
+
+:::note Megjegyzés
+Az elérésnek számos formája van, köztük az erőforrás egy reprezentációjának letöltése, létrehozása, módosítása, vagy az erőforrás néhány vagy összes reprezentációjának törlése.
+:::
+
+:::info Web ágens (web agent)
+A Weben egy személy, entitás vagy folyamat nevében cselekvő személy vagy szoftver.
+:::
+
+:::tip Példa
+Keresőrobot (web crawler)
+:::
+
+:::info Felhasználói ágens (user agent)
+A web ágensek egy fajtája, egy személy nevében cselekvő szoftver.
+:::
+
+:::tip Példa
+Webböngésző
+:::
+
+**Azonosítás**:
+
+- Az erőforrások azonosítása URI-knak nevezett globális azonosítókkal történik.
+
+**Kölcsönhatás**:
+
+- A web ágensek szabványos protokollok segítségével kommunikálnak, melyek üzenetcserén alapulnak.
+  - A web protokollok közé tartozik például a HTTP, HTTPS és WebDAV.
+- Egy üzenet tartalmazhat adatokat valamint metaadatokat az erőforrásról, az üzenet adatokról és magáról az üzenetről.
+
+**Adatformátumok**:
+
+- A protokoll korlátozza az átvihető reprezentáció adatok és metaadatok formátumát.
+- A Web maga nem korlátozza a tartalomszolgáltatók által használható adatformátumokat.
+  - Ahhoz, hogy egy adatformátum egyaránt használható legyen két fél között, a két félnek (egy ésszerű mértékig) meg kell állapodni annak szintaxisában és szemantikájában.
+
+![Web Architektúra](./img/7-web_architektura.png)
+
+## Web szabványok és szabványügyi szervezetek.
+
+### Web szabványok
+
+Egy szabvány egy olyan dokumentum, mely követelményeket, előírásokat, irányelveket vagy jellemzőket fogalmaznak meg,
+melyek következetesen használhatók annak biztosítására, hogy anyagok, termékek, folyamatok és szolgáltatások megfeleljenek a rendeltetésüknek.
+
+Eredetünk szerint a szabványoknak három fajtája van:
+
+- De facto szabványok
+- De jure szabványok
+- Önkéntes közmegegyezéses szabványok
+
+:::info De facto szabványok
+A gyakori használatból vagy a piaci elfogadottságból származnak.
+:::
+:::tip Példa
+QWERTY billentyűzetkiosztás, TeX, PDF (2008 előtt).
+:::
+
+:::info De jure szabványok
+Helyi, állami és/vagy nemzetközi szintű szabályozók által kötelezőként előírt szabványok.
+:::
+:::tip Példa
+Nemzetközi Mértékegységrendszer (SI), PDF (2008-tól).
+:::
+
+:::info Önkéntes közmegegyezéses szabványok
+Különböző magánintézmények (például szakmai egyesületek és szervezetek, akkreditált szabványügyi szervezetek és ipari konzorciumok) által meghatározott szabványok.
+:::
+:::tip Példa
+Az Internet protokollkészletet (közismert nevén TCP/IP), HTML, CSS.
+:::
+
+#### Nyílt szabvány
+
+A nyílt szabvány olyan szabvány, amely nyíltan hozzáférhető és bárki által használható. Előfeltétele továbbá a nyílt licenc, a diszkrimináció-mentesség és a bővíthetőség. Jellemzően bárki részt vehet a fejlesztésben. Nincs egységes definíció, és az értelmezések a használat függvényében változnak.
+
+:::tip Példa
+
+- OpenStand: The Modern Paradigm for Standards (IEEE, ISOC, IETF, IAB, W3C, …) https://open-stand.org/
+- Open Standards Requirement for Software (Open Source Initiative) https://opensource.org/osr/
+
+:::
+
+### Szabványügyi szervezetek
+
+Az alábbi szervezetek felelnek web szabványokért:
+
+- Ecma International https://www.ecma-international.org/
+- International Organization for Standardization (ISO) https://www.iso.org/
+- Internet Engineering Task Force (IETF) https://www.ietf.org/
+- Unicode Consortium https://unicode.org/consortium/consort.html
+- Web Hypertext Application Technology Working Group (WHATWG) https://whatwg.org/
+- World Wide Web Consortium (W3C) https://www.w3.org/
+- …
+
+#### Internet Assigned Numbers Authority (IANA)
+
+Az Internet működésének alapjául szolgáló kódok és számok kiosztását koordinálja. https://www.iana.org/
+
+- A DNS-gyökérzóna felügyelete, az .int és .arpa felső szintű tartományok üzemeltetése.
+- Az IP-címek kiosztásának globális koordinálása.
+- Nyilvántartja a különféle Internet protokollokhoz használt kódokat és számokat.
+
+:::caution Figyelem
+Az **IANA** egy _funkció_, melyet jelenleg egy nonprofit cég, az **Internet Corporation for Assigned Names and Numbers** (ICANN) működtet.
+:::
+
+#### Internet Engineering Task Force (IETF)
+
+Internet szabványokat fejlesztő nemzetközi szabványügyi szervezet.
+
+- Az IETF fejleszti például az Internet protokollkészletet (közismert nevén TCP/IP).
+- Nincs formális tagság, sem tagsági díj, bárki számára nyílt a részvétel lehetősége.
+- A szakmai munka munkacsoportokban történik.
+
+:::note Megjegyzés
+Az Internet szabványokhoz kötődő specifikációkat az **RFC** dokumentumsorozatban publikálja.
+:::
+
+##### RFC
+
+- Az RFC sorozat az Internetről szóló műszaki és szervezeti dokumentumokat tartalmaz.
+- Az RFC dokumentumsorozat 1969-ben indult az ARPANET projekt részeként.
+- Az RFC Editor szerkeszti, adja ki és katalogizálja az RFC-ket. https://www.rfc-editor.org/
+- Eredet szerint az RFC sorozatot négy folyamra osztják:
+
+  - Az Internet Engineering Task Force (IETF) folyam
+  - Az Internet Architecture Board (IAB) folyam
+  - Az Internet Research Task Force (IRTF) folyam
+  - A független beadványok folyama
+
+- Minden RFC-t egy szám azonosít.
+- Minden RFC elérhető ASCII szövegként.
+- A kiadott RFC-k soha nem módosulnak.
+- A különféle hibákat hibajegyzékek javítják.
+- Változtatások egy javított RFC írásával és kiadásával is eszközölhetők.
+
+#### World Wide Web Consortium (W3C)
+
+A W3C egy nemzetközi közösség, ahol tagszervezetek, főállású alkalmazottak és a nyilvánosság munkálkodnak együtt webszabványok fejlesztésén. A W3C küldetése a web lehetőségeinek maximális kiaknázása.
+
+A W3C ajánlásoknak nevezett, webtechnológiákat meghatározó és webszabványoknak számító dokumentumokat publikál.
+
+- A szabványok fejlesztése a Nyílt Szabványok Alapelveinek megfelelően történik.
+
+A W3C tervezési alapelvei:
+
+- Web mindenkinek
+- Web mindenhol
+
+:::info Web mindenkinek
+A web elérhető kell, hogy legyen mindenki számára, a hardverektől, szoftverektől, hálózati infrastruktúrától, anyanyelvtől, kultúrától, földrajzi elhelyezkedéstől, vagy a fizikai vagy szellemi képességektől függetlenül.
+:::
+
+:::note Megjegyzés
+Kapcsolódó fogalmak: **akadálymentesítés** (web accessibility), **nemzetköziesítés** (internationalization)
+:::
+
+:::info Web mindenhol
+A web elérhető kell, hogy legyen a legkülönfélébb eszközökről.
+
+:::
+
+:::tip Példa
+Mobiltelefonok, okostelefonok, PDA eszközök, háztartási készülékek, …
+
+:::
+
+<details>
+  <summary>Néhány mérföldkő</summary>
+  <div>
+1996 október: PNG (Portable Network Graphics) Specification Version 1.0 https://www.w3.org/TR/REC-png-961001
+
+1996 december: Cascading Style Sheets, level 1 https://www.w3.org/TR/REC-CSS1-961217
+
+1998 február: Extensible Markup Language (XML) 1.0 https://www.w3.org/TR/1998/REC-xml-19980210
+
+1998 április: Mathematical Markup Language (MathML) 1.0 Specification https://www.w3.org/TR/1998/REC-MathML-19980407/
+
+1998 október: Document Object Model (DOM) Level 1 Specification https://www.w3.org/TR/REC-DOM-Level-1/
+
+1999 november: XSL Transformations (XSLT) Version 1.0 https://www.w3.org/TR/1999/REC-xslt-19991116
+
+1999 december: HTML 4.01 Specification https://www.w3.org/TR/html401/
+
+2000 január: XHTML 1.0: The Extensible HyperText Markup Language https://www.w3.org/TR/2000/REC-xhtml1-20000126/
+
+2001 május: XHTML 1.1 - Module-based XHTML https://www.w3.org/TR/2001/REC-xhtml11-20010531/
+
+2004 október: XML Schema https://www.w3.org/TR/xmlschema-0/ https://www.w3.org/TR/xmlschema-1/ https://www.w3.org/TR/xmlschema-2/
+
+2011 június: Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification https://www.w3.org/TR/CSS2/
+
+2012 június: Media Queries https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/
+
+2011 szeptember: Selectors Level 3 https://www.w3.org/TR/2011/REC-css3-selectors-20110929/
+
+2014 október: HTML5 - A vocabulary and associated APIs for HTML and XHTML https://www.w3.org/TR/2014/REC-html5-20141028/
+
+2019 december: WebAssembly Core Specification https://www.w3.org/TR/wasm-core-1/
+
+2020 április: Web of Things (WoT) Architecture https://www.w3.org/TR/wot-architecture/
+
+2021 január: WebRTC 1.0: Real-Time Communication Between Browsers https://www.w3.org/TR/webrtc/
+
+2022 április: Media Queries Level 3 https://www.w3.org/TR/mediaqueries-3/
+
+  </div>
+</details>
+
+Jelenleg 472 tagszervezete van a világ minden részéről (2022. szeptember 5.)
+:::tip Példa
+Adobe, Amazon, Apple, CERN, Google, IBM, Intel, Meta, Microsoft, SZTAKI, …
+
+:::
+
+A munkát az alábbi anyaintézmények koordinálják:
+
+- MIT/CSAIL (USA), ERCIM (Franciaország), Keio University (Japán), Beihang University (Kína)
+
+:::note W3C Chapters
+A W3C tevékenységéhez kapcsolódó területileg szerveződő közösségek
+:::
+
+A fejlesztést munkacsoportok végzik.
+A munkacsoportok által előállított eredmények többek között szakmai jelentések, tesztkészletek és nyílt forrású szoftverek.
+A munkacsoportok a szóban forgó terület szakértőiből állnak, akik az alábbiak lehetnek:
+
+- W3C alkalmazott,
+- egy tagszervezetet képviselő egyén (általában egy tagszervezet alkalmazottja),
+- egy meghívott szakértőként közreműködő egyén.
+
+:::note Részvétel
+Nyitott a részvétel lehetősége a nyilvánosság számára
+:::
+
+#### Web Hypertext Application Technology Working Group (WHATWG)
+
+A Web fejlődése iránt elkötelezett közösség, mely böngészőkben implementálható szabványokat fejleszt.
+
+2004-ben alapították az Apple, a Mozilla Foundation és az Opera Software programozói, akik elégedetlenek voltak a W3C a HTML fejlesztésére irányuló tevékenységével.
+
+Működését az irányítócsoport (Steering Group) koordinálja, melynek tagjai az Apple, Google, Microsoft és a Mozilla.
+
+Nyitott a részvétel lehetősége a nyilvánosság számára.
+
+Szabványok:
+
+- DOM https://dom.spec.whatwg.org/
+- Fullscreen API https://fullscreen.spec.whatwg.org/
+- HTML https://html.spec.whatwg.org/
+- URL https://url.spec.whatwg.org/
+- XMLHttpRequest https://xhr.spec.whatwg.org/
+- …
+
+## URI-k és felépítésük.
+
+### Egységes erőforrás-azonosító (uniform resource identifier) (URI)
+
+Absztrakt vagy fizikai erőforrást azonosító tömör karaktersorozat.
+
+- Egy erőforrás nem feltétlenül érhető el a Weben.
+- URI-kat hozzá lehet rendelni akár a tárgyi világ objektumaihoz és fogalmakhoz is.
+
+Minden URI egy sémanévvel kezdődik, melyet egy `:` karakter választ el a séma-specifikus résztől.
+
+- A séma-specifikus rész szintaxisát és jelentését sémaspecifikációk határozhatják meg bizonyos korlátok között.
+
+:::note Megjegyzés
+Az URI-sémákat (is) adminisztráló szerv: Internet Assigned Numbers Authority (IANA)
+:::
+
+Közismert URI sémák:
+
+- `file`
+- `http/https`
+- `mailto`
+- `about`
+
+:::info Hivatkozás-feloldás (dereferencing)
+Az URI által azonosított erőforráshoz való hozzáférést jelenti.
+
+Ez leggyakrabban az erőforrás egy reprezentációjának letöltését jelenti.
+:::
+
+Az URI két fő típusa a következő:
+
+- Uniform Resource Locator (URL)
+- Uniform Resource Name (URN)
+
+:::info Uniform Resource Locator (URL)
+**Egységes erőforrás-helymeghatározó**. Az erőforrások azonosítása az elérés módjával.
+
+- Megadja az objektum helyét szabályozott és strukturált formában. Ez lehetővé teszi az objektum egyedi azonosítását. Az objektum helyének megváltoztatása azonban, mondjuk egy szerverváltás miatt, nem végezhető el automatikusan.
+- Az URL-ek az URI-k egy részhalmaza. Minden URL URI, de minden URI nem URL.
+
+:::
+
+:::tip Példa
+
+`mailto:myname@webpage.com` & `ftp://webpage.com/download.jpg`
+
+:::
+
+:::info Uniform Resource Name (URN)
+**Egységes erőforrás-név**. Erőforrások helytől független tartós azonosítása.
+
+- Megadja az objektum nevét, amely nem feltétlenül egyedi. Az objektum elnevezésére nincs közös, univerzális szabvány. Ezért ez a módszer az objektumok egyedi azonosítására nem vált be.
+
+:::
+:::tip Példa
+
+`urn:isbn:00934563` azonosít egy könyvet az egyedi ISBN száma alapján.
+
+:::
+
+A többi típus a következő:
+
+- Uniform Resource Characteristics (URC)
+- Data URI
+
+:::info Uniform Resource Characteristics/Citations (URC)
+**Egységes erőforrás-jellemzők/citációk**.
+Olyan alapvető metaadatokat ad meg az erőforrásról, amelyeket az ember is megérthet, és amelyeket egy gép is elemezhet.
+
+Az URC-ket **soha nem alkalmazták**, és nem is annyira népszerűek, de az alapkoncepciók befolyásolták az olyan jövőbeli technológiákat, mint az RDF.
+:::
+
+:::info Data URI
+Az adatok közvetlenül elhelyezhetők egy egységes erőforrás-azonosítóban ahelyett, hogy megadnánk a helyét (URL) és a nevét (URN). Az adat URI lehetővé teszi mindenféle objektum beágyazását egy weboldalon belül. Nagyon hasznos a gyakran használt képek vagy sok kis méretű (32×32 pixelnél kisebb) kép betöltéséhez.
+:::
+
+<URISvg />
+
+### URI-k felépítése
+
+URI-kban megengedett **karakterek**:
+
+- Fenntartott karakterek az alábbiak:
+  - `:`, `/`, `?`, `#`, `[`, `]`, `@`, `!`, `$`, `&`, `'` , `(`, `)`, `\*` , `+`, `,`, `;`, `=`
+    - Határolójelként használt karakterek
+- Nem fenntartott karakterek:
+  - `A`, …, `Z`, `a`, …, `z`
+  - `0`, …, `9`
+  - `-` , `.`, `\_`, `~`
+
+A specifikáció nem határoz meg karakterkódolást
+
+:::info Százalékos kódolás (percent-encoding)
+Nem megengedett karakterek használatához vagy fenntartott karakterek speciális jelentésének elnyomásához.
+
+- Tekintsük a karaktert az adott karakterkódolásban ábrázoló oktettsorozatot.
+- Az oktettsorozatot kódoljuk egy olyan karakterlánccal, melyben minden oktettet %HH módon ábrázolunk, ahol HH az oktett értékét reprezentáló két hexadecimális számjegy karakter.
+  - Például a szóköz karaktert %20 módon kell kódolni.
+  - Használhatóak az `A`, …, `F` és az `a`, …, `f` hexadecimális számjegy karakterek is.
+  - URI-k összehasonlításánál nem számít, hogy hexadecimális számjegyként kis- vagy nagybetűk szerepelnek-e.
+
+:::
+
+:::tip Példa
+
+- `file:///media/Movies/What's Up, Tiger Lily? (1966)/` ->
+  `file:///media/Movies/What%27s%20Up%2C%20Tiger%20Lily%3F%20%281966%29/`
+
+- UTF-8 karakterkódolást feltételezve:
+  `http://www.w3.org/People/Dürst/` ->
+  `http://www.w3.org/People/D%C3%BCrst/`
+
+:::
+
+#### URI szintaxis
+
+Hierarchikus felépítés.
+
+- A komponensek felsorolása balról jobbra haladva fontosság szerint csökkenő sorrendben történik.
+
+Általános szintaxis:
+`séma ':' hierarchikus-rész ['?' lekérdezés] ['#' erőforrásrész]`
+
+A hierarchikus rész egy autoritás (authority) és egy útvonal (path) komponenst tartalmazhat, szintaxisa:
+
+- `// autoritás útvonal` vagy `útvonal`
+
+Ha _van autoritás komponens_, akkor az _útvonal üres_ kell legyen _vagy_ a `/` karakterrel kell kezdődjön.
+
+Ha _nincs autoritás komponens_, akkor az útvonal nem kezdődhet két `/` karakterrel.
+
+![URI-schema](./img/7-URI-schema.png)
+
+:::info Autoritás komponens
+Nevét onnan kapta, hogy fennhatósága alá tartozik az URI további része által meghatározott névtér.
+
+Szintaxisa: `[userinfo '@'] host [':' port]`
+
+Az URI sémák meghatározhatnak egy alapértelmezett portot.
+
+- Például a http sémánál 80 az alapértelmezés.
+
+:::
+
+:::info Útvonal komponens
+
+- Útvonal részek `/` karakterekkel elválasztott sorozata, amely lehet üres
+- Az első `?` vagy `#` karakterig, ezek hiányában pedig az URI végéig tart.
+- Az _állományrendszerekben_ megszokott módon használhatóak útvonal részként `.` és `..`.
+
+:::
+
+:::info Lekérdezés komponens
+
+- A `?` karakter jelzi az elejét, a `#` karakterig, annak hiányában pedig az URI végéig tart
+- Nem hierarchikus adatokat tartalmaz
+- Gyakran név `=` érték formájú, `&` karakterekkel elválasztott név-érték párokat tartalmaz.
+  - A http és https URI sémák esetében ez űrlap adatok továbbítására szolgál (application/x-www-form-urlencoded kódolás).
+
+:::
+
+:::info Erőforrásrész-azonosító
+
+- A `#` karakter jelzi az elejét, az URI végéig tart.
+- Lehetővé teszi egy másodlagos erőforrás közvetett azonosítását egy elsődleges erőforrásra történő hivatkozáson keresztül.
+  - A másodlagos erőforrás lehet például az elsődleges erőforrás egy része.
+- Jelentését az elsődleges erőforrás elérése során kapott lehetséges reprezentációk határozzák meg, ezek médiatípusa.
+  - A média típusok megszorításokat szabhatnak az erőforrásrész-azonosító formájára, meghatározhatják az így azonosított másodlagos erőforrások jelentését.
+- Hivatkozás-feloldás során mindig eltávolításra kerül.
+- A séma specifikációk olyan URI szintaxist kell, hogy meghatározzanak, melynek csak abszolút (erőforrásrész-azonosítót nem tartalmazó) URIk felelnek meg.
+  - Nem definiálnak erőforrásrész-azonosító szintaxist vagy használatot, tekintet nélkül arra, hogy az a sémán keresztül azonosítható erőforrásokra alkalmazható-e.
+
+:::
+
+:::info Erőforrásrész-azonosító jelentése
+`text/html` média típus:
+
+- Az erőforrásrész azonosító a dokumentum adott részét jelenti vagy állapot információt szolgáltat szkriptek számára.
+
+`application/xml`, `text/xml` és `*/*+xml` média típusok:
+
+- Az utóbbiba beleértendők például: `application/xhtml+xml`, `image/svg+xml`, `model/x3d+xml`, …
+
+:::
+:::tip Példa
+
+- Például a https://www.w3.org/blog/news/#w3c_footer URI esetén az erőforrásrész-azonosító a `w3c_footer` azonosítójú elemet jelenti.
+- Például a https://www.youtube.com/watch?v=w0ffwDYo00Q#t=77 URI esetén az erőforrásrész-azonosító azt jelzi, hogy mely _pozíción_ kell elkezdeni a _videó lejátszását_ (a 77. másodperctől).
+- Például a https://www.w3.org/TR/xml/#sec-bibliography URI esetén az erőforrásrész-azonosító a `sec-bibliography` azonosítójú elemet jelenti a dokumentumban.
+
+:::
+
+:::info Abszolút URI
+Olyan URI, amely nem tartalmaz erőforrásrészazonosítót.
+
+- Bázis URI-ként csak abszolút URI használható.
+
+:::
+:::info URI-hivatkozás
+URI vagy relatív hivatkozás.
+
+:::
+:::info Relatív hivatkozás
+kb. egy URI séma-specifikus része, vagy annak egy megfelelő végszelete (lehet akár az üres karakterlánc is).
+
+- A „relatív URI” kifejezést a specifikáció egyáltalán nem használja!
+- Míg egy URI mindig a használat környezetétől függetlenül azonosít egy erőforrást, egy relatív hivatkozás egy adott környezetben értelmezett.
+- Egy úgynevezett bázis-URI alapján URI-vá lehet feloldani.
+- A relatív hivatkozások feloldásához egy algoritmust ír le a specifikáció.
+
+:::
+
+## HTTP: kérések és válaszok felépítése, metódusok, állapotkódok, tartalomegyeztetés, sütik.
+
+### Hypertext Transfer Protocol (HTTP)
+
+Állapotnélküli alkalmazásszintű kérés/válasz protokollok egy családja, melyek egy közös általános interfésszel, kiterjeszhető szemantikával és önleíró üzenetekkel teszik lehetővé a rugalmas interakciót hálózati alapú hiperszöveg információs rendszerekkel.
+
+### Jellemzők
+
+:::note Egységes interfész
+Egységes interfészt biztosít erőforrásokkal történő interakcióhoz olyan üzenetek küldése révén, melyek reprezentációkat manipulálnak vagy továbbítanak.
+
+:::
+:::note A kliens-szerver modellen alapuló kérés/válasz protokoll
+Kliensek és szerverek közötti üzenetcserével működik.
+
+:::
+:::note Állapotnélküli protokoll
+Minden egyes kérés jelentése a többiétől külön értelmezhető.
+
+:::
+:::note Kiterjeszhető
+A HTTP számos általános kiterjesztési pontot határoz meg, melyek révén új egy verzió kiadása nélkül vezethetők be képességek a protokollba, mint például metódusok, állapotkódok vagy mezők.
+
+:::
+
+### Fogalmak
+
+:::info Erőforrás
+Egy HTTP kérés célja, melyet egy URI azonosít.
+
+:::
+
+:::info Reprezentáció
+
+- Olyan információ, mely egy adott erőforrás múltbeli, jelenlegi vagy kívánt állapotát hivatott tükrözni.
+- Átvihető a protokollon keresztül.
+- Reprezentáció metaadatokból és reprezentáció adatokból áll.
+- Egy erőforrás több olyan reprezentációval is rendelkezhet vagy pedig képes lehet ilyenek előállítására, melyek az erőforrás jelenlegi állapotát hivatottak tükrözni.
+
+:::
+
+:::info Tartalomegyeztetés (content negotiation)
+Egy mechanizmus egy bizonyos kérés kielégítéséhez a legmegfelelőbb erőforrás reprezentáció kiválasztásához és szolgáltatásához, melyet akkor alkalmaznak, amikor az erőforrásoknak több alternatív reprezentációja lehet.
+
+:::
+
+:::info Kapcsolat
+A HTTP egy kliens/szerver protokoll, mely egy megbízható szállítási vagy viszony rétegbeli kapcsolat fölött működik.
+
+:::
+
+:::info Üzenet
+A HTTP egy állapotnélküli kérés/válasz protokoll üzenetek egy kapcsolaton keresztül történő váltásához.
+
+- Egy üzenet általában egy kérés vagy egy válasz. (Azonban például a HTTP/2 kapcsolatvezérlő üzeneteket is használ.)
+
+:::
+
+:::info Küldő/fogadó
+Egy adott üzenetet elküldő vagy fogadó tetszőleges implementáció.
+
+:::
+
+A kliens és a szerver olyan szerepek, melyet egy adott kapcsolatnál töltenek be programok. Ugyanaz a program kliens és szerver is lehet különböző kapcsolatoknál.
+
+:::info Kliens
+Egy szerverrel egy vagy több HTTP kérés küldése céljából kapcsolatot létrehozó program.
+
+:::
+
+:::info Szerver
+Egy program, mely kapcsolatokat fogad el abból a célból, hogy HTTP kéréseket szolgáljon ki HTTP válaszok küldésével.
+
+:::
+:::info Felhasználói ágens (user agent)
+Egy HTTP kérést kezdeményező program.
+
+- Például böngésző, keresőrobot, parancssori eszköz (például curl, HTTPie), háztartási gép, firmware frissítő szkript, mobil alkalmazás, …
+- Felhasználói ágensnek lenni nem jelenti azt, hogy egy emberi felhasználó kezeli a programot a kérés időpontjában.
+
+:::
+:::info Eredet szerver (origin server)
+Egy program, mely hiteles válaszokat tud létrehozni egy adott cél erőforráshoz.
+
+:::
+:::info Közvetítő (intermediary)
+Lehetővé teszik kérések kapcsolatok egy láncán keresztül történő kiszolgálását.
+-A közvetítőknek a következő három szokásos formája van: proxy, átjáró, alagút.
+
+:::
+
+### Üzenet absztrakció
+
+Egy üzenet általánosan a következőkből áll:
+
+- Vezérlő adatok
+- Fejléc szakasz
+- Tartalom
+- Lezáró szakasz
+
+Az üzeneteket önleírónak szánják, azaz minden, amit egy fogadónak tudnia kell az üzenetről, megállapítható a (dekódolt) üzenet vizsgálatával.
+
+#### Vezérlő adatok
+
+Az üzenetek az elsődleges céljukat leíró vezérlő adatokkal kezdődnek.
+
+- **Kérésekben** a vezérlő adatok a metódust, a kérést célt és a protokoll verziót foglalják magukban.
+- **Válaszokban** a vezérlő adatok az állapotkódot, az opcionális indok frázist és a protokoll verziót foglalják magukban.
+
+Minden HTTP üzenetnek van protokoll verziója.
+
+#### Fejléc szakasz
+
+A tartalom előtt küldött vagy fogadott mezőket fejlécmezőknek (vagy informálisan egyszerűen fejléceknek) nevezzük.
+
+Egy üzenet fejléc szakasza fejléc mezősorok egy sorozatából áll.
+
+#### Tartalom
+
+A HTTP üzenetek egy teljes vagy részleges reprezentációt hordozhatnak az üzenet tartalmaként.
+
+A tartalom átvitele egy bájtfolyamként történik a fejléc szakasz után.
+
+A `Content-Type` és a `Content-Encoding` fejlécmezők által meghatározott formátumban és kódolásban van.
+
+##### Tartalom szemantika
+
+A tartalom célját egy kérésben a metódus szemantika határozza meg.
+
+- Például egy reprezentáció egy POST kérés tartalmaként a cél erőforrás által feldolgozandó információkat ábrázol.
+
+Egy válaszban a tartalom célját a kérés metódusa, az állapotkód és a tartalmat leíró válasz mezők határozzák meg.
+
+- Például egy GET kérésre adott 200 (OK) állapotkódú válasz a cél erőforrás az üzenet létrehozásának pillanatában megfigyelhető aktuális állapotát ábrázolja.
+
+#### Lezáró szakasz
+
+A tartalom után küldött vagy fogadott mezőket lezáró mezőknek (vagy informálisan egyszerűen lezáróknak) nevezzük.
+
+A lezáró mezők ellenőrző összegek, digitális aláírások, kézbesítési metrikák vagy utófeldolgozási állapot információk továbbítására használhatók.
+
+Egy üzenet lezáró szakasza lezáró mezősorok egy sorozatából áll.
+
+A lezáró mezőket a fejlécmezőktől elkülönítve ajánlott feldolgozni és tárolni.
+
+##### Mezők
+
+## A web jelölőnyelvei: XML és HTML dokumentumok felépítése.
+
+## Stíluslap nyelvek.
+
+## JSON.
+
+## További információk
+
+https://arato.inf.unideb.hu/jeszenszky.peter/download/webtech/presentations/hu/
