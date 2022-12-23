@@ -617,31 +617,27 @@ Egy üzenet általánosan a következőkből áll:
 
 Az üzeneteket önleírónak szánják, azaz minden, amit egy fogadónak tudnia kell az üzenetről, megállapítható a (dekódolt) üzenet vizsgálatával.
 
-#### Vezérlő adatok
-
+:::info Vezérlő adatok
 Az üzenetek az elsődleges céljukat leíró vezérlő adatokkal kezdődnek.
 
 - **Kérésekben** a vezérlő adatok a metódust, a kérést célt és a protokoll verziót foglalják magukban.
 - **Válaszokban** a vezérlő adatok az állapotkódot, az opcionális indok frázist és a protokoll verziót foglalják magukban.
 
 Minden HTTP üzenetnek van protokoll verziója.
-
-#### Fejléc szakasz
-
+:::
+:::info Fejléc szakasz
 A tartalom előtt küldött vagy fogadott mezőket fejlécmezőknek (vagy informálisan egyszerűen fejléceknek) nevezzük.
 
 Egy üzenet fejléc szakasza fejléc mezősorok egy sorozatából áll.
-
-#### Tartalom
-
+:::
+:::info Tartalom
 A HTTP üzenetek egy teljes vagy részleges reprezentációt hordozhatnak az üzenet tartalmaként.
 
 A tartalom átvitele egy bájtfolyamként történik a fejléc szakasz után.
 
 A `Content-Type` és a `Content-Encoding` fejlécmezők által meghatározott formátumban és kódolásban van.
-
-##### Tartalom szemantika
-
+:::
+:::tip Tartalom szemantika
 A tartalom célját egy kérésben a metódus szemantika határozza meg.
 
 - Például egy reprezentáció egy POST kérés tartalmaként a cél erőforrás által feldolgozandó információkat ábrázol.
@@ -649,9 +645,8 @@ A tartalom célját egy kérésben a metódus szemantika határozza meg.
 Egy válaszban a tartalom célját a kérés metódusa, az állapotkód és a tartalmat leíró válasz mezők határozzák meg.
 
 - Például egy GET kérésre adott 200 (OK) állapotkódú válasz a cél erőforrás az üzenet létrehozásának pillanatában megfigyelhető aktuális állapotát ábrázolja.
-
-#### Lezáró szakasz
-
+:::
+:::info Lezáró szakasz
 A tartalom után küldött vagy fogadott mezőket lezáró mezőknek (vagy informálisan egyszerűen lezáróknak) nevezzük.
 
 A lezáró mezők ellenőrző összegek, digitális aláírások, kézbesítési metrikák vagy utófeldolgozási állapot információk továbbítására használhatók.
@@ -659,8 +654,9 @@ A lezáró mezők ellenőrző összegek, digitális aláírások, kézbesítési
 Egy üzenet lezáró szakasza lezáró mezősorok egy sorozatából áll.
 
 A lezáró mezőket a fejlécmezőktől elkülönítve ajánlott feldolgozni és tárolni.
+:::
 
-##### Mezők
+#### Mezők
 
 A HTTP mezőket használ adatok név/értek párok formájában történő szolgáltatásához.
 Mezők szolgálnak a következő információk továbbítására:
@@ -676,24 +672,22 @@ A mezők küldése és fogadása az üzenetek fejléc és lezáró szakaszaiban 
 - Egy üzenet fejléc vagy lezáró szakaszában küldött mezőt fejlécmezőnek illetve lezáró mezőnek nevezünk.
 - Bizonyos mezők, mint például az ETag, előfordulhatnak fejléc- vagy lezáró mezőként is.
 
-Mezőnevek:
-
+:::tip Mezőnevek
 - Egy mezőnév egy vagy több karakterből álló olyan sorozat, melyben az US-ASCII karakterkészlet egy részhalmaza használható csak.
 - A mezőnevek kisbetű-nagybetű érzéketlenek.
-
-Mezőértékek:
-
+:::
+:::tip Mezőértékek
 - Egy mezőérték egy olyan karaktersorozat, mely egy vagy több nyomtatható US-ASCII karakterből, szóközből és vizszintes tabulátorból áll.
 - A vezető és záró whitespace karaktereket a felhasználás előtt el kell távolítani.
 - A mezőkhöz előírható, hogy egyetlen tagot vagy pedig egy vesszővel elválasztott taglistát hordozzanak.
 - Minden egyes mező korlátozhatja a megengedett értékek halmazát.
-
-Mezőszakaszok:
-
+:::
+:::tip Mezőszakaszok
 - Tetszőleges számú olyan mezősorból állnak, melyek mindegyike egy mezőnevet és egy hozzá tartozó mezősor értéket tartalmaz.
 - Amikor egy mezőnév megismétlődik egy szakaszban, az értéke egy olyan lista, melyben a mező a szakaszbeli mezősor értékei az előfordulásuk sorrendjében kerülnek összefűzésre elválasztóként egy vessző karakterrel.
   - A gyakorlatban a Set-Cookie fejlécmező gyakran több mezősorban is megjelenik egy válaszban, azonban a Set-Cookie mezősor értékek nem kerülnek egyesítésre egyetlen mezőértékké.
 - Nem lényeges, hogy milyen sorrendben fordulnak elő különböző mezőnevű mezősorok egy szakaszban.
+:::
 
 A HTTP specifikációk sok szabványos mezőt határoznak meg.
 A HTTP által meghatározottakon túl sok más specifikáció definiál fejlécmezőket.
@@ -725,18 +719,18 @@ Egy cél erőforrás által megengedett metódusok az Allow fejlécmezőben soro
 Ha egy kérés metódusát nem ismeri fel vagy nem implementálja egy eredet szerver, akkor az 501 (Not Implemented) állapotkóddal ajánlott válaszolnia.
 Ha egy kérés metódusát felismeri és implementálja ugyan egy eredet szerver, de nem engedélyezi a cél erőforrásra, akkor a 405 (Method Not Allowed) állapotkóddal ajánlott válaszolnia.
 
-#### GET metódus
+:::info GET metódus
 
 A cél erőforrás egy aktuális kiválasztott reprezentációjának átvitelét kérelmezi.
 Az információ-visszakeresés elsődleges mechanizmusa.
 Egy kliens úgy módosíthatja a GET jelentését a kérésben a Range fejlécmező küldésével, hogy az csak a kiválasztott reprezentáció bizonyos részeinek átvitelét kérelmezi.
-
-#### HEAD metódus
+:::
+:::info HEAD metódus
 
 Azonos a GET metódussal, azzal a különbséggel, hogy a szerver nem küldhet tartalmat a válaszban.
 Úgy használható metaadatok szerzésére a kiválasztott reprezentációról, hogy reprezentáció adatok nem kerülnek átvitelre
-
-#### POST metódus
+:::
+:::info POST metódus
 
 Azt kérelmezi, hogy a cél erőforrás dolgozza fel a kérésben mellékelt reprezentációt a saját szemantikájának megfelelően.
 Tipikus felhasználások:
@@ -745,41 +739,41 @@ Tipikus felhasználások:
 - Egy üzenet postázása egy hírcsoportba, levelezési listára vagy blogba.
 - Egy új erőforrás létrehozása.
 - Adatok hozzáfűzése egy erőforrás létező reprezentációjához.
-
-#### PUT metódus
+:::
+:::info PUT metódus
 
 Azt kérelmezi, hogy a kerüljön létrehozásra vagy helyettesítésre a cél erőforrás állapota a kérésben mellékelt reprezentáció által meghatározott állapottal.
 Egy adott reprezentációt tartalmazó sikeres PUT kérés arra enged következtetni, hogy egy következő GET kérés ugyanarra a cél erőforrásra egy 200 (OK) állapotkódú válaszban elküldött ekvivalens reprezentációt eredményez.
-
-#### Különbség a PUT és POST között
+:::
+:::tip Különbség a PUT és POST között
 
 A POST és a PUT metódus közötti alapvető eltérést a mellékelt reprezentáció eltérő célja hangsúlyozza:
 
 - A cél erőforrás egy POST kérésben a mellékelt reprezentációt hivatott kezelni.
 - A mellékelt reprezentáció egy PUT kérésben a cél erőforrás állapotát hivatott helyettesíteni.
-
-#### DELETE metódus
+:::
+:::info DELETE metódus
 
 Azt kérelmezi, hogy az eredet szerver törölje a cél erőforrás és aktuális funkcionalitása közötti kapcsolatot.
 Ha a cél erőforrásnak egy vagy több aktuális reprezentációja van, akkor ezeket az eredet szerver vagy megsemmisíti, vagy nem, a kapcsolódó tárterület vagy felszabadításra kerül, vagy nem, teljes egészében az erőforrás természetétől és az eredet szerver általi implementációjól függően.
 Viszonylag kevés erőforrás engedi meg a DELETE metódust.
-
-#### OPTIONS metódus
+:::
+:::info OPTIONS metódus
 
 A cél erőforrás kommunikációs opcióiról (az eredet szerveren vagy egy közvetítőn) rendelkezésre álló információkat kér.
 Cél erőforrásként \* általában a szervert jelenti, nem pedig egy meghatározott erőforrást.
 Egy OPTIONS kérésre adott sikeres válaszban a szerver számára ajánlott minden olyan fejlécmező elküldése, melyek a szerver által implementált és a cél erőforrásra alkalmazható opcionális lehetőségeket jelezhetnek.
 
 - Például az Allow fejlécmező a cél erőforrás által támogatottként hirdetett metódusokat sorolja fel.
-
-#### TRACE metódus
+:::
+:::info TRACE metódus
 
 A kérés visszaküldését kérelmezi.
 
 - A kérés végső fogadója kell, hogy visszaküldje a kapott üzenetet a kliensnek egy 200-as (OK) állapotkódú válasz tartalmaként. Ennek egy módja a message/http formátum használata.
 - Az érzékeny adatokat tartalmazó kérés mezőket ki kell zárni.
   A metódus általában biztonsági okokból nem engedélyezett a szervereken.
-
+:::
 ### Állapotkódok
 
 Egy válasz állapotkódja egy olyan háromjegyű decimális egész szám, mely a kérés ereményét és a válasz jelentését írja le, beleértve azt, hogy sikeres volt-e a kérés és hogy milyen tartalom van benne mellékelve (ha van egyáltalán).
@@ -787,17 +781,16 @@ Az összes érvényes állapotkód a 100 és 599 közötti tartományba esik.
 
 Az állapotkód első számjegye a válasz fajtáját határozza meg:
 
-- 1xx (informáló): a kapcsolat állapotát vagy a kérés előrelhaladását közlő köztes választ jelez egy végső válasz küldése előtt.
-- 2xx (siker): azt jelzi, hogy a kérés sikeresen fogadásra, értelmezésre és elfogadásra került.
-- 3xx (átirányítás): azt jelzi, hogy a felhasználói ágens további műveletet kell, hogy végrehajtson a kérés teljesítéséhez, melyet automatikusan elvégezhet.
-- 4xx (kliens hiba): azt jelzi, hogy a kérés rossz szintaxisú vagy nem teljesíthető.
-- 5xx (szerver hiba): azt jelzi, hogy a szerver nem teljesített egy nyilvánvalóan érvényes kérést.
+- **1xx (informáló):** a kapcsolat állapotát vagy a kérés előrelhaladását közlő köztes választ jelez egy végső válasz küldése előtt.
+- **2xx (siker):** azt jelzi, hogy a kérés sikeresen fogadásra, értelmezésre és elfogadásra került.
+- **3xx (átirányítás):** azt jelzi, hogy a felhasználói ágens további műveletet kell, hogy végrehajtson a kérés teljesítéséhez, melyet automatikusan elvégezhet.
+- **4xx (kliens hiba):** azt jelzi, hogy a kérés rossz szintaxisú vagy nem teljesíthető.
+- **5xx (szerver hiba):** azt jelzi, hogy a szerver nem teljesített egy nyilvánvalóan érvényes kérést.
 
 Egy kliensnek nem kell megértenie minden regisztrált állapotkód jelentését.
 
 - Kötelező azonban az állapotkód fajtájának megértése az első számjegy alapján.
-- Egy nem felismert állapotkódot az x00 állapotkóddal ekvivalensként kell kezelni, ahol x a nem felismert állapotkód első számjegye.
-  HEAD kérésekre adott válaszok kivételével a 4xx vagy 5xx állapotkódú válaszokban a szerver számára ajánlott egy olyan reprezentáció küldése, mely a hiba magyarázatát tartalmazza, valamint azt, hogy a hibát okozó körülmények átmenetiek vagy állandóak.
+- Egy nem felismert állapotkódot az x00 állapotkóddal ekvivalensként kell kezelni, ahol x a nem felismert állapotkód első számjegye. HEAD kérésekre adott válaszok kivételével a 4xx vagy 5xx állapotkódú válaszokban a szerver számára ajánlott egy olyan reprezentáció küldése, mely a hiba magyarázatát tartalmazza, valamint azt, hogy a hibát okozó körülmények átmenetiek vagy állandóak.
 
 Az állapotkódok kiterjeszthetők.
 Az IANA adminisztrálja az állapotkódokat.
@@ -835,9 +828,9 @@ Ezért biztosít a HTTP a tartalomegyeztetéshez mechanizmusokat.
 
 A HTTP két főbb tartalomegyeztetési mintát határoz meg:
 
-- Proaktív egyeztetés (proactive negotiation): a szerver választja ki a reprezentációt a felhasználói ágens kifejezett preferenciái alapján.
+- **Proaktív egyeztetés (proactive negotiation):** a szerver választja ki a reprezentációt a felhasználói ágens kifejezett preferenciái alapján.
   - Szerver-vezérelt (server-driven) tartalomegyeztetés néven is ismert.
-- Reaktív egyeztetés (reactive negotiation): a szerver választásra kínálja fel a felhasználói ágensnek a reprezentációk listáját.
+- **Reaktív egyeztetés (reactive negotiation):** a szerver választásra kínálja fel a felhasználói ágensnek a reprezentációk listáját.
   - Ágens-vezérelt (agent-driven) tartalomegyeztetés néven is ismert.
 
 Más tartalomegyeztetési minták is lehetségesek. Ezek a minták egymást nem kölcsönösen kizáróak.
@@ -848,47 +841,47 @@ Az előnyben részesített reprezentációt egy algoritmussal választja ki az e
 A választás a válaszhoz rendelkezésre álló reprezentációk és a kérésben szolgáltatott különféle információk – beleértve az explicit tartalomegyeztetési fejlécmezőket, a User-Agent mező részeit és az olyan implicit jellemzőket, mint például a kliens hálózati címe – összehasonlítása alapján történik.
 Proaktív egyeztetésnek alávetett válaszban gyakran kerül küldésre a Vary fejlécmező annak jelzésére, hogy a kérés mely részei kerültek felhasználásra a kiválasztási algoritmusban.
 
-Előnyös:
+:::tip Előnyös
 
 - Amikor nehéz egy felhasználói ágens számára leírni a rendelkezésre álló reprezentációk közüli választás algoritmusát, vagy
 - amikor a szerver az első válaszban el kívánja küldeni a felhasználói ágensnek az általa legjobbnak becsült reprezentációt, elkerülendő egy további kérést.
-
-Hátrányok:
+:::
+:::tip Hátrányok
 
 - Lehetetlen a szerver számára annak pontos meghatározása, hogy mi lenne a legjobb egy tetszőleges felhasználónak, mivel ehhez kimerítő ismeretek lennének szükségesek a felhasználói ágens képességeiről és a válasz tervezett felhasználási módjáról.
 - Nagyon nem hatékony a felhasználói ágens képességeit minden kérésben leírni, ez egyben a felhasználó magánszférájára is egy lehetséges kockázatot jelenthet.
 - Bonyolítja az eredet szerver megvalósítását és a kérésekre válaszokat előállító algoritmusokat.
 - Korlátozza a válaszok újrafelhasználhatóságát megosztott gyorsítótárazáshoz.
-
+:::
 #### Reaktív egyeztetés
 
 A tartalom kiválasztását a felhasználói ágens végzi el, miután egy olyan kezdeti választ kap, mely erőforrások egy listáját tartalmazza alternatív reprezentációkhoz.
 A kiválasztást végrehajthatja automatikusan a felhasználói ágens vagy kézzel a felhasználó.
 
-Előnyös:
+:::tip Előnyös
 
 - Amikor a válasz általánosan használt dimenziók (például típus, nyelv vagy kódolás) mentén változik, vagy
 - amikor az eredet szerver nem képes a felhasználói ágens képességeinek megállapítására a kérés vizsgálatából.
-
-Hátrányok:
+:::
+:::tip Hátrányok
 
 - Miután megkapta az alternatív reprezentációk listáját, a felhasználói ágensnek egy további kérést kell végrehajtania ahhoz, hogy megkapja a kívánt reprezentációt.
 - A HTTP nem határoz meg mechanizmust az automatikus kiválasztás támogatására.
-
+:::
 ### Sütik
 
-Süti (cookie):
+:::info Süti (cookie)
 
 - Egy név-érték pár és kapcsolódó metaadatok (attribútumok), melyeket egy eredet szerver egy válasz Set-Cookie fejlécmezőjében küld a felhasználói ágensnek.
   - Az attribútumok segítségével az eredet szerver egy hatáskört határozhat meg a sütihez.
 - A felhasználói ágens a további kérésekben a név-érték párt a Cookie fejlécmezőben küldi vissza az eredet szervernek.
-
-Felhasználás:
+:::
+:::info Felhasználás
 
 - Munkamenet kezelés
 - Testreszabás
 - Felhasználó követés (lásd a Referer fejlécmezőt)
-
+:::
 Amikor a felhasználói ágens egy Set-Cookie fejlécmezőt kap, eltárolja az attribútumaival együtt.
 A továbbiakban, amikor a felhasználói ágens egy HTTP kérést hajt végre, a Cookie fejlécmezőbe illeszti az alkalmazható, nem lejárt sütiket.
 
@@ -906,10 +899,12 @@ A specifikáció az alábbi attribútumokat definiálja:
 - Secure
 - HttpOnly
 
+
+:::info Expires & Max-Age
 A süti maximális élettartamát jelző attribútumok:
 
-- Expires: a süti lejáratának dátumát és idejét adja meg.
-- Max-Age: azt adja meg, hogy hány másodperc múlva jár le a süti.
+- **Expires:** a süti lejáratának dátumát és idejét adja meg.
+- **Max-Age:** azt adja meg, hogy hány másodperc múlva jár le a süti.
 
 Perzisztens sütiknek nevezzük az Expires vagy Max-Age attribútummal rendelkező sütiket, mert ezeket a felhasználói ágens több munkameneten keresztül megtarthatja.
 
@@ -918,34 +913,35 @@ Perzisztens sütiknek nevezzük az Expires vagy Max-Age attribútummal rendelkez
 Ha egy sütinek nincs Expires és Max-Age attribútuma sem, akkor a felhasználói ágens az aktuális munkamenet végéig tartja meg.
 
 A szerverek sütiket törölhetnek a felhasználói ágensnek egy olyan új sütit küldve, melynek Expires attribútumának értéke egy múltbeli időpont.
+:::
 
-Domain:
-
+:::info Domain
 - Meghatározza, hogy a süti mely szervereknek lesz elküldve.
   - Ha például example.com az attribútum értéke, akkor a felhasználói ágens a sütit a Cookie fejlécmezőbe illeszti, amikor HTTP kéréseket intéz az example.com vagy www.example.com szerverekhez..
 - Ha a szerver kihagyja az attribútumot, akkor a felhasználói ágens csak az eredet szervernek küldi vissza a sütit.
 - A felhasználói ágens elutasít minden olyan sütit, melynél az attribútum által meghatározott hatáskör nem tartalmazza az eredet szervert.
 - Biztonsági okokból sok felhasználói ágens úgy van beállítva, hogy elutasítson minden olyan sütit, melynek Domain attribútuma egy nyilvános regisztrátor ellenőrzése alatt álló nyilvános utótag, mint például com, co.uk, …
+:::
 
-Path:
-
+:::info Path
 - A süti hatáskörét adott útvonalakra korlátozza.
 - Ha a szerver kihagyja az attribútumot, a felhasználói ágens a kért URI útvonal komponensének „könyvtárát” használja alapértelmezett értékként.
+:::
 
-Secure:
-
+:::info Secure
 - A süti hatáskörének biztonságos csatornákra korlátozása.
 - Egy Secure attribútummal rendelkező sütit a felhasználói ágens csak akkor akkor tesz bele egy kérésbe, ha annak átvitele biztonságos csatornán keresztül történik.
   - Mivel a süti érzékeny információt tartalmazhat, melynek sima szövegként történő átvitele kockázatot jelent.
+:::
 
-HttpOnly:
-
+:::info HttpOnly
 - HTTP kérésekre korlátozza a süti hatáskörét.
 - Arra utasítja a felhasználói ágenst, hogy ne tegye a sütit elérhetővé kliens oldali API-k (például JavaScript) számára.
+:::
 
 #### Sütik kezelése
 
-A felhasználói ágenseknek:
+:::note A felhasználói ágenseknek:
 
 - Törölniük kell a lejárt sütiket.
 - Az aktuális munkamenet végén törölniük kell az összes nem perzisztens sütit.
@@ -954,13 +950,13 @@ A felhasználói ágenseknek:
 - Ajánlott a felhasználók számára lehetővé tenni a sütik letiltását.
 
 A felhasználói ágensek korlátokat szabnak a tárolható sütik számára és méretére.
-
-A specifikáció az alábbi minimális képességeket ajánlja:
+:::
+:::note A specifikáció az alábbi minimális képességeket ajánlja:
 
 - Sütinként legalább 4096 bájt.
 - Tartományonként legalább 50 süti.
 - Összesen legalább 3000 süti.
-
+:::
 #### Adatvédelmi és biztonsági kérdések
 
 A sütiket gyakran bírálják azért, mert lehetővé teszik a szerverek számára a felhasználók követését.
@@ -980,7 +976,7 @@ Biztonságos csatorna használata esetén a szerverek számára ajánlott a Secu
 
 ## A web jelölőnyelvei: XML és HTML dokumentumok felépítése.
 
-#### XML
+### XML
 
 Szűkebb értelemben: szintaxis strukturált dokumentumok ábrázolására, mely lehetővé teszi azok automatikus feldolgozását (elektronikus dokumentum formátum).
 
@@ -1002,20 +998,23 @@ Kiterjeszthető, mert nincs előre definiált címkekészlet a szerkezeti alkot�
 
 Lehetővé teszi jelölőnyelvek definiálást, ezért meta-jelölőnyelvnek tekinthető.
 
-#### Az XML és a HTML összehasonlítása
+### Az XML és a HTML összehasonlítása
 
-XML:
+:::info XML
 
 - Nincs előre definiált címkekészlet
 - Célja adatok leírása
 - Adatcsere formátumként használják
-  HTML:
+:::
+
+:::info  HTML:
 - Előre definiált címkekészlet használata
 - Célja információ megjelenítés
 - Egy prezentációs nyelv
 - Tekinthető az XML egy speciális alkalmazásának (XHTML)
+:::
 
-#### Előnyök
+:::tip Előnyök
 
 - Egyszerűség
   - Az XML dokumentumok közönséges szöveges állományok, melyeket akár a legegyszerűbb szövegszerkesztővel is létre lehet hozni.
@@ -1025,8 +1024,8 @@ XML:
 - Univerzális adatcsere formátum
 - Kiterjedt infrastruktúra
 - Az iparban de-facto szabvány
-
-#### Hátrányok
+:::
+:::tip Hátrányok
 
 Mindezek ellenére fontos, együtt kell élni vele:
 
@@ -1034,24 +1033,24 @@ Mindezek ellenére fontos, együtt kell élni vele:
 - Nagy tárigény
 - Bonyolultság
   - Se szeri, se száma az XML-hez kötődő specifikációknak.
-
-#### Dokumentum központú XML
+:::
+:::info  Dokumentum központú XML
 
 A dokumentumokat jelölésekkel megtűzdelt folyó szöveg alkotja.
 A dokumentumok szerkezete nagy változatosságot mutat.
 Lényeges az elemek sorrendje.
 Az ilyen dokumentumok tartalma elsősorban emberi fogyasztásra szánt.
 Ilyen alkalmazás például az XHTML
-
-#### Adatközpontú XML
+:::
+:::info  Adatközpontú XML
 
 A dokumentumokat nagyszámú adatelem alkotja.
 Kevésbé véletlenszerű dokumentum-szerkezet.
 Az elemek sorrendje kevésbé lényeges.
 Az ilyen dokumentumok elsősorban gépi feldolgozásra szántak.
 Ilyen alkalmazás például az SVG.
-
-#### szerkezet
+:::
+### Szerkezet
 
 Fizikai és logikai szerkezetük van.
 
@@ -1066,7 +1065,7 @@ Minden elemet nyitó és záró címke határol vagy egyetlen üres elem címke 
 <img src="logo.png" alt="Logo"/>
 ```
 
-##### Elemek
+:::info  Elemek
 
 A nyitó, záró és üres elem címkében adott nevet elemtípusnak nevezzük.
 
@@ -1081,8 +1080,8 @@ Az üres elem tartalom nélküli elem.
 
 - Megadható közvetlenül egymást követő nyitó és záró címkével vagy üres elem címkével.
   - Példa: <elem></elem>, <elem/>
-
-##### Karakterek
+:::
+:::info  Karakterek
 
 Az XML dokumentumok Unicode karakterekből állnak.
 Minden XML feldolgozó kötelezően kell, hogy támogassa az UTF-8 és UTF-16 kódolásokat.
@@ -1093,9 +1092,9 @@ Whitespace karakterek az alábbiak:
 - U+000A (új sor, LF, '\n')
 - U+000D („kocsi vissza”, CR, '\r')
 - U+0020 (szóköz)
+:::
 
-##### Jelölők
-
+:::info Jelölők
 - Nyitó, záró és üres elem címke
 - Karakterhivatkozás
 - Egyedhivatkozás
@@ -1105,38 +1104,31 @@ Whitespace karakterek az alábbiak:
 - XML deklaráció
 - Szövegdeklaráció
 - Dokumentumtípus- deklaráció
+:::
 
-##### Karakteres adat
-
+:::info  Karakteres adat
 A dokumentum szövegének az a része, mely nem jelölő.
+:::
 
-##### Nyitó, záró és üres elem címke
+:::info Nyitó, záró és üres elem címke
 
 Nyitó címke:
-
-- Példa:
-
 ```xml
 <title>, <title xml:lang="en">
 ```
 
 Záró címke:
-
-- Példa:
-
 ```xml
 </title>
 ```
 
 Üres elem címke:
-
-- Példa:
-
 ```xml
 <br/>, <hr />, <img src="logo.png" alt="Logo"/>
 ```
+:::
 
-##### Karakterhivatkozások
+:::info Karakterhivatkozások
 
 Szövegben, attribútum értékekben és literális egyed értékekben Unicode karakterek kifejezhetők az alábbi formájú karakterhivatkozásokkal:
 
@@ -1144,8 +1136,8 @@ Szövegben, attribútum értékekben és literális egyed értékekben Unicode k
   - Példa: `&#169;` (©), `&#9775;` (☯), `&#128570;`
 - &#xhhhh;, ahol hhhh a kódpontot ábrázoló hexadecimális számjegysorozat.
   - Példa: `&#xA9;` (©), `&#x262F;` ( ☯), `&#x1F63A;`
-
-##### Egyedhivatkozások
+:::
+:::info Egyedhivatkozások
 
 Hivatkozás egy névvel azonosított egyed tartalmára.
 
@@ -1155,8 +1147,8 @@ Hivatkozás egy névvel azonosított egyed tartalmára.
   - Példa: `%inline;`, `%ImgAlign;`
 
 Az egyedhivatkozásokról részletesen később, a dokumentum fizikai szerkezete kapcsán lesz szó.
-
-##### Megjegyzések
+:::
+:::info Megjegyzések
 
 A dokumentumban bárhol szerepelhetnek más jelölőkön kívül.
 
@@ -1166,8 +1158,8 @@ A dokumentumban bárhol szerepelhetnek más jelölőkön kívül.
 ```xml
  <!-- Ez egy megjegyzés -->
 ```
-
-##### Feldolgozási utasítások
+:::
+:::info Feldolgozási utasítások
 
 Az alkalmazások számára tartalmaznak utasításokat.
 Példa:
@@ -1175,8 +1167,8 @@ Példa:
 ```xml
 <?xml-stylesheet type="text/css" href="style.css"?>
 ```
-
-##### CDATA-szakaszok
+:::
+:::info CDATA-szakaszok
 
 Bárhol előfordulhatnak a dokumentumban, ahol előfordulhat karakteres adat.
 
@@ -1187,8 +1179,8 @@ Bárhol előfordulhatnak a dokumentumban, ahol előfordulhat karakteres adat.
 ```xml
 <![CDATA[if (0 < n && n <= 10)]]>
 ```
-
-##### XML deklaráció
+:::
+:::info XML deklaráció
 
 Az XML dokumentumoknak egy XML deklarációval ajánlott kezdődniük, mely meghatározza az XML használt verziószámát.
 
@@ -1199,15 +1191,16 @@ Az XML dokumentumoknak egy XML deklarációval ajánlott kezdődniük, mely megh
 <?xml version="1.0"?>
 <?xml version='1.0' encoding='UTF-8'?>
 ```
-
-##### Dokumentumtípus-deklaráció
+:::
+:::info Dokumentumtípus-deklaráció
 
 Dokumentumok egy osztályához egy nyelvtant meghatározó jelölő deklarációkat tartalmaz és/vagy ilyen deklarációkra mutat.
 
 - Ezt a nyelvtant dokumentumtípus-definíciónak (vagy röviden DTD-nek) nevezik.
 
 A név a dokumentumtípus-deklarációban a gyökérelem elemtípusát írja elő.
-
+:::
+:::tip Külső DTD alkészletnek
 Egy **külső DTD alkészletnek** nevezett, jelölő deklarációkat tartalmazó külső egyedre mutató dokumentumtípusdeklaráció:
 
 ```xml
@@ -1215,7 +1208,8 @@ Egy **külső DTD alkészletnek** nevezett, jelölő deklarációkat tartalmazó
 <!DOCTYPE score-partwise SYSTEM "partwise.dtd">
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 ```
-
+:::
+:::tip Belső DTD alkészletet
 Jelölő deklarációkat - az úgynevezett **belső DTD alkészletet** - tartalmazó dokumentumtípus-deklaráció:
 
 ```xml
@@ -1225,7 +1219,8 @@ Jelölő deklarációkat - az úgynevezett **belső DTD alkészletet** - tartalm
     xml:lang CDATA #IMPLIED>
 ]>
 ```
-
+:::
+:::tip Kevert
 Egy külső DTD alkészletre mutató dokumentumtípus-deklaráció, mely belső DTD alkészletet is tartalmaz:
 
 ```xml
@@ -1235,8 +1230,8 @@ Egy külső DTD alkészletre mutató dokumentumtípus-deklaráció, mely belső 
   <!ENTITY rag "&r; and &g;">
 ]>
 ```
-
-##### Dokumentumtípus-definíció
+:::
+:::info Dokumentumtípus-definíció
 
 Lehetővé teszi megszorítások előírását a dokumentum logikai szerkezetére, valamint tárolási egységek használatát támogatja.
 
@@ -1249,6 +1244,8 @@ A dokumentumtípus-deklarációban társítható egy dokumentumhoz.
 - Ha a külső és belső alkészlet is van, akkor a belső alkészlet megelőzi a külső alkészletet.
   - Ez lehetővé teszi a külső alkészletben lévő egyed- és attribútumlista-deklarációk felülírását.
 
+:::
+
 ## Stíluslap nyelvek.
 
 Strukturált (például HTML és XML) dokumentumok megjelenítésének leírására szolgáló stíluslap nyelv.
@@ -1257,7 +1254,8 @@ Strukturált (például HTML és XML) dokumentumok megjelenítésének leírás�
   Szétválasztja a dokumentumok megjelenítési stílusát a dokumentumok tartalmától.
 - Ilyen módon egyszerűsíti a webszerkesztést és a webhelyek karbantartását.
 
-A szó hagyományos értelmében a CSS-nek nincsenek verziói, hanem szintjei vannak:
+### CSS
+A szó hagyományos értelmében a CSS-nek nincsenek verziói, hanem **szintjei** vannak:
 
 - CSS Level 1 - Elavultnak tekintett
 - CSS Level 2 - Javítása jelenleg fejlesztés alatt
@@ -1267,18 +1265,17 @@ A CSS minden egyes szintje az előzőn alapul, annak definícióit finomítja é
 
 A modern böngészőprogramok jórészt támogatják a CSS 2.1 szabványt. A CSS3 bizonyos lehetőségeit is támogatják.
 
-##### Állomány jellemzők
+:::info Állomány jellemzők
+- Állománynév végződés: `.css`
+- IANA média típus: `text/css`
+:::
 
-- Állománynév végződés: .css
-- IANA média típus: text/css
-
-##### Karakterek
-
+:::info Karakterek
 Az Unicode karakterkészlet használata.
+:::
 
-##### Megjegyzések
-
-A /_ és _/ határólók között lehet megadni megjegyzéseket.
+:::info Megjegyzések
+A `/*` és `*/` határólók között lehet megadni megjegyzéseket.
 Példa:
 
 ```css
@@ -1287,128 +1284,125 @@ Példa:
 
 Tokeneken kívül bárhol megengedettek.
 Nem ágyazhatóak egymásba.
+:::
 
-##### Dobozmodell
-
+:::info Dobozmodell
 A CSS egy fastruktúrájú dokumentumot kap, melyet egy rajzvásznon (például a képernyőn) jelenít meg egy olyan közbülső struktúrát, a dobozfát (box tree) előállítva, mely a megjelenített dokumentum formázási szerkezetét ábrázolja.
 
 Minden egyes doboz a fában a dokumentum egy megfelelő elemet (vagy pszeudo-elemét) ábrázolja térben és/vagy időben a rajzvásznon.
 
 A CSS minden egyes elemhez nulla vagy több dobozt generál az elem display tulajdonsága által meghatározott módon.
-
 - Egy elem általában egyetlen dobozt generál.
-
+:::
 ![URI-schema](./img/7-doboz.png)
 
-##### Tulajdonságok
+:::info Tulajdonságok
 
 A CSS által definiált paraméterek, melyek révén a dokumentumok megjelenítése vezérelhető.
 A tulajdonságoknak neve és értéke van.
 
 Összevont tulajdonság (shorthand property):
-
 - Olyan tulajdonság, mely több CSS tulajdonság értékének egyidejű beállítására szolgál.
-- Például a margin tulajdonság a margin-top, margin-right, margin-bottom és marginleft tulajdonságok értékét állítja be.
+- Például a `margin` tulajdonság a `margin-top`, `margin-right`, `margin-bottom` és `margin-left` tulajdonságok értékét állítja be.
+:::
 
-##### Deklarációs blokk
-
+:::info Deklarációs blokk
 '{' és '}' karakterek határolják, melyek között deklarációk egy listája kötelező.
 
 - A deklarációk tulajdonságnév:érték formájúak, ahol a tokenek előtt és után is megengedettek whitespace karakterek.
   - A deklarációban tulajdonságnév egy azonosító.
-- A deklarációkat ';' karakterrel kell elválasztani.
-  - Az utolsó deklaráció után nem kötelező a ';' karakter.
+- A deklarációkat `;` karakterrel kell elválasztani.
+  - Az utolsó deklaráció után nem kötelező a `;` karakter.
+:::
 
-##### Szabályhalmazok (stílus szabályok)
+:::info Szabályhalmazok (stílus szabályok)
+Egy kiválasztóból (vagy `,` karakterekkel elválasztott kiválasztókból) és egy az(oka)t követő deklarációs blokkból állnak.
+:::
 
-Egy kiválasztóból (vagy ',' karakterekkel elválasztott kiválasztókból) és egy az(oka)t követő deklarációs blokkból állnak.
-
-##### At-szabályok
-
+:::info At-szabályok
 A stíluslap feldolgozását vezérlő speciális szabályok.
 
-'@' karakterrel kezdődnek, melyet egy azonosító követ, és ';' karakterrel vagy egy deklarációs blokkal végződnek.
+`@` karakterrel kezdődnek, melyet egy azonosító követ, és `;` karakterrel vagy egy deklarációs blokkal végződnek.
 
-Példa: @charset, @import, @namespace, @media
+Példa: `@charset`, `@import`, `@namespace`, `@media`
+:::
 
-##### Értékek
+### Értékek
 
 A tulajdonságok értékét komponens értékek alkotják:
 
-- Azonosítók (példa: none, inherit)
-- Sztringek (példa: 'Hello, world!')
-- URL-ek (példa: url(images/item.png))
-- Számok (példa: 123, 3.141593)
-- Százalékok (példa: 150%)
-- Dimenziók (példa: 10px, 0.5em, 45deg)
-- Színek (példa: fuchsia, #f0f, #ff00ff, rgb(255,0,255))
-- Funkcionális jelölések (példa: attr(name), calc(100% - 50px), counter(chapter-number))
+- Azonosítók (példa: `none`, `inherit`)
+- Sztringek (példa: `'Hello, world!'`)
+- URL-ek (példa: `url(images/item.png)`)
+- Számok (példa: `123`, `3.141593`)
+- Százalékok (példa: `150%`)
+- Dimenziók (példa: `10px`, `0.5em`, `45deg`)
+- Színek (példa: `fuchsia`, `#f0f`, `#ff00ff`, `rgb(255,0,255)`)
+- Funkcionális jelölések (példa: `attr(name)`, `calc(100% - 50px)`, `counter(chapter-number)`)
 
 Minden egyes tulajdonsághoz meghatározott az értékben használható komponens értékek típus, száma és sorrendje.
 
-Példa:
-
+:::tip Példa
 - text-transform: `none | capitalize | uppercase | lowercase | full-width`
 - letter-spacing: `normal | <length>`
 - border-color: `<color>{1,4}`
 - border-top: `<line-width> || <line-style> || <color>`
+:::
 
-###### Azonosítók
-
+:::info Azonosítók
 Kulcsszavak:
-
-- ASCII kisbetű-nagybetű érzéketlenek (ekvivalensek az [a-z] és [A-Z] karakterek).
+- ASCII kisbetű-nagybetű érzéketlenek (ekvivalensek az `[a-z]` és `[A-Z]` karakterek).
 
 Egyéni azonosítók (author-defined identifiers):
-
 - Például számlálók neveként használatosak.
 - Kisbetű-nagybetű érzékenyek.
+:::
 
-###### Sztringek
+:::info Sztringek
 
-''' vagy '"' karakterek között adhatóak meg.
+`'` vagy `"` karakterek között adhatóak meg.
 
 Nem tartalmazhatják a határoló karaktert.
 
-- Határólójelek levédéséhez használjuk a '\' karaktert.
-  - Példa: 'It\'s So Cool', "\"Good morning, Frank,\" said Hal."
+- Határólójelek levédéséhez használjuk a `\` karaktert.
+  - Példa: `It\'s So Cool`, `\"Good morning, Frank,\" said Hal.`
 
-Újsor karakter kizárólag a \A vezérlősorozattal adható meg.
-
-###### URL-ek
+Újsor karakter kizárólag a `\A` vezérlősorozattal adható meg.
+:::
+:::info URL-ek
 
 Példa:
 
-- list-style-image: url("http://eg.com/images/item.png")
-- list-style-image: url('http://eg.com/images/item.png')
-- list-style-image: url(http://eg.com/images/item.png)
+- `list-style-image: url("http://eg.com/images/item.png")`
+- `list-style-image: url('http://eg.com/images/item.png')`
+- `list-style-image: url(http://eg.com/images/item.png)`
 
 Használható relatív hivatkozás, feloldásakor bázis-URL a stíluslap URL-je.
 
-- Példa: list-style-image: url("images/item.png")
+- Példa: `list-style-image: url("images/item.png")`
 
-Bizonyos környezetekben (például @import) elhagyható az url() függvény és az URL megadható sztringként is.
+Bizonyos környezetekben (például `@import`) elhagyható az `url()` függvény és az URL megadható sztringként is.
 
-- Példa: @import "default.css";
-
-###### Számok
+- Példa: `@import "default.css"`;
+:::
+:::info Számok
 
 Kétféle szám használata:
 
 - Egészek: egy opcionális előjel karakterből és legalább egy decimális számjegy karakterből állnak.
-  - Példa: 0, 255, -1, +10946
-- Valós számok: egy opcionális előjel karakterből, legalább egy decimális számjegy karakterből, egy opcionális decimális pont karakterből állnak, melyeket opcionálisan egy 'e' vagy 'E' karakter után egy egész szám követhet.
+  - Példa: `0`, `255`, `-1`, `+10946`
+- Valós számok: egy opcionális előjel karakterből, legalább egy decimális számjegy karakterből, egy opcionális decimális pont karakterből állnak, melyeket opcionálisan egy `e` vagy `E` karakter után egy egész szám követhet.
   - A decimális pont karakter jobb oldalán kötelező legalább egy számjegy karakter.
   - Speciális esetüket jelentik az egész számok.
-  - Példa: 1.5, -100.0, +.25, 1E-10
+  - Példa: `1.5`, `-100.0`, `+.25`, `1E-10`
 
 Tulajdonságok korlátozhatják az értékként használható számok tartományát.
 
 - Például kizárhatják a negatív számokat.
+:::
+:::info Százalékok
 
-###### Százalékok
-
-Egy százalék egy olyan egész vagy valós szám, melyet közvetlenül egy '%' karakter követ.
+Egy százalék egy olyan egész vagy valós szám, melyet közvetlenül egy `%` karakter követ.
 
 Egy százalék mindig egy másik mennyiséghez viszonyított.
 
@@ -1423,9 +1417,8 @@ nav {
   width: 40%;
 }
 ```
-
-###### Dimenziók
-
+:::
+:::info Dimenziók
 Egy dimenzió egy olyan szám, melyet közvetlenül egy mértékegység követ.
 
 - A mértékegység egy ASCII kisbetű-nagybetű érzéketlen azonosító.
@@ -1433,48 +1426,48 @@ Egy dimenzió egy olyan szám, melyet közvetlenül egy mértékegység követ.
 Egy adott mennyiséget ábrázolnak, mint például hossz vagy szög.
 
 Hosszúság esetén a 0 értéknél elhagyható a mértékegység.
+:::
+:::info Hosszúságok
 
-###### Hosszúságok
+**Kétféle mértékegység**:
 
-Kétféle mértékegység:
+- **Relatív**: egy másik hosszúsághoz képest határoz meg egy hosszúságot.
+  - `em`, `ex`, `ch`, `rem`, `vw`, `vh`, `vmin`, `vmax`
+- **Abszolút**: valamilyen fizikai méreten alapul.
+  - `cm`, `mm`, `Q`, `in`, `pc`, `pt`, `px`
 
-- Relatív: egy másik hosszúsághoz képest határoz meg egy hosszúságot.
-  - em, ex, ch, rem, vw, vh, vmin, vmax
-- Abszolút: valamilyen fizikai méreten alapul.
-  - cm, mm, Q, in, pc, pt, px
+Példa: `0.5em`, `1.5cm`, `0px`, `0`, `-1in`
 
-Példa: 0.5em, 1.5cm, 0px, 0, -1in
+**Relatív mértékegységek**:
 
-Relatív mértékegységek:
-
-- em: a font-size tulajdonság az elemhez tartozó számított értékét jelenti (a font-size tulajdonság esetén a font-size tulajdonság a szülő elemhez tartozó számított értékét).
-- ex: az elemhez tartozó betűkészlet x-height értékét jelenti (a font-size tulajdonság esetén a szülő elemhez tartozó x-height értéket).
+- `em`: a font-size tulajdonság az elemhez tartozó számított értékét jelenti (a font-size tulajdonság esetén a font-size tulajdonság a szülő elemhez tartozó számított értékét).
+- `ex`: az elemhez tartozó betűkészlet x-height értékét jelenti (a font-size tulajdonság esetén a szülő elemhez tartozó x-height értéket).
   - Azért nevezik így, mert gyakran a betűkészlet x karakterének magasságával egyezik meg értéke.
-
-###### Színek
-
-16 szín kulcsszó: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, yellow
+:::
+:::info Színek
+16 szín kulcsszó: `aqua`, `black`, `blue`, `fuchsia`, `gray`, `green`, `lime`, `maroon`, `navy`, `olive`, `purple`, `red`, `silver`, `teal`, `white`, `yellow`
 
 A modern böngészőprogramok támogatni szoktak számos további szín kulcsszót is.
-
-RGB színmodell:
-
-- Ekvivalens lehetőségek a halvány palaszürke (lightslategrey) szín megadására:
-  - #778899
-  - #789 (minden egyes hexadecimális számjegy megkettőzése)
-  - rgb(119,136,153)
-
-RGB színmodell:
-
+:::
+:::note RGB színmodell
 - Az rgb() funkcionális jelölésnél használni lehet százalékokat is, ekkor 100% a 255 értéknek felel meg.
 - Ekvivalensek tehát például a következő színek is:
-  - #ffffff
-  - #fff
-  - rgb(255,255,255)
-  - rgb(100%,100%,100%)
-  - white
+  - `#ffffff`
+  - `#fff`
+  - `rgb(255,255,255)`
+  - `rgb(100%,100%,100%)`
+  - `white`
+:::
 
-##### Kiválasztók
+:::tip Példa
+RGB színmodell:
+- Ekvivalens lehetőségek a *halvány palaszürke* (lightslategrey) szín megadására:
+  - `#778899`
+  - `#789` (minden egyes hexadecimális számjegy megkettőzése)
+  - `rgb(119,136,153)`
+:::
+
+### Kiválasztók
 
 Mintaillesztésre szolgálnak.
 Meghatározzák, hogy egy szabály melyelemekre vonatkozik.
@@ -1484,56 +1477,60 @@ Kisbetű-nagybetű érzéketlenség az ASCII tartományban (ekvivalensek az [a-z
 - Az utóbbi esetben a kisbetű-nagybetű érzékenység a használt dokumentum nyelvtől függ.
   - Például a HTML kisbetű-nagybetű érzéketlen az elemnevek tekintetében, az XHTML és XML kisbetűnagybetű érzékeny.
 
-**Egyszerű kiválasztó**: egyetlen típus kiválasztó, általános kiválasztó, attribútum kiválasztó, osztály kiválasztó, ID-kiválasztó vagy pszeudo-osztály.
+:::info Egyszerű kiválasztó
+Egyetlen típus kiválasztó, általános kiválasztó, attribútum kiválasztó, osztály kiválasztó, ID-kiválasztó vagy pszeudo-osztály.
+:::
+:::tip Példa
+- `div`
+- `-`
+- `[rel=stylesheet]`
+- `.copyright`
+- `#logo`
+- `:lang(hu)`
+:::
 
-Példa:
-
-- div
-- -
-- [rel=stylesheet]
-- .copyright
-- #logo
-- :lang(hu)
-
-**Kombinátor**: az alábbi karakterek valamelyike:
-
+:::info Kombinátor
+Az alábbi karakterek valamelyike:
 - whitespace
-- '>'
-- '+'
-- '~'
+- `>`
+- `+`
+- `~`
+:::
 
-**Egyszerű kiválasztók sorozata**:
-
+:::info Egyszerű kiválasztók sorozata
 - Egymást követő egyszerű kiválasztók, melyek között nincsenek kombinátorok.
 - Típus kiválasztóval vagy általános kiválasztóval kezdődnek és nem tartalmaznak további típus kiválasztókat vagy általános kiválasztókat.
-- Példa:
-  - div
-  - h2#status
-  - link[rel=stylesheet][type=text/css]
-  - p.copyright
-  - \*:lang(hu)
-  - tr:nth-child(odd)
-  - li:not(:last-child)
+:::
 
-**Kiválasztó**:
+:::tip Példa
+  - `div`
+  - `h2#status`
+  - `link[rel=stylesheet][type=text/css]`
+  - `p.copyright`
+  - `\*:lang(hu)`
+  - `tr:nth-child(odd)`
+  - `li:not(:last-child)`
+:::
+
+:::info Kiválasztó
 
 - Egyszerű kiválasztók sorozatainak olyan sorozata, melyeket kombinátorok választanak el.
   - Legalább egy sorozat alkotja.
 - Pszeudo-elem az utolsó egyszerű kiválasztó sorozat végéhez adható hozzá, de legfeljebb csak egy!
-- Például:
-  - p
-  - a img
-  - h1 ~ table
-  - div#main > h1
-  - div > h1 + p
-  - q::before
+:::
 
-###### Típus kiválasztó
+:::tip Például
+  - `p`
+  - `a img`
+  - `h1 ~ table`
+  - `div#main > h1`
+  - `div > h1 + p`
+  - `q::before`
+:::
 
+:::info Típus kiválasztó
 Egy CSS minősített név, a gyakorlatban tipikusan egy azonosító.
 A megfelelő nevű elemek illeszkednek rá.
-
-Példa:
 
 ```css
 p {
@@ -1543,36 +1540,32 @@ a {
   text-decoration: none;
 }
 ```
+:::
 
-###### Általános kiválasztó
-
-Általános kiválasztónak nevezzük a \* formájú kiválasztót.
+:::info Általános kiválasztó
+Általános kiválasztónak nevezzük a `*` formájú kiválasztót.
 Minden elem illeszkedik rá.
 Elhagyható olyan egyszerű kiválasztóból, mely további komponenseket is tartalmaz.
 
 - Így például az alábbi kiválasztók ekvivalensek:
-  - \*#nav és #nav
-  - \*.important és .important
-  - \*[title] és [title]
+  - `*#nav` és `#nav`
+  - `*.important` és `.important`
+  - `*[title]` és `[title]`
 - Nem ajánlott az elhagyás a jobban olvashatóság végett.
-  - Például a div \*:first-child kiválasztó jobban olvasható, mint a div :first-child, mert kevésbé keverhető össze a div:first-child kiválasztóval.
+  - Például a `div *:first-child` kiválasztó jobban olvasható, mint a `div :first-child`, mert kevésbé keverhető össze a `div:first-child` kiválasztóval.
+:::
 
-###### Attribútum kiválasztók
-
-[att]
-
+:::info Attribútum kiválasztók
+`[att]`
 - Az att attribútummal rendelkező elemek illeszkednek rá.
 
-[att=érték]
-
+`[att=érték]`
 - Olyan elemek illeszkednek rá, melyek att attribútumának értéke pontosan érték.
 
-[att~=érték]
-
+`[att~=érték]`
 - Olyan elemek illeszkednek rá, melyek att attribútumának értéke whitespace karakterekkel elválasztott olyan szavak egy listája, melyek egyike megegyezik értékkel.
 
-[att|=érték]
-
+`[att|=érték]`
 - Olyan elemek illeszkednek rá, melyek att attribútumának értéke pontosan megegyezik értékkel, vagy pedig az érték- karaktersorozattal kezdődik.
 - Olyan attribútumokhoz használni, melyek értékeként nyelvváltozatok (például en-US, en-GB) jelenhetnek meg.
   - Azonban az xml:lang attribútumhoz és a HTML lang attribútumához a :lang(C) pszeudo-osztályt kell használni.
@@ -1592,9 +1585,8 @@ a[hreflang|="en"] {
   text-decoration: line-through;
 }
 ```
-
-###### Osztály kiválasztó
-
+:::
+:::info Osztály kiválasztó
 HTML dokumentumoknál a [class~=érték] attribútum kiválasztó helyett használható az ekvivalens .érték kiválasztó.
 
 ```css
@@ -1607,13 +1599,11 @@ div.centered {
   text-decoration: underline;
 }
 ```
-
-###### ID-kiválasztó
-
+:::
+:::info ID-kiválasztó
 #azonosító formájú kiválasztó, az adott azonosítójú elem illeszkedik rá.
 
 Az azonosítót egy ID típusú attribútum kell, hogy szolgáltassa a dokumentumban.
-
 - A dokumentum nyelvtől függ, hogy mi ennek az attribútumnak a neve, például a HTML-ben id.
 
 ```css
@@ -1626,29 +1616,28 @@ div#main {
   text-align: center;
 }
 ```
-
-###### Pszeudo-osztályok
-
-:azonosító vagy :azonosító(érték) formájú kiválasztók.
-
+:::
+:::info Pszeudo-osztályok
+`:azonosító` vagy :`azonosító(érték)` formájú kiválasztók.
 - A pszeudo-osztályok neve kisbetű-nagybetű érzéketlen.
 
 Olyan kiválasztást tesznek lehetővé, mely a dokumentumon kívül információkon alapul vagy nem fejezhető ki a többi egyszerű kiválasztóval.
 
 Bizonyos pszeudo-osztályok egymást kölcsönösen kizáróak.
-
-**Dinamikus pszeudo-osztályok**: olyan pszeudoosztály, melyet egy elem megszerezhet vagy elveszíthet, miközben a felhasználó interakcióban van a dokumentummal.
+:::
+:::note Dinamikus pszeudo-osztályok 
+Olyan pszeudoosztály, melyet egy elem megszerezhet vagy elveszíthet, miközben a felhasználó interakcióban van a dokumentummal.
 
 Dinamikus pszeudo-osztályok:
 
 - Link pszeudo-osztályok:
-  - :link: a felhasználó által még nem meglátogatott hiperhivatkozásokra vonatkozik.
-  - :visited: a felhasználó által meglátogatott hiperhivatkozásokra vonatkozik.
+  - `:link`: a felhasználó által még nem meglátogatott hiperhivatkozásokra vonatkozik.
+  - `:visited`: a felhasználó által meglátogatott hiperhivatkozásokra vonatkozik.
 - Felhasználói akció pszeudo-osztályok:
-  - :hover: a felhasználó által mutatóeszközzel kijelölt, de nem feltétlenül aktivált elemre vonatkozik.
-  - :active: a felhasználó által mutatóeszközzel aktivált elemre vonatkozik.
+  - `:hover`: a felhasználó által mutatóeszközzel kijelölt, de nem feltétlenül aktivált elemre vonatkozik.
+  - `:active`: a felhasználó által mutatóeszközzel aktivált elemre vonatkozik.
     - Például az egérgomb lenyomása és felengedése között hatásos.
-  - :focus: a fókuszt birtokló elemre vonatkozik.
+  - `:focus`: a fókuszt birtokló elemre vonatkozik.
 
 ```css
 :link {
@@ -1667,21 +1656,21 @@ a:active {
   font-weight: bolder;
 }
 ```
-
-A :target pszeudo-osztály:
+:::
+:::note A `:target` pszeudo-osztály
 
 - Ha a dokumentum URI-ja tartalmaz erőforrásrészazonosítót, akkor az erőforrásrész-azonosítónak megfelelő elem kiválasztása.
-  - Ha például index.html#copyright a dokumentum URI-ja, akkor a div:target kiválasztó a copyright azonosítójú div elemet választja ki.
-
-A :lang(C) pszeudo-osztály:
+  - Ha például `index.html#copyright` a dokumentum URI-ja, akkor a `div:target` kiválasztó a `copyright` azonosítójú `div` elemet választja ki.
+:::
+:::note A `:lang(C)` pszeudo-osztály
 
 - A C nyelvű szöveget tartalmazó elemek illeszkednek rá.
   - C egy CSS azonosító (nyelvkód).
 - Példa:
-  - :lang(en), :lang(en-GB), :lang(en-US)
-  - :lang(hu)
-- XML dokumentumokban a nyelvet az xml:lang attribútum határozza meg, HTML dokumentumokban a nyelv megadható a lang és az xml:lang attribútummal is.
-  - A lang és xml:lang attribútum nem közvetlenül az elemen kell, hogy megjelenjen.
+  - `:lang(en)`, `:lang(en-GB)`, `:lang(en-US)`
+  - `:lang(hu)`
+- XML dokumentumokban a nyelvet az `xml:lang` attribútum határozza meg, HTML dokumentumokban a nyelv megadható a lang és az `xml:lang` attribútummal is.
+  - A `lang` és `xml:lang` attribútum nem közvetlenül az elemen kell, hogy megjelenjen.
 
 ```css
 A :lang(C) pszeudo-osztály:
@@ -1691,35 +1680,32 @@ q:lang(hu) {
   quotes: "„" "”" "»" "«";
 }
 ```
-
-UI elem állapot pszeudo-osztályok:
-
-- :enabled: engedélyezett állapotú felhasználói felület elemek kiválasztása.
-- :disabled: letiltott állapotú felhasználói felület elemek kiválasztása.
-- :checked: bejelölt felhasználói felület elemek (például jelölőnégyzetek, rádiógombok) kiválasztása.
-
-Szerkezeti pszeudo-osztályok:
-
+:::
+:::note UI elem állapot pszeudo-osztályok
+- `:enabled`: engedélyezett állapotú felhasználói felület elemek kiválasztása.
+- `:disabled`: letiltott állapotú felhasználói felület elemek kiválasztása.
+- `:checked`: bejelölt felhasználói felület elemek (például jelölőnégyzetek, rádiógombok) kiválasztása.
+:::
+:::note Szerkezeti pszeudo-osztályok:
 - Amikor megállapításra kerül, egy elem helye a testvéreinek listájában, akkor csak az elemeket kell a listában figyelembe venni.
   - Nem kell figyelembe venni például szöveget, megjegyzéseket és feldolgozási utasításokat sem.
 - A listában az elemek számozása egytől történik
-
-Szerkezeti pszeudo-osztályok:
-
-- :root: a dokumentum gyökérelemét választja ki.
-- :only-child: olyan elemeket választ ki, melyek szülőjének nincs más elemgyermeke.
-- :only-of-type: olyan elemeket választ ki, melyek szülőjének nincs más az elemmel megegyező kifejtett nevű elemgyermeke.
-- :empty: a szöveget és elemeket nem tartalmazó elemeket választja ki, melyek azonban tartalmazhatnak megjegyzéseket és feldolgozási utasításokat.
-- :nth-child(an+b): ahol a és b egészek
+:::
+:::note Szerkezeti pszeudo-osztályok:
+- `:root`: a dokumentum gyökérelemét választja ki.
+- `:only-child`: olyan elemeket választ ki, melyek szülőjének nincs más elemgyermeke.
+- `:only-of-type`: olyan elemeket választ ki, melyek szülőjének nincs más az elemmel megegyező kifejtett nevű elemgyermeke.
+- `:empty`: a szöveget és elemeket nem tartalmazó elemeket választja ki, melyek azonban tartalmazhatnak megjegyzéseket és feldolgozási utasításokat.
+- `:nth-child(an+b)`: ahol a és b egészek
   - Az olyan elemeket választja ki, melyeknek an+b-1 megelőző elemtestvére van valamely nemnegatív n-re.
-- :nth-last-child(an+b): ahol a és b egészek
+- `:nth-last-child(an+b)`: ahol a és b egészek
   - Az olyan elemeket választja ki, melyeknek an+b-1 következő elemtestvére van valamely nemnegatív n-re.
-- :nth-of-type(an+b): ahol a és b egészek
+- `:nth-of-type(an+b)`: ahol a és b egészek
   - Az olyan elemeket választja ki, melyeknek valamely nemnegatív n-re an+b-1 olyan megelőző elemtestvére van, melyek kifejtett neve megegyezik az elem kifejtett nevével.
-- :nth-last-of-type(an+b): ahol a és b egészek
+- `:nth-last-of-type(an+b)`: ahol a és b egészek
   - Az olyan elemeket választja ki, melyeknek valamely nemnegatív n-re an+b-1 olyan következő elemtestvére van, melyek kifejtett neve megegyezik az elem kifejtett nevével
-
-###### Pszeudo-elemek
+:::
+### Pszeudo-elemek
 
 Lehetővé teszik a dokumentumok olyan részeinek kiválasztását, melyek más módon nem hozzáférhetők.
 
@@ -1727,24 +1713,26 @@ Minden kiválasztókban legfeljebb egy pszeudo-elem megengedett.
 
 Az alábbi pszeudo-elemek állnak rendelkezésre:
 
-- ::first-line
-- ::first-letter
-- ::before, ::after
+- `::first-line`
+- `::first-letter`
+- `::before`, `::after`
 
-A pszeudo-osztályoktól való megkülönböztetés miatt ':' helyett '::' karaktereket használ a pszeudo-elemekhez a CSS3.
+A pszeudo-osztályoktól való megkülönböztetés miatt `:` helyett `::` karaktereket használ a pszeudo-elemekhez a CSS3.
 
-- Kompatibilitási okokból használható ':' is.
+- Kompatibilitási okokból használható `:` is.
 
-::first-line: egy elem első formázott sorát ábrázolja.
+:::note `::first-line`
+Egy elem első formázott sorát ábrázolja.
 
 ```css
 p::first-line {
   text-decoration: underline;
 }
 ```
+:::
 
-::first-letter: egy elem első betű vagy számjegy karakterét ábrázolja, ha azt nem előzi meg más tartalom, például kép.
-
+:::note `::first-letter`
+Egy elem első betű vagy számjegy karakterét ábrázolja, ha azt nem előzi meg más tartalom, például kép.
 - Vonatkozik az első betű vagy számjegy karaktert megelőző vagy követő írásjelekre is.
 
 ```css
@@ -1753,8 +1741,10 @@ p::first-letter {
   font-weight: bold;
 }
 ```
+:::
 
-::before és ::after: lehetővé teszik egy elem tartalmához generált tartalom hozzáadását.
+:::note `::before` & `::after`
+Lehetővé teszik egy elem tartalmához generált tartalom hozzáadását.
 
 ```css
 div.proof::before {
@@ -1765,20 +1755,21 @@ div.proof::after {
   content: "\220E"; /* End of proof */
 }
 ```
+:::
 
-###### Kombinátorok
+### Kombinátorok
 
 Egyszerű kiválasztók két sorozatát elválasztó whitespace.
 
 Ha P és Q egyszerű kiválasztók két sorozata, akkor a P Q kiválasztóra a Q-ra illeszkedő olyan elemek illeszkednek, melyek a P-re illeszkedő elemek leszármazottai.
-
+:::tip Példa
 ```css
 thead th {
   background-color: darkgrey;
 }
 ```
-
-Gyermek kombinátor:
+:::
+:::note Gyermek kombinátor:
 
 - Egyszerű kiválasztók két sorozatát elválasztó '>' karakter.
 - Ha P és Q egyszerű kiválasztók két sorozata, akkor a P > Q kiválasztóra a Q-ra illeszkedő olyan elemek illeszkednek, melyek a P-re illeszkedő elemek gyermekei.
@@ -1791,9 +1782,8 @@ p > img:only-child {
   margin-left: 0;
 }
 ```
-
-Szomszéd testvér kombinátor:
-
+:::
+:::note Szomszéd testvér kombinátor
 - Egyszerű kiválasztók két sorozatát elválasztó '+' karakter.
 - Ha P és Q egyszerű kiválasztók két sorozata, akkor a P + Q kiválasztóra a Q-ra illeszkedő olyan elemek illeszkednek, melyek a P-re illeszkedő elemet követnek közvetlenül a dokumentumban.
   - Az illeszkedő elemeknek ugyanaz kell, hogy legyen a szülője.
@@ -1804,18 +1794,18 @@ h1 + p {
   text-indent: 0;
 }
 ```
-
-##### Különböző eredetű stíluslapok
+:::
+### Különböző eredetű stíluslapok
 
 Különböző eredetű stíluslapok állhatnak rendelkezésre dokumentumok megjelenítéséhez.
 
 Egy stíluslap eredete szerint lehet:
 
-- A felhasználói ágenstől (böngészőtől) származó stíluslap
-- A felhasználótól származó stíluslap
-- A dokumentum szerzőjétől származó stíluslap
+- A **felhasználói ágenstől** (böngészőtől) származó stíluslap
+- A **felhasználótól** származó stíluslap
+- A **dokumentum szerzőjétől** származó stíluslap
 
-A fenti felsorolásban növekvő „erősorrendben” tüntettük fel a stíluslapokat.
+A fenti felsorolásban növekvő *„erősorrendben”* tüntettük fel a stíluslapokat.
 
 ## JSON (JavaScript Object Notation)
 
@@ -1840,14 +1830,15 @@ Az alábbi két strukturált típus ábrázolását teszi lehetővé:
 - Objektumok
 
 JSON szöveg tokenek sorozata.
+
 Tokenek:
 
-- Szerkezeti tokenek a {,}, [,], és , karakterek
+- Szerkezeti tokenek a `{`,`}`, `[`,`]` és `,` karakterek
 - Sztringek
 - Számok
-- Literális tokenek true, false, null
+- Literális tokenek `true`, `false`, `null`
 
-Tokenek előtt és után megengedhető a whitespace karakter
+Tokenek előtt és után megengedhető a whitespace karakter.
 
 ```xml
 <menu id="file" value="File">
