@@ -1,0 +1,240 @@
+# 1. Tétel: Valószínűségi eloszlások; Adatszerkezetek
+
+## Diszkrét és folytonos valószínűségi eloszlás fogalma. 
+
+:::info Diszkrét eloszlás
+- Diszkrétnek nevezzük azokat a valószínűségi változókat, ami **megszámlálhatóan sok értéket** vesznek fel.
+- Véges sok vagy végtelen, de fel tudjuk sorolni az értékeket.
+- Ekkor az eloszlásfüggvény lépcsőzetes lesz.
+- Minden számnál annyit ugrik, mint az adott szám valószínűsége.
+- Binomiális, Poisson
+:::
+:::info Folytonos eloszlás
+- Folytonosnak nevezzük azokat a valószínűségi változókat, melyek folytonos mennyiségeket mérnek.
+- Pl: idő
+- Ha az `X` valószínűségi változó folytonos, akkor `A` és `B` között **bármilyen valós értéket felvehet**.
+- Egyenletes, Exponenciális, Normális
+:::
+
+## Nevezetes eloszlások: binomiális, Poisson, egyenletes, exponenciális, normális.
+- A diszkrét eloszlású valószínűségi változó csak diszkrét, definiált értékeket vehet fel.
+- A folytonos eloszlású valószínűségi változó végtelen sok értéket vehet fel.
+
+Diszkrét:
+- Binomiális
+- Geometriai
+- Poisson
+
+Abszolult folytonos:
+- Exponenciális
+- Egyenletes
+- Normális
+
+### Binomiális eloszlás
+- A binomiális eloszlás egy diszkrét eloszlás.
+- Esetén az `X` **korlátos**, tehát van maximum értéke.
+- Az `X` valószínűségi változó
+    - Eseményekhez rendel hozzá számokat
+    - Pl: 2 balesetes nap van egy héten, X = 2
+- A `k` maga a mennyiség, amit `n`-ből választottunk
+    - Pl: 2
+- Az `n` a minta száma
+    - Pl: egy héten mennyi van, n = 7
+- A `p` a valószínűség
+    - Pl: 30 nap alatt átlag 12 van, 12/30 = 0,4
+
+
+---
+
+Dobjunk fel egy érmét $n$–szer egymás után. A fejek vagy
+írások számának eloszlása ún. binomiális eloszlás. Az $X$
+v.v. binomiális eloszlást követ, ha 
+$$
+P(X = k) = \binom{n}{k}p^{k}(1-p)^{n-k}, \space\space\space\space\space k = 0,1,...,n,
+$$
+ahol $n \in \mathbb{N}$ és $p \in [0, 1]$ paraméterek. Jelölés: $Bi(n, p)$.
+
+$X$ várható értéke és szórásnégyzete:
+$$
+E(X) = np, \space\space\space\space\space D(X)^{2} = np(1-p)
+$$
+
+#### Mikor használunk binomiális eloszlást?
+$n$ darab véletlen kísérletet végzek, mindegyik a többitől
+függetlenül $p$ valószínűséggel sikeres.
+
+Legyen $X = a$ sikeres kísérletek száma. Ekkor $X$ eloszlása
+binomiális eloszlású $n, p$ paraméterekkel.
+
+Például: feldobok 10 érmét, hány lesz ebből fej, egy betegség ellni
+gyógyszerkísérletnél hányan gyógyulnak meg, egy processzor
+magján hány jó mag van.
+
+### Poisson eloszlás
+
+- A poisson eloszlás egy diszkrét eloszlás.
+- Esetén az X nem korlátos, tehát nincs maximum értéke.
+- Az X valószínűségi változó
+    - Pl: 2 balesetek száma van egy héten, X = 2
+- A λ az eloszlás várható értéke
+    - Pl: hány baleset van egy héten, ha 30 naponta 12 baleset van.
+        - 12/30 = 0,4
+        - Tehát egy héten:
+            - 0,4 * 7 = 2,8
+
+---
+
+Ritka események, pl. sajtóhibák száma egy lapon, meghibásodások száma egy gépnél, mazsolák egy kalácsban, eloszlásának jellemzésére szolgál. Az X v. v.
+Poisson eloszlást követ, ha
+$$
+P(X = k) = \frac{\lambda^{k}}{k!}e^{-\lambda}, \space\space\space\space\space k = 0,1,2,...,
+$$
+hol $\lambda > 0$ paraméter. Jelölés: $Po(\lambda)$.
+
+$X$ várható értéke és szórásnégyzete:
+$$
+E(X)=\lambda, \space\space\space\space\space D^{2}(X)=\lambda
+$$
+
+#### Mikor használunk Poisson eloszlást?
+Amikor binomiálist használnák, de $n$ nagy $n\to \infty$, $p$ kicsi $n\to 0$ , de a várható érték állandó $np = \lambda$
+
+Például: Budapesten a heti tűzesetek száma (sok helyen lehet tűz,
+de a valószínűsége kicsi). Egy méter szövetanyagban a hibák
+átlagos száma (sok helyen lehet hiba, de a valószínűség kicsi). Egy
+webszerveren a percenkénti lekérdezések száma (sok lekérdezés van
+de kicsi a valószínűsége, hogy pont ezt a szervert kérdezik).
+
+### Egyenletes eloszlás
+- Minden érték ugyanakkora valószínűséget vesz fel.
+    - Pl: `A` az intervallum kezdete, ez a legkisebb érték, amit `x` felvehet. `B` pedig az intervallum vége, a legnagyobb érték, amit `x` felvehet.
+
+---
+
+Az egyik legtermészetesebb eloszlás az (egy halmazon
+adott) egyenletes eloszlás. Pl.: gyakran mondjuk, hogy
+dobjunk le egy pontot egyenletesen egy intervallumra.
+Ez azt jelenti, hogy egy részintervallumba esés valószínűsége arányos a részintervallum hosszával.
+
+Az $X$ egyenletes eloszlást követ az $[a, b]$ intervallumon,
+ha sűrűségfüggvénye:
+$$
+f(x)= \left\{\begin{matrix}
+\frac{1}{b-a} & ha\space a<x<b \\
+0 & egyébként \\ 
+\end{matrix}\right.
+$$
+
+Jelölés: $Uni(a, b)$.
+
+$X$ várható értéke és szórásnégyzete:
+$$
+E(X) = \frac{a+b}{2}, \space\space\space\space\space D^{2}(X) = \frac{( b -a )^{2}}{12}
+$$
+
+#### Mikor használunk Egyenletes eloszlást?
+Ha egy véletlen érték biztosan $a$ és $b$ érték közé esik, de semmilyen
+más információ nem tudott róla, akkor $[a, b]$-n egyenletes eloszlást
+kell használni. Jelölés: $Uni(a, b)$.
+
+Például: Világutazó barátom részegen felhív és mikor fut be a hívás
+egyneletes $[0, 24]$-en. Egy $1$ méter hosszú kötélnek van piros és kék
+vége. Tökéletesen összeragasztom a két végét, hogy egy kört
+kapjak, majd megpörgetem ezt a kört egy olló nyitott szárai között,
+majd elcsattintom az ollót. Újra szétszedem a kötelet az
+összeragasztásnál, akkor a piros végű darab hossza egyenletes
+eloszású $[0, 1]$-en.
+
+Eloszlásfüggvénye:
+$$
+F(x)=\left\{\begin{matrix}
+0 & x \leq  a \\
+\frac{x-a}{b-a} & a<x\leq b \\
+1 & b<x \\
+\end{matrix}\right.
+$$
+
+
+$X$ várható értéke és szórásnégyzete:
+$$
+E(X) = \frac{a+b}{2}, \space\space\space\space\space D^{2}(X) = \frac{( b -a )^{2}}{12}
+$$
+
+
+### Exponenciális eloszlás
+
+- Az exponenciális eloszlás élettartamok, várakozási idők, általában egy esemény bekövetkezéséig eltelő véletlen időtartamok hosszának jellemzésekor szokott előkerülni.
+- Ezzel összefügg, hogy értéke csak pozitív lehet.
+- Legfontosabb tulajdonsága az örökifjúság.
+- Exponenciális eloszlásnak nincs ,,memóriája”, a további várakozási esélyeket nem befolyásolja az, hogy már valamennyi időt vártunk.
+
+---
+#### Mikor használunk exponenciális eloszlást?
+Olyan időintervallum hosszára, amikor várok valaminek a
+bekövetkeztére sokszor használunk exponenciális eloszlást.
+
+Például: Egy telefonközpontban két hívás közt eltelt idő. Egy
+egyszerű alkatrész élettartama. Nukleáris bomlás
+
+Az exponenciális eloszlás eloszlásfüggvénye:
+$$
+F(x) = \left\{\begin{matrix}
+0 & ha\space x\leq 0 \\
+1-e^{-\lambda x} & ha\space 0<x \\
+\end{matrix}\right.
+$$
+
+$X$ várható értéke és szórása:
+$$
+E(X) = \frac{1}{\lambda}, \space\space\space\space\space D(X) = \frac{1}{\lambda}
+$$
+
+
+### Normális eloszlás
+
+- A normális eloszlásnak van sűrűségfüggvénye (alakja haranggörbe), viszont eloszlásfüggvénye nincs.
+- Ezért, bevezetünk egy speciális normális eloszlást, melynek a várható értéke `0`, a szórása pedig `1`.
+- Ezt standard normális eloszlásnak nevezzük.
+- Standard normális eloszlás sűrűségfüggvénye a **Gauss-görbe**.
+- Jele:
+    - Φ (fi)
+
+---
+
+A természetben egyik leggyakrabban eloforduló eloszlás, 
+az alakja kapcsán gyakran harang–görbe eloszlásról beszélnek. Ennek elméleti alapja a központi határeloszlás
+tétel, melyet szokás úgy interpretálni, hogy sok független, azonos eloszlású kis hatás összesítése (megfelelő
+normálás után) normális eloszlást eredményez.
+
+Az $X$ normális eloszlást követ, ha sűrűségfüggvénye:
+$$
+f(x) = \frac{1}{\sqrt{2\pi }\sigma }e^{-\frac{(x-m)^{2}}{2\sigma ^{2}}}, \space\space\space\space\space x\in\mathbb{R}
+$$
+ahol $m \in\mathbb{R}$ és $\sigma > 0$ paraméterek. Jelölés: $N (m, \sigma^{2})$.
+
+$X$ várható értéke és szórásnégyzete (azaz a paraméterek jelentése):
+$$
+E(X) = m,\space\space\space\space\space D^{2}(X)=\sigma^{2}
+$$
+
+Az $N(0, 1)$ eloszlást standard normális eloszlásnak
+nevezik.
+
+-----------
+
+
+## Adatszerkezetekkel kapcsolatos alapfogalmak: absztrakció (logikai és fizikai szint), absztrakt adatszerkezetek (homogén-heterogén, statikus-dinamikus, struktúra, műveletek). 
+## Elemi adatszerkezetek: lista, verem, sor. 
+## Halmaz, multihalmaz, mátrix. 
+## Fák ábrázolása, keresések, bejárások, törlés, beszúrás.
+
+
+
+
+## További információk
+
+- https://www.math.u-szeged.hu/~barczy/KompStatElo4_BM_IM.pdf
+- https://math.bme.hu/~lfarkas/2019-2020-2/vegyval/5e.pdf
+- https://math.bme.hu/~lfarkas/2019-2020-2/vegyval/6e.pdf
+
+- https://www.codecogs.com/eqnedit.php
