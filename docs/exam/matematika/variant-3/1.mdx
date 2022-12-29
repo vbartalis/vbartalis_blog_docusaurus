@@ -46,7 +46,7 @@ Abszolult folytonos:
 
 ---
 
-Dobjunk fel egy érmét $n$–szer egymás után. A fejek vagy
+Dobjunk fel egy érmét $n$-szer egymás után. A fejek vagy
 írások számának eloszlása ún. binomiális eloszlás. Az $X$
 v.v. binomiális eloszlást követ, ha 
 $$
@@ -202,7 +202,7 @@ $$
 ---
 
 A természetben egyik leggyakrabban eloforduló eloszlás, 
-az alakja kapcsán gyakran harang–görbe eloszlásról beszélnek. Ennek elméleti alapja a központi határeloszlás
+az alakja kapcsán gyakran harang-görbe eloszlásról beszélnek. Ennek elméleti alapja a központi határeloszlás
 tétel, melyet szokás úgy interpretálni, hogy sok független, azonos eloszlású kis hatás összesítése (megfelelő
 normálás után) normális eloszlást eredményez.
 
@@ -223,10 +223,491 @@ nevezik.
 -----------
 
 
-## Adatszerkezetekkel kapcsolatos alapfogalmak: absztrakció (logikai és fizikai szint), absztrakt adatszerkezetek (homogén-heterogén, statikus-dinamikus, struktúra, műveletek). 
+## Adatszerkezetekkel kapcsolatos alapfogalmak
+
+A valós világ **rendszereinek** alkotóelemei az **egyedek**, melyek **tulajdonságokkal**, és **viselkedésmóddal** rendelkeznek.
+
+**tulajdonság** statikus jellemző
+
+**viselkedésmód** dinamikus jellemző, az egyedek egymáshoz való kapcsolatát jellemzi
+
+**Modellalkotás**: lényeges jellemzők kiemelése, lényegtelenek figyelmen kívül hagyása
+
+A **modellezés** lényege: absztrakció
+- Azon tulajdonságok, melyek lehetőleg minél több egyednél megtalálhatóak: az egyedek karakterisztikus tulajdonságai
+- Viselkedésmód elemek
+
+A modell nem egyedi dolgokkal, hanem ezen dolgok absztrakt osztályaival foglalkozik.
+
+Informatikában:
+- tulajdonság: adat
+- viselkedésmód: program
+
+Az adatelemek lehetnek **egyszerűek** (atomiak) és **összetettek**.
+
+Minden adatelem rendelkezik valamilyen **értékkel**
+
+
+### Absztrakció (logikai és fizikai szint)
+
+Logikai szint:
+- Az adatelemek között jól meghatározott kapcsolatrendszervan. Az adatelemek és a közöttük lévő kapcsolatok definiáljáka **logikai (absztrakt) adatszerkezetet**. Független hardvertől,szoftvertől.
+- absztrakt adatszerkezetek, melyek függetlenek a platformtól, a számítőgéptől
+
+Fizikai szint:
+- **Fizikai adatszerkezet (társzerkezet)**: adatszerkezet az operatívtárban vagy periférián (háttértáron).
+- hardver + szoftveraz adatok tárolására szolgáló hely
+    - memória (tár)
+    - háttértároló (állományok)
+
+### Absztrakt adatszerkezetek (homogén-heterogén, statikus-dinamikus, struktúra, műveletek)
+Lehetséges csoportosítási szempontok:
+
+Milyen az adatszerkezet elemeinek a típusa?
+- homogén
+- heterogén
+
+Változhat-e az adatszerkezet elemeinek száma?
+- statikus
+- dinamikus
+
+Milyen kapcsolatban állnak egymással az adatelemek az adatszerkezetben?
+- Egy homogén adatszerkezet lehet
+    - struktúra nélküli
+    - asszociatív
+    - szekvenciális
+    - hierarchikus
+    - hálós
+- A heterogén adatszerkezeteket nem csoportosítjuk ilyenszempont alapján.
+
+Absztrakt adatszerkezetekkel végezhető **műveletek**:
+- Létrehozás
+- Módosítás
+    - bővítés
+    - törlés (fizikai, logikai)
+    - csere
+- Rendezés
+- Keresés
+- Elérés
+- Bejárás
+- Feldolgozás
+
+#### Ábrázolási (tárolási) módok
+
+**Ábrázolás** alatt az adatszerkezet memóriában való megjelenési formáját értjük. Ez **minden adatszerkezet** esetén lehet
+- folytonos (vektorszerű)
+- szétszórt (láncolt)
+
+Az adatelemek számára tárhelyeket foglalunk a memóriában. Egy **tárhely** mindig egy bájtcsoportot jelent, amely egy adatelem értékét tárolja, illetve szerkezetleíró információkat is hordozhat.
+
+#### Folytonos (vektorszerű) tárolás
+Egy tárhelyen egy adatelem értékét tároljuk. A tárhelyek amemóriában folytonos, **összefüggő** tárterületet alkotnak, atárhelyek **mérete** azonos.
+
+Előnye: 
+- közvetlen elérés, a kezdőcím és az egy adatelemheztartozó tárhely méretének ismeretében
+- a csere m űvelete könnyen megvalósítható
+- hatékony rendező algoritmusok (pl. gyorsrendezés)
+- hatékony kereső algoritmusok (pl. bináris keresés)
+
+Hátránya:
+- nem segíti a bővítés és a fizikai törlés m ű veleténekvégrehajtását
+
+#### Szétszórt (láncolt) tárolás
+
+Egy tárhelyen egy adatelem értékét (**adatrész**) és legalább egy
+mutató értékét (mutatórész) tároljuk. A mutatók értékei
+memóriacímek lehetnek, amelyek megmondják az adatelem
+rákövetkezőinek tárbeli helyét. A tárhelyek mérete nem
+szükségképpen azonos, elhelyezkedésük a memóriában
+tetszőleges.
+
+A szétszórt ábrázolási mód alapvető fajtái:
+- egyirányban láncolt lista
+- cirkuláris lista
+- kétirányban láncolt lista
+- multilista
+
 ## Elemi adatszerkezetek: lista, verem, sor. 
+
+### Lista
+Dinamikus, homogén, szekvenciális adatszerkezet.
+
+:::info Jelölések 
+- **Üres lista**: `q = []`
+- **Nem üres lista**: `q = [x1,x2…,xn]`
+- **Lista feje**: `x1`
+- **Lista vége**: `xn`
+- **Lista farka**: `[x2,...,xn]`
+- **Lista hossza**: `n`
+:::
+
+:::info Alapműveletek
+- **Hozzáférés, elérés**: közvetlen `q[i] = n`
+- **Részlista képzés**
+- **Konkatenáció, egyesítés**
+:::
+
+:::info Listával végezhető műveletek
+- **Bővítés**
+    - Bárhol bővíthető
+    - Bővítéskor részlistákat képzünk, és konkatenáljuk
+- **Törlés**
+    - Megvalósítható fizikai törlés
+    - Részlistákat képzünk, és a törlendő elemet kihagyjuk
+- **Csere**
+    - Bármelyik elem cserélhető
+    - Részlistaképzés
+- **Rendezés**
+    - Értelmezhető
+- **Keresés**
+    - értelmezhető
+- **Elérés**
+    - Soros vagy közvetlen
+- **Bejárás**
+    - értelmezhető
+- **Feldolgozás**
+    - Alapműveletek segítségével
+:::
+
+:::info Szélső elemekkel végezhető műveletek
+- **Access head**
+    - Első elem elérése
+- **Push**
+    - Bővítés az első elem előtt
+- **Pop**
+    - Első elem törlése
+- **Access end**
+    - Utolsó elem elérése
+- **Inject**
+    - Bővítés az utolsó elem után
+- **Eject**
+    - Az utolsó elem törlése
+:::
+
+:::info Ábrázolása
+**Folytonos reprezentáció:**
+- Vektorral
+- Lista elemei egy tömbben vannak eltárolva egymás után.
+- Könnyen bejárható.
+- Egy új elem a lista végére kerül.
+- Ha a közepére szúrunk be, az mozgatással jár, ahogy a törlés szintén.
+
+**Szétszórt reprezentáció:**
+- Láncolt listával
+- Beszúrás:
+    - Lista elejére, végére, aktuális elem után, elé
+- Törlés:
+    - Lista eleje, vége, aktuális elem
+:::
+
+![Tömb ábrázolása](./img/1-tomb.png)
+
+
+### Verem
+Speciális lista adatszerkezet.
+Csak a verem tetejére lehet betenni, illetve onnan kivenni.
+Az utoljára betett elem a verem tetejére kerül.
+Az elsőnek betett elem a verem aljára.
+
+
+:::info Végezhető műveletek:
+- **Létrehozás**
+    - Üres verem létrehozása
+- **Bővítés**
+    - Új elem bevitele az utoljára betett elem fölé (PUSH)
+- **Csere**
+    - nincs
+- **Törlés**
+    - Fizikai, verem tetején (POP)
+- **Rendezés, keresés, bejárás**
+    - Nem értelmezett
+- **Elérés**
+    - Felső elemet közvetlenül, többit sehogyan
+- **Feldolgozás**
+    - Last in first out (LIFO adatszerkezet)
+    - utolsóként értelmező adatelem feldolgozása először.
+:::
+
+:::info Ábrázolás:
+**Folytonos reprezentáció:**
+- A veremmutató mindig a verem tetején lévő elemet indexeli.
+- Ha a veremmutató értéke 0, a verem üres.
+- Ha a veremmutató értéke n, a verem tele van.
+
+![Verem Folytonos](./img/1-verem-folytonos.png)
+
+**Szétszort reprezentáció:**
+- Egyirányban láncolt listával
+    - A fej mutató mindig a verem tetején lévő elemre mutat.
+    - Ha a fejnek NIL az értéke, a verem üres.
+
+![Verem Szétszort](./img/1-verem-szetszort.png)
+:::
+
+
+### Sor
+
+Specialis lista adatszerkezet
+
+:::info Alapműveletei
+- **Első elemhez történő hozzáférés**
+    - Access head
+- **Bővítés az utolsó elem mögé**
+    - Put (INJECT)
+- **Első elem törlése**
+    - Get (POP)
+:::
+
+:::info Sorral végezhető műveletek
+- **Létrehozás**
+    - Üres sor
+- **Bővítés**
+    - Utolsó elem mögé
+- **Csere**
+    - nincs
+- **Törlés**
+    - Fizikai, az első elemet
+- **Rendezés, keresés, bejárás**
+    - Nem értelmezett
+- **Elérés**
+    - Az első elemet közvetlenül, a többit sehogyan sem
+- **Feldolgozás**
+    - First in First out (FIFO) adatszerkezet.
+    - Az elsőként érkező elemet dolgozzuk fel először
+:::
+
+:::info Ábrázolás:=
+**Folytonos reprezentáció:**
+- Sor első helye rögzített, mindig az 1. Indexű tárhely a vektorban.
+- A v mutató a sor utolsó elemét indexeli.
+- Üres a sor, ha `v = 0`.
+- Tele van a sor, ha `v = n`.
+- Új elemet a `v + 1` pozícióba helyezünk.
+- Törléskor csúsztatjuk az elemeket.
+
+**Szétszórt reprezentáció:**
+- Egyirányban láncolt listával, két segédmutatóval (első, utolsó)
+- Elérni és feldolgozni az első mutató által hivatkozott elemet tudjuk.
+- Bővíteni pedig az utolsó mutató által hivatkozott elem mögé tudunk.
+- A sor üres, ha mindkét segédmutató értéke `NIL`.
+:::
+
 ## Halmaz, multihalmaz, mátrix. 
+### Halmaz
+
+Struktúra nélküli, homogén és dinamikus adatszerkezetek.
+Minden eleme különböző.
+Adatszerkezetben lévő **elemek között nincs kapcsolat** (ezért struktúra nélküli.)
+
+:::info Alapműveletei
+- Eleme
+- Uniója
+- Metszet
+- Különbség
+:::
+
+:::info Hagyományos műveletek
+- **Adatfeldolgozás**
+    - a halmaz alapműveleteinek segítségével
+- **Csere** 
+    - Nincs
+- **Rendezés, keresés, elérés, bejárás**
+    - nem értelmezettek
+- **Törlés**
+    - csak fizikai, különbségképzéssel
+- **Bővítés**
+    - unió képzéssel
+- **Reprezentáció**
+    - Karakterisztikus függvény segítségével
+    - Elemeit sorba rendezzük, és mindegyikhez hozzárendelünk egy-egy bit méretű tárterületet.
+    - Az adott értékű adatelemhez tartozó bit fogja jelezni, hogy az adatelem benne van-e a halmazban (1) vagy nem (0).
+:::
+
+### Multihalmaz
+Struktúra nélküli, homogén, dinamikus adatszerkezet.
+Elemek között nincs kapcsolat.
+Több azonos elem is előfordulhat.
+
+:::info Alapműveletei
+Alapműveletei halmazéval megegyezőek
+:::
+
+:::info Hagyományos műveletek
+Hagyományos műveletek hasonlóak a halmazokéhoz
+:::
+
+:::info Reprezentációja
+- Karakterisztikus függvénnyel történik
+- Elemeit sorba rendezzük, mindegyikhez hozzárendelünk egy tárterületet.
+- Általában 1 byte-ot.
+- A tárhelyen az adott értékű elemek előfordulásainak számát tároljuk.
+:::
+
+### Mátrix
+Kétdimenziós tömb
+
+![Mátrix](./img/1-matrix.png)
+
+:::info Végezhető műveletek
+- **Létrehozás**
+    - Rögzítjük a dimenziót és az indextartományokat.
+    - Ezzel egyidőben meghatározzuk a tömb elemszámát is
+    - A szerkezet kialakításával párhuzamosan elemeket is elhelyezhetünk a tömbben.
+- **Bővítés**
+    - Nincs, ugyanis a tömb statikus
+- **Csere**
+    - Bármely létező elem értékét felülírhatjuk egy új értékkel
+    - Elhelyezhetünk elemet oda, ahová létrehozáskor nem tettünk
+- **Törlés**
+    - Csak logikai
+- **Rendezés**
+    - Egydimenziós tömböknél
+- **Keresés**
+    - Reprezentációfüggő művelet
+- **Bejárás**
+    - Reprezentációfüggő művelet
+- **Feldolgozás**
+    - Alapja a közvetlen elérés
+- **Leképezés**:
+    - Történhet sorfolytonosan vagy oszlopfolytonosan
+:::
+
+:::note Négyzetes (kvadratikus) mátrixok.
+- Az olyan négyzetes mátrixot, amelynek **főátlója alatt csupa 0** elem található, **felsőháromszög-mátrixnak** nevezzük.
+- Az olyan négyzetes mátrixot, amelynek **főátlója fölött lévő elemek mindegyikének értéke 0**, akkor **alsóháromszög-mátrixról** beszélünk.
+:::
+
 ## Fák ábrázolása, keresések, bejárások, törlés, beszúrás.
+:::info Hierarchikus adatszerkezet
+Minden adatelemének - egyet kivéve - pontosan egy megelőzője, és tetszőleges számú (akár 0) rákövetkezője lehet.
+
+Pl: fa
+:::
+### Fák ábrázolása
+
+Homogén, dinamikus, hierarchikus adatszerkezet.
+
+Részei:
+:::note Csúcs, csomópont
+![Csúcs, csomópont](./img/1-fa-1.png)
+:::
+:::note Gyökérelem
+![Gyökérelem](./img/1-fa-2.png)
+:::
+:::note Levélelem
+![Levélelem](./img/1-fa-3.png)
+:::
+:::note Közbenső elem
+![Közbenső elem](./img/1-fa-4.png)
+:::
+:::note Él
+![Él](./img/1-fa-5.png)
+:::
+:::note Út
+![Út](./img/1-fa-6.png)
+:::
+:::note Részfa
+![Részfa](./img/1-fa-7.png)
+:::
+:::note Szint
+![Szint](./img/1-fa-8.png)
+:::
+:::note Magasság
+![Magasság](./img/1-fa-9.png)
+:::
+
+:::info Bináris fa
+Olyan fa, melyben minden adatelemnek legfeljebb két rákövetkezője van.
+:::
+:::info Szigorú értelemben vett bináris fa
+Olyan bináris fa, ahol minden adatelemnek 0 vagy 2 rákövetkezője van.
+:::
+:::info Bináris keresőfa
+Olyan rendezett bináris fa, melyben az adatelemek mindegyike rendelkezik egy kulccsal, és minden adatelemre igaz, hogy az adatelem bal oldali részfájában lévő elemek kulcsai kisebbek, a jobb oldali részfájában lévő elemek kulcsai pedig nagyobbak az elem kulcsánál.
+
+![Bináris keresőfa](./img/1-fa-binaris-keresofa.png)
+
+:::
+:::info Műveletek
+- **Létrehozás**
+    - Üres fa
+- **Bővítés**
+    - Egy elemmel vagy részfával
+- **Törlés**
+    - Részfát vagy elemet
+- **Bejárás**
+    - Olyan algoritmus, melynek segítségével a bináris fa elemeit leképezzük egy sorra
+    - Preorder, inorder, postorder módon.
+:::
+:::info Reprezentációja
+- **Folytonos**
+    - Vektor segítségével
+- **Szétszórt**
+    - Láncolt lista segítségével
+:::
+
+
+### Bejárások
+:::info Preorder bejárás
+- Ha a bejárandó fa üres, az algoritmus véget ér.
+- Dolgozzuk fel a gyökérelemet.
+- Járjuk be a gyökérelem bal oldali részfáját preorder módon.
+- Járjuk be a gyökérelem jobb oldali részfáját preorder módon.
+:::
+
+![Preorder](./img/1-fa-bejaras-1.png)
+
+:::info Inorder bejárás
+- Ha a bejárandó fa üres, az algoritmus véget ér.
+- Járjuk be a gyökérelem bal oldali részfáját inorder módon.
+- Dolgozzuk fel a gyökérelemet
+- Járjuk be a gyökérelem jobb oldali részfáját inorder módon.
+
+:::
+
+![Inorder 1](./img/1-fa-bejaras-2-1.png)
+
+![Inorder 2](./img/1-fa-bejaras-2-2.png)
+
+![Inorder 3](./img/1-fa-bejaras-2-3.png)
+
+:::info Postorder bejárás
+- Ha a bejárandó fa üres, az algoritmus véget ér.
+- Járjuk be a gyökérelem bal oldali részfáját postorder módon.
+- Járjuk be a gyökérelem jobb oldali részfáját postorder módon.
+- Dolgozzuk fel a gyökérelemet.
+:::
+
+![Postorder 1](./img/1-fa-bejaras-3-1.png)
+
+![Postorder 2](./img/1-fa-bejaras-3-2.png)
+
+### Keresések
+:::info Keresés bináris fában
+Bináris keresőfában az elemek rendezettek, bal oldalon a kisebbek, jobb oldalon a nagyobbak, így a keresés elég egyszerű, vizsgáljuk a gyökért, majd ha nagyobb a keresett elem jobbra, ha kisebb balra indulunk el, rekurzívan.
+:::
+
+### Törlés
+:::info Törlés bináris fából
+- Ha üres a fa, akkor nem tudunk törölni, és ezzel az algoritmus sikertelenül véget ér.
+- Összehasonlítjuk a gyökérelem értékét a törlendő elemmel.
+- Ha a törlendő elem kisebb a gyökérelemnél, akkor a gyökérelem bal oldali részfájából töröljük a törlendő elemet. 
+- Ha a törlendő elem nagyobb a gyökérelemnél, akkor a gyökérelem jobb oldali részfájából töröljük a törlendő elemet.
+- Ha a két elem egyenlő, akkor megnézzük, hogy a gyökérelemnek hány rákövetkezője van.
+- Ha a gyökérelemnek egy rákövetkezője sincs (azaz levélelem), akkor egyszerűen törölhető. 
+- Ha a gyökérelemnek egy rákövetkezője van, akkor felülírjuk a gyökérelemet azzal a rákövetkező elemmel (azaz egy szinttel feljebb csúsztatjuk a gyökérelem nem üres részfáját).
+- Ha a gyökérelemnek két rákövetkezője van, akkor a gyökérelem értékét felülírjuk a gyökérelem bal oldali részfája legjobboldalibb elemének az értékével, majd a gyökérelem bal oldali részfájából töröljük ezt a legjobboldalibb elemet.
+- Ezzel az algoritmus sikeresen véget ér.
+:::
+
+### Beszúrás
+:::info Bináris keresőfa bővítése:
+- Ha üres a fa, akkor a beszúrandó elem lesz a fa egyetlen eleme (levéleleme)
+- Összehasonlítjuk a gyökérelem értékét a beszúrandó elemmel.
+    - Ha a két elem egyenlő, akkor a beszúrandó elemet nem helyezhetjük el a fában, és ezzel az algoritmus sikertelenül véget ér.
+    - Ha a beszúrandó elem kisebb a gyökérelemnél, akkor a gyökérelem bal oldali részfáját bővítjük a beszúrandó elemmel.
+    - Egyébként a gyökérelem jobb oldali részfáját bővítjük a beszúrandó elemmel.
+:::
 
 
 
@@ -239,3 +720,10 @@ nevezik.
 - https://math.bme.hu/~lfarkas/2019-2020-2/vegyval/6e.pdf
 
 - https://www.codecogs.com/eqnedit.php
+
+- http://tamop412.elte.hu/tananyagok/algoritmusok/lecke3_lap1.html
+- https://gyires.inf.unideb.hu/KMITT/c11/ch01s04.html
+- https://gyires.inf.unideb.hu/KMITT/b21/index.html
+- http://tamop412.elte.hu/tananyagok/algoritmusok/lecke3_lap1.html
+- https://docplayer.hu/180504758-3-eloadas-alapfogalmak-reprezentacio-es-implementacio-algoritmusok-a-halmaz-es-a-multihalmaz-tombok.html
+- https://adoc.pub/adatszerkezetek-1-eladas.html
