@@ -1,0 +1,208 @@
+# 4. Tétel: Függvények leírása, ábrázolása; Megoldás kereső algoritmusok
+
+## Függvények, görbék, felületek leírása és számítógépes ábrázolása.
+
+### Függvények leírása és számítógépes ábrázolása
+
+:::info
+Függvény segítségével jeleníthető meg egy ábra: minden x-hez tartozik egy y érték.
+A grafikon elméleti, ezt csak közelíthetjük, mivel a gyakorlatban behelyettesítünk,
+és az adott értékeket ábrázoljuk, majd ezeket összekötjük. A gyakorlati függvény tehát szakaszokból áll.
+A behelyettesített értékek számától, sűrűségétől függ, hogy hány ponton lesz törött a vonal.
+Számítógép annyi értéket helyettesít, hogy legalább 1 px-t ugorjon (ami függ a képernyő felbontásától is),
+így görbének látszik, viszont mindig töröttvonal marad.
+:::
+
+#### Polinomiális függvények
+
+$an×xn+an-1×xn-1+...+a1×x1+a0×x0$
+Polinom: x polinomját valamilyen hatványon megszorozzuk (n:fokszám, a:együtthatók, x:változó), konstans függvény: 0-adfokú polinom.
+f(x)=ax+b 1.fokú polinom, ahol a:meredekség, b:hol metszi f(x)-et (vagy y tengelyt) (mivel a értéke nem tud elég nagy lenni, ezért függőlegest nem tudunk ábrázolni.
+Elképzeléshez kitalálni függvényt:
+
+- ha 2 pont van megadva, éppen egyértelmű
+- 1 ponttal aluldeterminált
+- több, mint 2 pont esetén ha 1 egyenesre esnek, könnyű helyzet, ha nem, akkor egyik ponton sem megy át, hanem minden pontot közelít a legkisebb eltéréssel.
+
+$f(x)=ax2+bx+c$ 2.fokú polinom
+
+Elképzeléshez függvényt találni:
+
+- próbálkozás különböző a, b és c értékekkel
+- kideríteni hol a csúcspont
+- megadott minimum 3 ponttal egyenletrendszer megoldása
+
+Hullám ábrázolása esetén is célszerűbb polinomiális függvény használata szögfüggvény helyett, mert az x-hez tartozó f(x) értékek keresése szögfüggvény esetén időigényes, lassú, és apró változtatástól is összeomlik.
+
+$f(x)=ax3+bx2+cx+d$ 3.fokú polinom
+
+Megtalálása próbálkozással vagy minimum 4 pont megadásával (4 ismeretlen miatt).
+Ábrázolható 2 parabolával is, de úgy törés lesz a csatlakozási ponton.
+
+#### Implicit függvények
+
+Ha nincs egyértelmű hozzárendelés, tehát x-hez több y érték tartozik, pl egy kör, vagy egy függőleges esetén
+
+- Eddig: $x→f(x)$ , ahol $R→R$
+- Implicit esetben: $x,y → F(x,y)$, ahol $R×R→R$
+  - $F(x,y) = 0$
+
+Minden eddigi függvény átalakítható ilyenné:
+
+- explicit: $y= 3x2+5x+1 \space\space\space\space\space\space\space\space\space\space\space y=f(x)$
+- implicit: $0=3x2+5x+1-y \space\space\space\space 0=f(x)-y$
+- tehát pl:
+  - $x2+y2=9$
+  - $x2+y2-9=0$
+  - $F(x,y)=0$
+
+#### Vektor alapján ábrázolok függvényt
+
+Ezek a paraméteres vektorfüggvények, vagy paraméterekkel megadott vektor görbék.
+Mozgó helyvektor végpontjai rajzolják a görbét, tehát idő függvényében vektort írunk le.
+
+Értelmezési tartomány: idő.
+
+$r(t): [a,b]→V2$ , ahol V2 a szabad vektorok halmaza, a t paraméter valós érték, [a,b] intervallum az ábrázolás idejének kezdő és végpontja közötti intervallum, a függvény értéke pedig a vektor.
+
+2 függvényként is lehet kezelni:
+
+- Van $(x,y)$ koordinátám
+- $x(t)$ és $y(t)$ is függvénye a t-nek
+- $x(t): [a,b]→ R$, $y(t): [a,b]→ R$
+
+A vektorfüggvény tehát koordináta függvények együttese. Minden t (azaz [a,b] intervallumon értelmezett idő) értékre x és y koordinátákat ad.
+
+Ez a módszer egyesíti az eddigiek előnyeit:
+
+- könnyű kirajzolás (pl $y=f(x)$ esetén)
+- a görbe maga alá is görbülhet, bármilyen alakú lehet ( $F(x,y)=0$ esetén)
+
+### Görbék leírása és számítógépes ábrázolása
+
+#### Implicit típusú görbék
+
+Behelyettesítés esetén bonyolult egyenletet kapunk (Pl $4x5-5x3y7+sin(x)+cos(y2)-7=0$)
+
+Ábrázolás módja: (0,0) behelyettesítése, pontonkénti (pixelenkénti) kiértékelés: ha az eredmény rajta van a vonalon, akkor 0-val egyenlő, egyébként nincs rajta.
+
+Minden pixelt be kell helyettesíteni. Lassú kiértékelés, és nem egyértelmű, akár a szoftver is elbizonytalanodhat, ezért ritkán használjuk computer grafikában.
+
+Tulajdonságai:
+
+- az $(x0,y0)$ koordinátájú pont akkor és csakis akkor illeszkedik a görbére, ha $F(x0,y0)=0$
+- ha $F(x0,y0)>0$, akkor az görbe fölött helyezkedik el (fel és jobbra)
+- ha $F(x0,y0)<0$, akkor az görbe alatt helyezkedik el (le és balra)
+
+Értékek behelyettesítése a távolságot is mutatja (minél nagyobb az érték, annál távolabb van a pont)
+
+#### Polinommal megadott görbe
+
+elsőfokú polinom:
+
+- $3x-4y-7 = 0$, egyenes → elsőrendű görbe
+
+másodfokú polinom:
+
+- $x2+y2-9=0$, kör→ másodrendű görbe
+- $x2-y=0$, parabola → másodrendű görbe
+
+n-edfokú polinom:
+
+- $xn-3yn+...=0$ → n-edrendű görbe
+
+Csak polinommal megadott lehet valahanyadrendű görbe vagy algebrai görbe (mivel a függvény is algebrai, nem analitikus. Pl. $sin(x)$ analitikus lenne)
+
+Egy n-edrendű és egy m-edrendű görbének legfeljebb $n×m$ darab látható metszéspontja lehet (ezen mindkét görbe átmegy)
+
+#### Vektorral megadott görbe
+
+Mozgó helyvektor végpontjai rajzolják a görbét, tehát idő függvényében vektort írunk le. (Továbbiak: Függvények, 3.pont) Ezek a legáltalánosabban használt görberajzoló függvények.
+
+#### Térbeli görbe rajzolására alkalmatlanok az implicit és az explicit függvények.
+
+Csak vektorfüggvénnyel rajzolhatóak.
+
+$r(t): [a,b]→V3$, ahol $V3$ a térbeli vektorok halmaza
+
+$x(t): [a,b]→ R$, $y(t): [a,b]→ R$, $z(t): [a,b]→ R$
+
+### Felületek leírása és számítógépes ábrázolása
+
+#### Explicit
+
+- előállítás $z=f(x,y)$
+- minden $(x,y)$ pontra ad egy z értéket. $R×R→R $
+- $x,y$ síkon megkeresem a pontot, majd $z$ irányába tolom.
+  1. összes x-et behelyettesítem, y=0
+  2. összes y-t behelyettesítem, x=0
+  3. a többi pontot is behelyettesítem, kiszámolom
+
+Dróthálós megjelenítés:
+
+- Minden pontot ábrázolni kell, mert a köztes pontokat nem határozzák meg a szélsők.
+- Így a felületi görbéket ábrázolom, nem magát a felületet
+
+Előny: könnyű ábrázolás
+
+Hátrány: maga alá görbülő felületet nem tud ábrázolni
+
+#### Implicit
+
+- $F(x,y,z) = 0$
+- Egy $(x,y)$ értékhez több $z$ érték társul, tehát egymás alá görbül a felület.
+- A pont 3 koordinátája egy nagy egyenletben egyesül. Azok a pontok vannak a felületen, ahol kiértékelés során 0-t kapunk.
+
+Előnye: maga alá görbülő felületet is tud ábrázolni
+
+Hátránya: pontonkénti kiértékelés
+
+Ha adott az $F(x,y,z)$ n-edfokú polinom, akkor az $F(x,y,z)=0$ egyenletet kielégítő pontok összességét n-edrendű (vagy algebrai) felületnek nevezzük.
+
+- Pl:
+  - $n=1: ax+by+cz+d=0$ egy sík
+  - $n=2: ax2+by2+cz2+dxy+exz+fyz+gx+hy+jz+k = 0$, ahol dxy,exz és fyz is másodfokú tagok, teház ha nincs x2,y2,z2, akkor is másodfokú.
+
+Metszéspontok: felület+görbe, felület+felület.
+
+Egy n-edrendű felületnek és egy m-edrendű görbének $n×m$ látható metszéspontja lehet. Tehát egy felület egyenletének fokszámát eldönthetem úgy, hogy egyenessel metszem, és a metszéspontok száma megadja a felület egyenletének fokszámát.
+Egy n-edrendű és egy m-edrendű felület metszésvonala egy $m×n$-edrendű görbe.
+
+#### Paraméteres megadás
+
+- $r: [a,b]×[c,d]$ (a két időintervallum Descartes szorzata)→V3
+- $x: [a,b]×[c,d] →R$, $y: [a,b]×[c,d] →R$, $z: [a,b]×[c,d] →R$
+- Míg a görbék ábrázolása során pontokat kötök össze, itt paraméter vonalakkal rácsozom be
+- Lépései ([a,b] intervallumot az u tengelyen, [c,d] intervallumot a v tengelyen ábrázolva):
+  1. u értéke fix, a v értéke pedig c-ről d-re egységenként nő. (1. paraméter állandó, 2. változó) Eredményei pontok, amelyeket összekötve görbét kapok
+  2. új, de szintén fix u érték, míg a-ból b-be nem érünk (az intervallumokon minél kisebb a lépték, annál simább a felület, annál pontosabb a végeredmény)
+  3. az első 2 lépést a v értékein is megismételni
+
+Előnyök, hátrányok (implicit vs paraméteres):
+
+|              | IMPLICIT                | PARAMÉTERES           |
+| ------------ | ----------------------- | --------------------- |
+| MEGJELENÍTÉS | -                       | +                     |
+| KOORDINÁTA   | +, behelyettesítés után | -, 3 egyenletből álló |
+| ILLESZKEDÉSE | 0 eredmény rajta van    | 2 ismeretlenes        |
+| A FELÜLETRE  | nem 0, nincs            | egyenletrendszer      |
+
+Előfordul, hogy az egyik implicit, a másik paraméteres formában jó.
+
+Felület érzékeltetése: rácsvonalakkal, színezéssel, szintvonalakkal
+
+---
+
+## Problémák reprezentálása állapottéren.
+
+## A megoldás keresése visszalépéssel.
+
+## Szisztematikus és heurisztikus gráfkereső eljárások: a szélességi, a mélységi és az A algoritmusok.
+
+## Kétszemélyes játékok és reprezentálásuk.
+
+## A nyerő stratégia.
+
+## Lépésajánló algoritmusok.
+
+## További információk
