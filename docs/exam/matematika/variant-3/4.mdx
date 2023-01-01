@@ -195,14 +195,211 @@ Felület érzékeltetése: rácsvonalakkal, színezéssel, szintvonalakkal
 
 ## Problémák reprezentálása állapottéren.
 
+A mesterséges intelligencia problémáinak megoldása a probléma meg-fogalmazásával
+kezdődik: a problémát leírjuk, reprezentáljuk. Az egyik legelterjedtebb reprezentációs
+technika az állapottér-reprezentáció(state space representation).
+
+### Állapottér reprezentáció:
+
+- A mesterséges intelligencia problémáinak megoldása a probléma
+  megfogalmazásával kezdődik.
+- A problémát leírjuk, reprezentáljuk.
+- Az egyik legelterjedtebb reprezentációs technika az állapottér-
+  reprezentáció.
+- Legyen adott egy probléma, amit jelöljünk p-vel.
+- Megkeressük p világának legalább egy, de véges sok – a probléma
+  megoldása során fontosnak vélt – meghatározóját.
+- (pl. objektum, pozíció, méret, hőmérséklet, szín, stb)
+- Tegyük fel, hogy m ilyen jellemzőt találtunk.
+- Minden egyes jellemző p világát különböző értékekkel jellemzi.
+- (pl. szín: fekete/fehér; hőmérséklet: [−20◦, 40◦], stb)
+
+### Állapot:
+
+- Ha a megadott jellemzők épp rendre a h1, . . . , hm értékekkel
+  rendelkeznek azt mondjuk, hogy p világa a (h1, . . . , hm) érték m-essel
+  leírt állapotban (state) van.
+
+### Állapottér:
+
+- A világunk állapotainak halmaza.
+- A kezdeti állapot és az állapottér-átmenet függvény együttesen definiálják
+  a probléma állapotterét, az állapotok halmazát.
+
+### Kényszerfeltétel:
+
+- Jelölje az i-edik jellemző által felvehető értékek halmazát Hi (i = 1,..,m)
+- Ekkor p állapotai elemei a H1x…xHm halmaznak.
+- Azokat a feltételeket, amelyek meghatározzák, hogy ebből a halmazból
+  mely m-esek állapotok, kényszerfeltételeknek nevezzük.
+- Az állapottér tehát az értékhalmazok Descartes-szorzatárnak a
+  kényszerfeltételekkel kijelölt részhalmaza:
+
+![Kényszerfeltétel](./img/4-kenyszerfeltetel.png)
+
+### Kezdőállapot:
+
+- Az A állapottér azon állapotát, amit a probléma világa jellemzőinek
+  kezdőértékei határoznak meg, kezdőállapotnak nevezzük és kezdő-vel
+  jelöljük.
+
+### Célállapot:
+
+- A kezdőállapotból kiindulva a probléma világának sorban előálló állapotait rendre meg szeretnénk változtatni, míg végül valamely számunkra megfelelő úgynevezett célállapotba jutunk.
+- Jelölje C ⊆ A a célállapotok halmazát.
+- **Célállapotok megadása történhet**:
+  - Felsorolással
+  - Célfeltételek megadásával
+
+### Operátorok:
+
+- Hogy célállapotba juthassunk, meg kell tudnunk változtatni bizonyos állapotokat.
+- Az állapotváltozásokat leíró leképezéseket operátoroknak nevezzük.
+- Nem minden operátor alkalmazható feltétlenül minden állapotra, ezért meg szoktuk adni az operátorok értelmezési tartományát az **operátoralkalmazási előfeltételek** segítségével.
+
+### Állapottér-reprezentáltuk:
+
+- Legyen p egy probléma.
+- Azt mondjuk, hogy p problémát állapottér-reprezentáltuk, ha megadtuk az:
+  - 〈A,kezdő,C,O〉 négyest
+  - Ahol, A nem üres halmaz és a probléma állapottere
+  - Kezdő eleme A halmaznak és ő a kezdőállapot
+  - A célállapotok halmazát, ahol C eleme A halmaznak
+  - Az opetárotok nem üres véges halmazát.
+    - Jelölése: 〈A,kezdő,C,O〉.
+
 ## A megoldás keresése visszalépéssel.
+
+- **Még kevesebb memóriát használ a mélységi keresőtől**
+- Mélységi keresés egy változata
+- Összes követő helyett, egyidejűleg egy követőt generál
+- Minden kifejtett csomópontra emlékszik, melyik követője jön legközelebb
+- **Tárigénye** O(m) az O(bm) helyett.
+- Követő csomópont generálása az aktuális állapot módosításával, anélkül, hogy az állapotot átmásolnánk.
+- Rossz választás esetén elakadhat.
+- Nem optimális, nem teljes.
+- **Nem optimális:**
+  - Ha a megoldás a jobb részfában van, előbb ő végignézi a bal részfát fölöslegesen
+- **Nem teljes:**
+  - Ha a bal oldali részfa korlátlanul mély lenne, és nem tartalmazna megoldást, a keresés soha nem állna meg.
 
 ## Szisztematikus és heurisztikus gráfkereső eljárások: a szélességi, a mélységi és az A algoritmusok.
 
+### Gráfkereső:
+
+- Akkor hasznos, mikor feltételezzük, hogy az állapottér reprezentáció köröket tartalmaz.
+- Minden állapot legfeljebb egyszer szerepelhet, kerül kifejtésre.
+- Csak olyan állapotokat fejtünk ki, amiket eddig nem fejtettünk.
+- Előfordulhat, hogy a peremben több azonos állapot szerepel, de ez nem okoz problémát.
+
+### Szélességi kereső:
+
+- Egyszerű keresési stratégia
+- **Először a gyökércsomópontot fejtjük ki.**
+- Következő lépésben az összes gyökércsomópontból generált csomópontot, majd azok következőit.
+- Minden adott mélységű csomópontot hamarabb fejt ki, mielőtt bármelyik egy szinttel lejjebbi csomópontot kifejtene.
+- Feldolgozás FIFO (first in first out)
+- Az összes újonnan generált követőt a sor végére teszi, tehát a legsekélyebb csomópontokat hamarabb fej ki, mint a mélyebben fekvőket.
+- A keresés teljes, ha a legsekélyebb célcsomópont valamilyen véges d mélységben fekszik, akkor a keresés eljut hozzá az összes nála sekélyebben fekvő csomópontot kifejtve.
+- Optimális, ha az útköltség a csomópont mélységének nem csökkenő függvénye.
+- **Tárigény** az idő igénnyel azonos, tárigény problémát jelent
+- A gyökércsomópont, b csomópontot generál, második szint $b^{2}$ stb
+
+### Mélységi kereső:
+
+- **Mindig a fa aktuális peremében a legmélyebben fekvő csomópontot fejti ki.**
+- A keresés azonnal a fa legmélyebben fekvő szintjére jut el, ahol a csomópontoknak már nincsenek következőik.
+- LIFO, (last is first out)
+- Szerény tárigényű, csak egyetlen a gyökércsomópontból a levélcsomópontig vezető utat kell tárolni kiegészítve az út minden egyes csomópontja melletti kifejtetlen csomópontokat.
+- Egy már kifejtett csomópont elhagyható a listából, ha az összes leszármazottja meg lett vizsgálva.
+- **Tárigénye** bm+1, b elágazási tényező, m a maximális mélység.
+
+### A\* algoritmus:
+
+- A teljes becsült útköltség minimalizálása
+- A csomópontokat úgy értékeli ki, hogy összekombinálja
+- 2 dolgot tárolunk költség (ez a kiindulópont), út + heurisztika
+- $f(n) = g(n) + h(n)$
+- $f(n)$ a legolcsóbb, az n csomóponton keresztül vezető megoldás becsült költsége.
+- Ha a legolcsóbb megoldást keressük, érdemes először a legkisebb $g(n) + h(n)$ értékkel rendelkező csomópontot kifejteni
+- Ha a h függvény eleget tesz bizonyos feltételeknek a keresés teljes és optimális.
+
 ## Kétszemélyes játékok és reprezentálásuk.
+
+### Osztályozás:
+
+- Diszkrét játékok
+  - A játszma állásból állásba vivő lépések sorozata
+- Véges játékok
+  - Az állásokban véges sok lehetséges lépése van minden játékosnak.
+  - A játszmák véges sok lépés után véget érnek.
+- Teljes információjú játékok
+  - A játékosok a játékkal kapcsolatos összes információval rendelkeznek a játék folyamán.
+- Determinisztikus játékok
+  - Nincs szerepe a véletlennek.
+- Zérusösszegű játékok
+  - A játékosok nyereségének és veszteségének összege 0.
+
+### A játékok reprezentációja:
+
+- $A,B$ két játékos
+- H a játékállások halmaza
+  - Kezdőállás:
+    - a0, ami eleme H halmaznak.
+- Játékot kezdi:
+  - J0 eleme {A,B}, felváltva lépnek
+- Játék menete:
+  - L a lépések halmaza
+    - { L | L : H -> H } (minden lépés a játékállások halmazán belüli értékek képez)
+- Játék vége:
+  - Játék véget ér az a állásban, ha végállás(a)
+- Játékot nyeri:
+  - Nyer : ${a | végállás(a)} -> {jön_{a}, volt_{a}}$
+    - Valaki nyer, ha az adott állás végállás.
+    - $jön_{a}$ lenne az a állásban soron következő játékos
+    - $jön_{a}$ nem egyenlő $volt_{a}$-val.
+- Játék állapottér reprezentációja:
+  - 〈A,kezdő,C,O〉négyes, ahol
+  - A = {(a,J) | a eleme H, J eleme {A,B}; J következik lépni}
+  - Kezdő = (a0,J0)
+  - C = {(a,J) | végállás(a), J nyer, ha nyer(a) = jöna}
+  - O = { ol | ol(a,J) = (L(a),I,J eleme {A,B}, I= J}
+
+### Játékfa:
+
+- Páros szinteken lévő állásokban a kezdőjátékos, páratlan szinteken lévőkben pedig ellenefele léphet.
+- Egy állást annyi különböző csúcs szemléltet, ahány különböző módon a játék során a kezdőállásból eljuthatunk hozzá.
+- Véges hosszúak az utak, mivel véges játékokkal foglalkozunk.
+- Ha a játék során a játékosok kezdő állapotból valamely v eleme V állapotba érnek, azaz kezdő -> V (van olyan operátor, amely kezdőből a végállapotba visz), azt mondjuk, hogy lejátszották a játszmát.
 
 ## A nyerő stratégia.
 
+A J játékos stratégiáját a J nyerő stratégiájának nevezzük, ha (az ellenfél stratégia-választásától függetlenül) minden a stratégia alkalmazása mellett lejátszható játszmában J nyer.
+
 ## Lépésajánló algoritmusok.
+
+Három féle van:
+
+- Minmax
+- Negamax
+- Alfa-béta nyesés
+
+### Minmax:
+
+- Az optimális döntést az aktuális állapotból számolja ki, felhasználva egy egyszerű rekurzív formulát, amit az egyes követő állapotok minmax értékeinek kiszámítására a definiáló egyenletekből közvetlenül származatunk.
+- A rekurzió egészen a fa leveléig folytatódik.
+- A minmax értékeket a fa mentén visszafelé terjesztjük ki
+- Minden csúcsban ahol nem a támogatott játékos lép min-t, ahol a támogatott max-ot választunk.
+
+### Negamax:
+
+- Egyszerűbb rekurzív függvényt készítünk.
+- Nem a támogatott játékos szerint értékeli az egyes lépéseket, hanem mindig a soron következő játékos szerint.
+- Maximum keresést végzünk a közbenső csúcsoknál, negálva a közvetlenül elérhető állapotok jóságértékét.
+
+### Alfa-béta nyesés:
+
+- Lehetséges a korrekt minmax kiszámítása anélkül, hogy minden csomópontra rá kelljen nézni.
+- Ugyanazt a döntést adja vissza mint a minmax, a döntésre hatással nem lévő ágakat lenyesi.
 
 ## További információk
