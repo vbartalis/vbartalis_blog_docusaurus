@@ -121,6 +121,12 @@ const config = {
             : 2022 + "-" + new Date().getFullYear()
         } vbartalis. Built with Docusaurus.`,
       },
+      docs: {
+        sidebar:{
+          // autoCollapseCategories:true,
+          hideable:true
+        }
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
