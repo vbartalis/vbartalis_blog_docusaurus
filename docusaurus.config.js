@@ -41,7 +41,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
           showReadingTime: true,
@@ -122,10 +122,10 @@ const config = {
         } vbartalis. Built with Docusaurus.`,
       },
       docs: {
-        sidebar:{
+        sidebar: {
           // autoCollapseCategories:true,
-          hideable:true
-        }
+          hideable: true,
+        },
       },
       prism: {
         theme: lightCodeTheme,
