@@ -39,8 +39,9 @@ function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
   }
   if (colorMode === "light") {
     svgItem = <Svg className={styles.featureSvg} role="img" />;
+  } else {
+    svgItem = <SvgDark className={styles.featureSvg} role="img" />;
   }
-  svgItem = <SvgDark className={styles.featureSvg} role="img" />;
 
   return (
     <div className={clsx("col col--4")}>
