@@ -4,18 +4,64 @@
         <title>Bartalis Vilmos Blog</title>
         <link>https://vbartalis.github.io/blog</link>
         <description>Bartalis Vilmos Blog</description>
-        <lastBuildDate>Thu, 03 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 02 Feb 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>hu</language>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://vbartalis.github.io/blog/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Thu, 03 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Welcome to my github page.]]></description>
-            <content:encoded><![CDATA[<p>Welcome to my github page.</p>]]></content:encoded>
-            <category>hello</category>
+            <title><![CDATA[A szellem szétválasztása]]></title>
+            <link>https://vbartalis.github.io/blog/2023/02/02/a-szellem-szetvallasztasa</link>
+            <guid>/2023/02/02/a-szellem-szetvallasztasa</guid>
+            <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ki lehet-e vágni]]></description>
+            <content:encoded><![CDATA[<p>Ki lehet-e vágni<br>
+<!-- -->A férges részeket?</p><p>Meg lehet-e tisztítani<br>
+<!-- -->Egy szellemet?</p><p>A legmélyebb fájdalmakból,<br>
+<!-- -->Egy pengét kovácsolni.</p><p>Levágni a bilincseket,<br>
+<!-- -->Amelyek rabul ejtenek.</p><p>Áldozatban elégetni,<br>
+<!-- -->A gyötrő terheket.</p><p>S hagyni szálljon<br>
+<!-- -->Szabadon a szellem.</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Egy pillantás]]></title>
+            <link>https://vbartalis.github.io/blog/2023/02/02/egy-pillanat</link>
+            <guid>/2023/02/02/egy-pillanat</guid>
+            <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Egy perc sem volt talán]]></description>
+            <content:encoded><![CDATA[<p>Egy perc sem volt talán<br>
+<!-- -->De mégis még mindig emlékszem a mosolyára<br>
+<!-- -->az ajtóban állva, csak egy pillantásra.<br>
+<!-- -->Valamit bennem hagyott egy életre,<br>
+<!-- -->Egy névtelen idegen.</p><p>Egy pillantás,<br>
+<!-- -->Csak egy pillanatig tartott.<br>
+<!-- -->De az a mosoly örökre bennem maradt.<br>
+<!-- -->Egy fehér ing a csillogó napsütésben<br>
+<!-- -->S a tenger sós illata.</p><p>Egy pillantás, egy pillanat.<br>
+<!-- -->Egy mosoly ami itt maradt.<br>
+<!-- -->Egy mosoly ami itt maradt.<br>
+<!-- -->Egy fehér ing s a tenger illata.</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Nem rímel]]></title>
+            <link>https://vbartalis.github.io/blog/2023/02/02/nem-rimel</link>
+            <guid>/2023/02/02/nem-rimel</guid>
+            <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Vajon vers e az ami nem rímel?]]></description>
+            <content:encoded><![CDATA[<p>Vajon vers e az ami nem rímel?<br>
+<!-- -->Vajon él e az aki nem szeret?</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Máskor, máshol, mással talán]]></title>
+            <link>https://vbartalis.github.io/blog/2022/12/17/maskor-mashol-massal</link>
+            <guid>/2022/12/17/maskor-mashol-massal</guid>
+            <pubDate>Sat, 17 Dec 2022 00:51:00 GMT</pubDate>
+            <description><![CDATA[Máskor, máshol, mással talán. Addig is maradjon nekem a zsibbasztó magány.]]></description>
+            <content:encoded><![CDATA[<p>Máskor, máshol, mással talán. Addig is maradjon nekem a zsibbasztó magány.<br>
+<!-- -->Minthogy fájjon, reggel, este. Kivágom egy részét szellememnek.</p>]]></content:encoded>
+            <category>vers</category>
         </item>
     </channel>
 </rss>
