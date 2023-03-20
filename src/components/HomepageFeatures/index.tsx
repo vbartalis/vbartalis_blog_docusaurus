@@ -32,11 +32,11 @@ const FeatureList: FeatureItem[] = [
 ];
 
 function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        {isDarkTheme ? (
+        {colorMode === "dark" ? (
           <SvgDark className={styles.featureSvg} role="img" />
         ) : (
           <Svg className={styles.featureSvg} role="img" />
