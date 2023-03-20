@@ -36,11 +36,11 @@ function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
   console.log("colorMode: " + colorMode);
   let svgItem;
   if (colorMode === "dark") {
-    svgItem = <SvgDark className={styles.featureSvg} role="img" />;
   }
   if (colorMode === "light") {
     svgItem = <Svg className={styles.featureSvg} role="img" />;
   }
+  svgItem = <SvgDark className={styles.featureSvg} role="img" />;
 
   return (
     <div className={clsx("col col--4")}>
