@@ -33,7 +33,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, SvgLight, SvgDark, description }: FeatureItem) {
   // console.log("colorMode: " + colorMode);
-  const {colorMode} = useColorMode()
+  const { colorMode } = useColorMode();
 
   return (
     <div className={clsx("col col--4")}>
@@ -44,15 +44,14 @@ function Feature({ title, SvgLight, SvgDark, description }: FeatureItem) {
           <SvgLight className={styles.featureSvg} role="img" />
         ) : (
           <div></div>
-        )
-        }
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
-  // );
+  );
 }
 
 export default function HomepageFeatures(): JSX.Element {
@@ -61,7 +60,7 @@ export default function HomepageFeatures(): JSX.Element {
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props}/>
+            <Feature key={idx} {...props} />
           ))}
         </div>
       </div>
