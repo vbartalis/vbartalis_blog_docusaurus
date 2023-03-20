@@ -31,12 +31,9 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
-  const { colorMode } = useColorMode();
+function Feature({ title, Svg, SvgDark, description, colorMode }) {
   console.log("colorMode: " + colorMode);
   let svgItem;
-  if (colorMode === "dark") {
-  }
   if (colorMode === "light") {
     svgItem = <Svg className={styles.featureSvg} role="img" />;
   } else {
@@ -71,12 +68,13 @@ function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  const { colorMode } = useColorMode();
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <Feature key={idx} {...props} colorMode={colorMode} />
           ))}
         </div>
       </div>
