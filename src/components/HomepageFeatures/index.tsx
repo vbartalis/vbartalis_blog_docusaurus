@@ -34,22 +34,39 @@ const FeatureList: FeatureItem[] = [
 function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
   const { colorMode } = useColorMode();
   console.log("colorMode: " + colorMode);
+  let svgItem;
+  if (colorMode === "dark") {
+    svgItem = <SvgDark className={styles.featureSvg} role="img" />;
+  }
+  if (colorMode === "light") {
+    svgItem = <Svg className={styles.featureSvg} role="img" />;
+  }
 
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
-        {colorMode === "dark" ? (
-          <SvgDark className={styles.featureSvg} role="img" />
-        ) : (
-          <Svg className={styles.featureSvg} role="img" />
-        )}
-      </div>
+      <div className="text--center">{svgItem}</div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
   );
+
+  // return (
+  //   <div className={clsx("col col--4")}>
+  //     <div className="text--center">
+  //       {colorMode === "dark" ? (
+  //         <SvgDark className={styles.featureSvg} role="img" />
+  //       ) : (
+  //         <Svg className={styles.featureSvg} role="img" />
+  //       )}
+  //     </div>
+  //     <div className="text--center padding-horiz--md">
+  //       <h3>{title}</h3>
+  //       <p>{description}</p>
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default function HomepageFeatures(): JSX.Element {
