@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  SvgLight: React.ComponentType<React.ComponentProps<"svg">>;
   SvgDark: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
@@ -13,30 +13,33 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Versek",
-    Svg: require("@site/static/img/svg/cat.svg").default,
+    SvgLight: require("@site/static/img/svg/cat.svg").default,
     SvgDark: require("@site/static/img/svg/cat-dark.svg").default,
     description: <></>,
   },
   {
     title: "Képek",
-    Svg: require("@site/static/img/svg/moose.svg").default,
+    SvgLight: require("@site/static/img/svg/moose.svg").default,
     SvgDark: require("@site/static/img/svg/moose-dark.svg").default,
     description: <></>,
   },
   {
     title: "Pillanatok",
-    Svg: require("@site/static/img/svg/flying.svg").default,
+    SvgLight: require("@site/static/img/svg/flying.svg").default,
     SvgDark: require("@site/static/img/svg/flying-dark.svg").default,
     description: <></>,
   },
 ];
 
-function Feature({ title, Svg, SvgDark, description, colorMode }) {
+function Feature({ title, SvgLight, SvgDark, description, colorMode }) {
   console.log("colorMode: " + colorMode);
   let svgItem;
   if (colorMode === "light") {
-    svgItem = <Svg className={styles.featureSvg} role="img" />;
-  } else {
+    console.log("l");
+    svgItem = <SvgLight className={styles.featureSvg} role="img" />;
+  }
+  if (colorMode === "dark") {
+    console.log("d");
     svgItem = <SvgDark className={styles.featureSvg} role="img" />;
   }
 
