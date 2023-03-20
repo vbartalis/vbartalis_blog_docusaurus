@@ -33,6 +33,8 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, SvgDark, description }: FeatureItem) {
   const { colorMode } = useColorMode();
+  console.log("colorMode: " + colorMode);
+
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
