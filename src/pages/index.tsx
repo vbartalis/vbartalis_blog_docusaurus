@@ -25,12 +25,14 @@ function HomepageHeader() {
         <ShowSvg {...svg}></ShowSvg>
         <div className={styles.heroTextArea}>
           <p className={styles.heroTitle}>{siteConfig.title}</p>
-          <p className={styles.heroSubitle}>{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          {/* <p className={styles.heroSubitle}>{siteConfig.tagline}</p> */}
+          <p className={styles.heroSubitle}>Üdvözöllek az oldalamon!</p>
+          <p className={styles.heroSubitle}>Welcome to my site!</p>
+          {/* <div className={styles.buttons}>
             <Link className="button button--secondary button--lg" to="/docs/intro">
-              Go to Wiki
+              Ugrás a Blogra
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

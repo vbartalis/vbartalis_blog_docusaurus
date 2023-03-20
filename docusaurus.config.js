@@ -4,13 +4,13 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-const math = require("remark-math");
-const katex = require("rehype-katex");
+// const math = require("remark-math");
+// const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Bartalis Vilmos",
-  tagline: "Welcome to my site! Üdvözöllek az oldalamon!",
+  // tagline: "Welcome to my site! Üdvözöllek az oldalamon!",
   url: "https://vbartalis.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -40,11 +40,11 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
-          remarkPlugins: [math],
-          rehypePlugins: [[katex, { strict: false }]],
+          // remarkPlugins: [math],
+          // rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
@@ -70,17 +70,18 @@ const config = {
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
+          srcDark: "img/logo-dark.svg",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Docs",
-          },
+          // {
+          //   type: "doc",
+          //   docId: "intro",
+          //   position: "left",
+          //   label: "Docs",
+          // },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/vbartalis/vbartalis.github.io",
+            href: "https://github.com/vbartalis/vbartalis",
             label: "GitHub",
             position: "right",
           },
@@ -89,17 +90,22 @@ const config = {
       footer: {
         style: "dark",
         links: [
+          //todo
           {
-            title: "Docs",
+            title: "Blog",
             items: [
               {
-                label: "PTI BSc",
-                to: "/docs/intro",
+                label: "Versek",
+                to: "/blog/tags/vers",
+              },
+              {
+                label: "Címkék",
+                to: "/blog/tags",
               },
             ],
           },
           {
-            title: "Community",
+            title: "Közösség",
             items: [
               {
                 label: "GitHub",
@@ -108,16 +114,16 @@ const config = {
             ],
           },
           {
-            title: "More",
+            title: "Egyéb",
             items: [
               {
                 label: "Blog",
                 to: "/blog",
               },
-              {
-                label: "GitHub",
-                href: "https://github.com/vbartalis/vbartalis.github.io",
-              },
+              // {
+              //   label: "GitHub",
+              //   href: "https://github.com/vbartalis/vbartalis.github.io",
+              // },
             ],
           },
         ],

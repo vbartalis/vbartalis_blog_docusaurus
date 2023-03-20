@@ -50,8 +50,8 @@
 .heroSubitle {
   font-size: 1.2rem;
   color: #fff;
-  /* padding: 0;
-  margin: 0; */
+  padding: 0;
+  margin: 0;
 }
 .featureSvg {
   position: absolute;
