@@ -12,7 +12,7 @@ const config = {
   title: "Bartalis Vilmos",
   // tagline: "Welcome to my site! Üdvözöllek az oldalamon!",
   url: "https://vbartalis.github.io",
-  baseUrl: "/",
+  baseUrl: "/vbartalis",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
