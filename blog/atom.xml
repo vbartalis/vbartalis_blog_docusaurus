@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://vbartalis.github.io/blog</id>
+    <id>https://vbartalis.github.io/vbartalis/blog</id>
     <title>Bartalis Vilmos Blog</title>
     <updated>2023-02-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://vbartalis.github.io/blog"/>
+    <link rel="alternate" href="https://vbartalis.github.io/vbartalis/blog"/>
     <subtitle>Bartalis Vilmos Blog</subtitle>
-    <icon>https://vbartalis.github.io/img/favicon.ico</icon>
+    <icon>https://vbartalis.github.io/vbartalis/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[A szellem szétválasztása]]></title>
         <id>/2023/02/02/a-szellem-szetvallasztasa</id>
-        <link href="https://vbartalis.github.io/blog/2023/02/02/a-szellem-szetvallasztasa"/>
+        <link href="https://vbartalis.github.io/vbartalis/blog/2023/02/02/a-szellem-szetvallasztasa"/>
         <updated>2023-02-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Ki lehet-e vágni]]></summary>
         <content type="html"><![CDATA[<p>Ki lehet-e vágni<br>
@@ -25,7 +25,7 @@
     <entry>
         <title type="html"><![CDATA[Egy pillantás]]></title>
         <id>/2023/02/02/egy-pillanat</id>
-        <link href="https://vbartalis.github.io/blog/2023/02/02/egy-pillanat"/>
+        <link href="https://vbartalis.github.io/vbartalis/blog/2023/02/02/egy-pillanat"/>
         <updated>2023-02-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Egy perc sem volt talán]]></summary>
         <content type="html"><![CDATA[<p>Egy perc sem volt talán<br>
@@ -45,7 +45,7 @@
     <entry>
         <title type="html"><![CDATA[Nem rímel]]></title>
         <id>/2023/02/02/nem-rimel</id>
-        <link href="https://vbartalis.github.io/blog/2023/02/02/nem-rimel"/>
+        <link href="https://vbartalis.github.io/vbartalis/blog/2023/02/02/nem-rimel"/>
         <updated>2023-02-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Vajon vers e az ami nem rímel?]]></summary>
         <content type="html"><![CDATA[<p>Vajon vers e az ami nem rímel?<br>
@@ -55,7 +55,7 @@
     <entry>
         <title type="html"><![CDATA[Máskor, máshol, mással talán]]></title>
         <id>/2022/12/17/maskor-mashol-massal</id>
-        <link href="https://vbartalis.github.io/blog/2022/12/17/maskor-mashol-massal"/>
+        <link href="https://vbartalis.github.io/vbartalis/blog/2022/12/17/maskor-mashol-massal"/>
         <updated>2022-12-17T00:51:00.000Z</updated>
         <summary type="html"><![CDATA[Máskor, máshol, mással talán. Addig is maradjon nekem a zsibbasztó magány.]]></summary>
         <content type="html"><![CDATA[<p>Máskor, máshol, mással talán. Addig is maradjon nekem a zsibbasztó magány.<br>

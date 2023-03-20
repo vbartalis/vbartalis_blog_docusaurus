@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Bartalis Vilmos Blog</title>
-        <link>https://vbartalis.github.io/blog</link>
+        <link>https://vbartalis.github.io/vbartalis/blog</link>
         <description>Bartalis Vilmos Blog</description>
         <lastBuildDate>Thu, 02 Feb 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>hu</language>
         <item>
             <title><![CDATA[A szellem szétválasztása]]></title>
-            <link>https://vbartalis.github.io/blog/2023/02/02/a-szellem-szetvallasztasa</link>
+            <link>https://vbartalis.github.io/vbartalis/blog/2023/02/02/a-szellem-szetvallasztasa</link>
             <guid>/2023/02/02/a-szellem-szetvallasztasa</guid>
             <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Ki lehet-e vágni]]></description>
@@ -25,7 +25,7 @@
         </item>
         <item>
             <title><![CDATA[Egy pillantás]]></title>
-            <link>https://vbartalis.github.io/blog/2023/02/02/egy-pillanat</link>
+            <link>https://vbartalis.github.io/vbartalis/blog/2023/02/02/egy-pillanat</link>
             <guid>/2023/02/02/egy-pillanat</guid>
             <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Egy perc sem volt talán]]></description>
@@ -45,7 +45,7 @@
         </item>
         <item>
             <title><![CDATA[Nem rímel]]></title>
-            <link>https://vbartalis.github.io/blog/2023/02/02/nem-rimel</link>
+            <link>https://vbartalis.github.io/vbartalis/blog/2023/02/02/nem-rimel</link>
             <guid>/2023/02/02/nem-rimel</guid>
             <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Vajon vers e az ami nem rímel?]]></description>
@@ -55,7 +55,7 @@
         </item>
         <item>
             <title><![CDATA[Máskor, máshol, mással talán]]></title>
-            <link>https://vbartalis.github.io/blog/2022/12/17/maskor-mashol-massal</link>
+            <link>https://vbartalis.github.io/vbartalis/blog/2022/12/17/maskor-mashol-massal</link>
             <guid>/2022/12/17/maskor-mashol-massal</guid>
             <pubDate>Sat, 17 Dec 2022 00:51:00 GMT</pubDate>
             <description><![CDATA[Máskor, máshol, mással talán. Addig is maradjon nekem a zsibbasztó magány.]]></description>
