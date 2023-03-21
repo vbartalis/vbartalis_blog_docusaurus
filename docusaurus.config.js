@@ -4,9 +4,6 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-// const math = require("remark-math");
-// const katex = require("rehype-katex");
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Bartalis Vilmos",
@@ -98,10 +95,6 @@ const config = {
                 label: "Versek",
                 to: "/blog/tags/vers",
               },
-              {
-                label: "Címkék",
-                to: "/blog/tags",
-              },
             ],
           },
           {
@@ -120,10 +113,10 @@ const config = {
                 label: "Blog",
                 to: "/blog",
               },
-              // {
-              //   label: "GitHub",
-              //   href: "https://github.com/vbartalis/vbartalis.github.io",
-              // },
+              {
+                label: "Címkék",
+                to: "/blog/tags",
+              },
             ],
           },
         ],

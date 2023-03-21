@@ -5,47 +5,36 @@ import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  SvgLight: React.ComponentType<React.ComponentProps<"svg">>;
-  SvgDark: React.ComponentType<React.ComponentProps<"svg">>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: "Versek",
-    SvgLight: require("@site/static/img/svg/cat.svg").default,
-    SvgDark: require("@site/static/img/svg/cat-dark.svg").default,
+    Svg: require("@site/static/img/svg/cat.svg").default,
     description: <></>,
   },
   {
     title: "Képek",
-    SvgLight: require("@site/static/img/svg/moose.svg").default,
-    SvgDark: require("@site/static/img/svg/moose-dark.svg").default,
+    Svg: require("@site/static/img/svg/moose.svg").default,
     description: <></>,
   },
   {
     title: "Pillanatok",
-    SvgLight: require("@site/static/img/svg/flying.svg").default,
-    SvgDark: require("@site/static/img/svg/flying-dark.svg").default,
+    Svg: require("@site/static/img/svg/flying.svg").default,
     description: <></>,
   },
 ];
 
-function Feature({ title, SvgLight, SvgDark, description }: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   // console.log("colorMode: " + colorMode);
   const { colorMode } = useColorMode();
 
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        <SvgDark className={styles.featureSvg} role="img" />
-        {/* {colorMode === "dark" ? (
-          <SvgDark className={styles.featureSvg} role="img" />
-        ) : colorMode === "light" ? (
-          <SvgLight className={styles.featureSvg} role="img" />
-        ) : (
-          <div></div>
-        )} */}
+        <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

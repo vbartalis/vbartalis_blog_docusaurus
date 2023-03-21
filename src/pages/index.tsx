@@ -1,9 +1,8 @@
-import React from "react";
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import Layout from "@theme/Layout";
+import clsx from "clsx";
+import React from "react";
 
 import styles from "./index.module.css";
 
@@ -25,14 +24,7 @@ function HomepageHeader() {
         <ShowSvg {...svg}></ShowSvg>
         <div className={styles.heroTextArea}>
           <p className={styles.heroTitle}>{siteConfig.title}</p>
-          {/* <p className={styles.heroSubitle}>{siteConfig.tagline}</p> */}
           <p className={styles.heroSubitle}>Üdvözöllek az oldalamon!</p>
-          <p className={styles.heroSubitle}>Welcome to my site!</p>
-          {/* <div className={styles.buttons}>
-            <Link className="button button--secondary button--lg" to="/docs/intro">
-              Ugrás a Blogra
-            </Link>
-          </div> */}
         </div>
       </div>
     </header>
