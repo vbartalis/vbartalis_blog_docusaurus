@@ -42,6 +42,8 @@ const config = {
         },
         blog: {
           showReadingTime: false,
+          blogSidebarTitle: "Minden Post",
+          blogSidebarCount: "ALL",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
