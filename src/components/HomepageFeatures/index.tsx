@@ -38,13 +38,14 @@ function Feature({ title, SvgLight, SvgDark, description }: FeatureItem) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        {colorMode === "dark" ? (
+        <SvgDark className={styles.featureSvg} role="img" />
+        {/* {colorMode === "dark" ? (
           <SvgDark className={styles.featureSvg} role="img" />
         ) : colorMode === "light" ? (
           <SvgLight className={styles.featureSvg} role="img" />
         ) : (
           <div></div>
-        )}
+        )} */}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

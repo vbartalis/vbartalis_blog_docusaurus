@@ -9,3 +9,10 @@
   height: 200px;
   width: 200px;
 }
+
+[data-theme="light"] .featureSvg [style*="fill: rgb(0, 0, 0);"] {
+  fill: rgb(0, 0, 0) !important;
+}
+[data-theme="dark"] .featureSvg [style*="fill: rgb(0, 0, 0);"] {
+  fill: var(--ifm-navbar-link-color, rgb(241, 241, 241)) !important;
+}
