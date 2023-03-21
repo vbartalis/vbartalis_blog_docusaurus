@@ -10,9 +10,13 @@
   width: 200px;
 }
 
-[data-theme="light"] .featureSvg [style*="fill: rgb(0, 0, 0);"] {
+[data-theme="light"] .featureSvg [style*="fill: rgb(0, 0, 0);"],
+[style*="fill: #000;"],
+[style*="fill: #000000;"] {
   fill: rgb(0, 0, 0) !important;
 }
-[data-theme="dark"] .featureSvg [style*="fill: rgb(0, 0, 0);"] {
+[data-theme="dark"] .featureSvg [style*="fill: rgb(0, 0, 0);"],
+[style*="fill: #000;"],
+[style*="fill: #000000;"] {
   fill: var(--ifm-navbar-link-color, rgb(241, 241, 241)) !important;
 }
