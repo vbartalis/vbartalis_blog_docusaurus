@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1067],{1181:e=>{e.exports=JSON.parse('{"permalink":"/vbartalis/blog/tags/vers","page":1,"postsPerPage":10,"totalPages":2,"totalCount":19,"nextPage":"/vbartalis/blog/tags/vers/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
