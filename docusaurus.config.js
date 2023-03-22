@@ -34,19 +34,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
-          // remarkPlugins: [math],
-          // rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
           showReadingTime: false,
           blogSidebarTitle: "Minden Post",
           blogSidebarCount: "ALL",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: "https://github.com/vbartalis/vbartalis.github.io/tree/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -79,6 +71,7 @@ const config = {
           //   label: "Docs",
           // },
           { to: "/blog", label: "Blog", position: "left" },
+          { to: "/vers", label: "Versek", position: "left" },
           {
             href: "https://github.com/vbartalis/vbartalis",
             label: "GitHub",
@@ -95,7 +88,11 @@ const config = {
             items: [
               {
                 label: "Versek",
-                to: "/blog/tags/vers",
+                to: "/vers",
+              },
+              {
+                label: "Blog",
+                to: "/blog",
               },
             ],
           },
@@ -112,11 +109,7 @@ const config = {
             title: "Egyéb",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "Címkék",
+                label: "Blog Címkék",
                 to: "/blog/tags",
               },
             ],
@@ -145,6 +138,20 @@ const config = {
         },
       ],
     }),
+
+  plugins: [
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        id: "vers",
+        path: "./vers",
+        routeBasePath: "vers",
+        showReadingTime: false,
+        blogSidebarTitle: "Minden Post",
+        blogSidebarCount: "ALL",
+      },
+    ],
+  ],
 };
 
 module.exports = config;
