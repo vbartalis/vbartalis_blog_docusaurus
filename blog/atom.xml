@@ -8,12 +8,12 @@
     <subtitle>Bartalis Vilmos Blog</subtitle>
     <icon>https://vbartalis.github.io/vbartalis/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Intro]]></title>
+        <title type="html"><![CDATA[intro]]></title>
         <id>/2023/03/22/intro</id>
         <link href="https://vbartalis.github.io/vbartalis/blog/2023/03/22/intro"/>
         <updated>2023-03-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Még nincsenek Posztok.]]></summary>
-        <content type="html"><![CDATA[<p>Még nincsenek Posztok.</p>]]></content>
+        <content type="html"><![CDATA[<h1>Intro</h1><p>Még nincsenek Posztok.</p>]]></content>
         <category label="intro" term="intro"/>
     </entry>
 </feed>
