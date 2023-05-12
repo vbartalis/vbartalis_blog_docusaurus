@@ -23,7 +23,7 @@ function HomepageHeader() {
       <div className={styles.heroTextContainer}>
         <ShowSvg {...svg}></ShowSvg>
         <div className={styles.heroTextArea}>
-          <p className={styles.heroTitle}>{siteConfig.title}</p>
+          <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
           <p className={styles.heroSubitle}>Üdvözöllek az oldalamon!</p>
         </div>
       </div>
@@ -34,7 +34,10 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Home`} description="Description will go into a meta tag in <head />">
+    <Layout
+      title={`Home`}
+      description="Üdvözöllek a honlapomon. Itt belepillanthatsz néhány gondolatfoszlányomba."
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
