@@ -4,10 +4,79 @@
         <title>Bartalis Vilmos Blog</title>
         <link>https://vbartalis.github.io/vbartalis/vers</link>
         <description>Bartalis Vilmos Blog</description>
-        <lastBuildDate>Tue, 21 Mar 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 May 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>hu</language>
+        <item>
+            <title><![CDATA[Epiphany]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/05/11/epiphany</link>
+            <guid>/2023/05/11/epiphany</guid>
+            <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Egy idolt láttam,]]></description>
+            <content:encoded><![CDATA[<p>Egy idolt láttam,
+Egy ideál után vágytam.
+Egy érzés után nyújtóztam, görnyedve.</p><p>Egy bálványt imádtam,
+S térdeimen jártam.
+Végig csak egy szebb ön-kép után vágytam.</p><hr><p>Egy ideált kergettem,
+S egy bálványt imádtam.
+Pedig véges végig,
+Csak egy <strong><em>érzés</em></strong> után vágytam.</p><p>Valójában nem akarok semmi mást,
+Csak egy <strong><em>szebb ön-képet,</em></strong>
+Szebbet mint amit megélek.</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Gondolok vagy érzek]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/05/11/gondolok-vagy-erzek</link>
+            <guid>/2023/05/11/gondolok-vagy-erzek</guid>
+            <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Vagy gondolok]]></description>
+            <content:encoded><![CDATA[<p>Vagy gondolok
+Vagy érzek
+De egyszerre mindkettőt nem tudom teljességben</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Egy újabb nap eltelt]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/05/04/egy-ujabb-nap-eltelt</link>
+            <guid>/2023/05/04/egy-ujabb-nap-eltelt</guid>
+            <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Démonok kúsznak talpaim alatt.]]></description>
+            <content:encoded><![CDATA[<p>Démonok kúsznak talpaim alatt.
+Tükörben legnagyobb félelmeim.
+Ma sem dőlt el a viadal.
+Vajon meddig tart még ez így?</p><p>Törhet a csont. Folyhat a vér.
+Változni nem fog, nincs miért.
+Az csak természetes, ha a tükörkép vissza néz.
+Akkor mégis miért borzaszt el így?</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Hol van?]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/05/04/hol-van</link>
+            <guid>/2023/05/04/hol-van</guid>
+            <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Egy Istenhez beszélek akiben nem hiszek.]]></description>
+            <content:encoded><![CDATA[<p>Egy Istenhez beszélek akiben nem hiszek.
+Egy álmot kergetek és démonok engem.
+Látom a túlpartot, de a révészt nem.
+Hol van az én szerelmem?</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Lehullott egy újabb csillag]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/04/30/lehullott-egy-ujabb-csillag</link>
+            <guid>/2023/04/30/lehullott-egy-ujabb-csillag</guid>
+            <pubDate>Sun, 30 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Lehullott egy újabb csillag]]></description>
+            <content:encoded><![CDATA[<p>Lehullott egy újabb csillag
+Fénye már enyésző
+Vajon mely irányból jött…?
+Már nem számot tevő.</p><p>Minden éjjel gyötör, hogy minden mulandó.
+Mintha csak ez nem változna, át egy ember öltőn.</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
         <item>
             <title><![CDATA[Időtlen]]></title>
             <link>https://vbartalis.github.io/vbartalis/vers/2023/03/21/idotlen</link>
@@ -40,6 +109,16 @@
 <!-- -->Ahogy az időmet számlálom.<br>
 <!-- -->Nem tudom, hogy mégis mire várok.<br>
 <!-- -->Nem tudom, hogy mégis mit akarok.</p>]]></content:encoded>
+            <category>vers</category>
+        </item>
+        <item>
+            <title><![CDATA[Halandó]]></title>
+            <link>https://vbartalis.github.io/vbartalis/vers/2023/02/05/halando</link>
+            <guid>/2023/02/05/halando</guid>
+            <pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Miért van ezer és egy célom?]]></description>
+            <content:encoded><![CDATA[<p>Miért van ezer és egy célom?
+Miért akarom a világon hagyni a nyomom?</p>]]></content:encoded>
             <category>vers</category>
         </item>
         <item>

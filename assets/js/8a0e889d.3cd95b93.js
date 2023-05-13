@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5308],{1890:e=>{e.exports=JSON.parse('{"permalink":"/vbartalis/vers/tags/vers/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":19,"previousPage":"/vbartalis/vers/tags/vers","blogDescription":"Az \xf6sszes versem egy helyen \xf6sszegy\xfcjtve.","blogTitle":"Versek"}')}}]);
