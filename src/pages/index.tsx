@@ -22,10 +22,8 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className={styles.heroTextContainer}>
         <ShowSvg {...svg}></ShowSvg>
-        <div className={styles.heroTextArea}>
-          <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
-          <p className={styles.heroSubitle}>Üdvözöllek az oldalamon!</p>
-        </div>
+        <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+        <h2 className={styles.heroSubitle}>Üdvözöllek az oldalamon!</h2>
       </div>
     </header>
   );
