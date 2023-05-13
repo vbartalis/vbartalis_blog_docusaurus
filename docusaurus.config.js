@@ -77,11 +77,11 @@ const config = {
           // },
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/vers", label: "Versek", position: "left" },
-          {
-            href: "https://github.com/vbartalis/vbartalis",
-            label: "GitHub",
-            position: "right",
-          },
+          // {
+          //   href: "https://github.com/vbartalis/vbartalis",
+          //   label: "GitHub",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
@@ -107,6 +107,10 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/vbartalis",
+              },
+              {
+                label: "Instagram",
+                href: "https://www.instagram.com/bartalis_vilmos/",
               },
             ],
           },
