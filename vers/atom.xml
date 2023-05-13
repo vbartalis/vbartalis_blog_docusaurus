@@ -13,16 +13,16 @@
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/05/11/epiphany"/>
         <updated>2023-05-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Egy idolt láttam,]]></summary>
-        <content type="html"><![CDATA[<p>Egy idolt láttam,
-Egy ideál után vágytam.
-Egy érzés után nyújtóztam, görnyedve.</p><p>Egy bálványt imádtam,
-S térdeimen jártam.
-Végig csak egy szebb ön-kép után vágytam.</p><hr><p>Egy ideált kergettem,
-S egy bálványt imádtam.
-Pedig véges végig,
-Csak egy <strong><em>érzés</em></strong> után vágytam.</p><p>Valójában nem akarok semmi mást,
-Csak egy <strong><em>szebb ön-képet,</em></strong>
-Szebbet mint amit megélek.</p>]]></content>
+        <content type="html"><![CDATA[<p>Egy idolt láttam,<br>
+<!-- -->Egy ideál után vágytam.<br>
+<!-- -->Egy érzés után nyújtóztam, görnyedve.</p><p>Egy bálványt imádtam,<br>
+<!-- -->S térdeimen jártam.<br>
+<!-- -->Végig csak egy szebb ön-kép után vágytam.</p><hr><p>Egy ideált kergettem,<br>
+<!-- -->S egy bálványt imádtam.<br>
+<!-- -->Pedig véges végig,<br>
+<!-- -->Csak egy <strong><em>érzés</em></strong> után vágytam.</p><p>Valójában nem akarok semmi mást,<br>
+<!-- -->Csak egy <strong><em>szebb ön-képet,</em></strong><br>
+<!-- -->Szebbet mint amit megélek.</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -31,9 +31,9 @@ Szebbet mint amit megélek.</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/05/11/gondolok-vagy-erzek"/>
         <updated>2023-05-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Vagy gondolok]]></summary>
-        <content type="html"><![CDATA[<p>Vagy gondolok
-Vagy érzek
-De egyszerre mindkettőt nem tudom teljességben</p>]]></content>
+        <content type="html"><![CDATA[<p>Vagy gondolok<br>
+<!-- -->Vagy érzek<br>
+<!-- -->De egyszerre mindkettőt nem tudom teljességben</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -42,13 +42,13 @@ De egyszerre mindkettőt nem tudom teljességben</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/05/04/egy-ujabb-nap-eltelt"/>
         <updated>2023-05-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Démonok kúsznak talpaim alatt.]]></summary>
-        <content type="html"><![CDATA[<p>Démonok kúsznak talpaim alatt.
-Tükörben legnagyobb félelmeim.
-Ma sem dőlt el a viadal.
-Vajon meddig tart még ez így?</p><p>Törhet a csont. Folyhat a vér.
-Változni nem fog, nincs miért.
-Az csak természetes, ha a tükörkép vissza néz.
-Akkor mégis miért borzaszt el így?</p>]]></content>
+        <content type="html"><![CDATA[<p>Démonok kúsznak talpaim alatt.<br>
+<!-- -->Tükörben legnagyobb félelmeim.<br>
+<!-- -->Ma sem dőlt el a viadal.<br>
+<!-- -->Vajon meddig tart még ez így?</p><p>Törhet a csont. Folyhat a vér.<br>
+<!-- -->Változni nem fog, nincs miért.<br>
+<!-- -->Az csak természetes, ha a tükörkép vissza néz.<br>
+<!-- -->Akkor mégis miért borzaszt el így?</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -57,10 +57,10 @@ Akkor mégis miért borzaszt el így?</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/05/04/hol-van"/>
         <updated>2023-05-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Egy Istenhez beszélek akiben nem hiszek.]]></summary>
-        <content type="html"><![CDATA[<p>Egy Istenhez beszélek akiben nem hiszek.
-Egy álmot kergetek és démonok engem.
-Látom a túlpartot, de a révészt nem.
-Hol van az én szerelmem?</p>]]></content>
+        <content type="html"><![CDATA[<p>Egy Istenhez beszélek akiben nem hiszek.<br>
+<!-- -->Egy álmot kergetek és démonok engem.<br>
+<!-- -->Látom a túlpartot, de a révészt nem.<br>
+<!-- -->Hol van az én szerelmem?</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -69,11 +69,11 @@ Hol van az én szerelmem?</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/04/30/lehullott-egy-ujabb-csillag"/>
         <updated>2023-04-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Lehullott egy újabb csillag]]></summary>
-        <content type="html"><![CDATA[<p>Lehullott egy újabb csillag
-Fénye már enyésző
-Vajon mely irányból jött…?
-Már nem számot tevő.</p><p>Minden éjjel gyötör, hogy minden mulandó.
-Mintha csak ez nem változna, át egy ember öltőn.</p>]]></content>
+        <content type="html"><![CDATA[<p>Lehullott egy újabb csillag<br>
+<!-- -->Fénye már enyésző<br>
+<!-- -->Vajon mely irányból jött…?<br>
+<!-- -->Már nem számot tevő.</p><p>Minden éjjel gyötör, hogy minden mulandó.<br>
+<!-- -->Mintha csak ez nem változna, át egy ember öltőn.</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -116,8 +116,8 @@ Mintha csak ez nem változna, át egy ember öltőn.</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2023/02/05/halando"/>
         <updated>2023-02-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Miért van ezer és egy célom?]]></summary>
-        <content type="html"><![CDATA[<p>Miért van ezer és egy célom?
-Miért akarom a világon hagyni a nyomom?</p>]]></content>
+        <content type="html"><![CDATA[<p>Miért van ezer és egy célom?<br>
+<!-- -->Miért akarom a világon hagyni a nyomom?</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
@@ -148,19 +148,19 @@ Miért akarom a világon hagyni a nyomom?</p>]]></content>
         <link href="https://vbartalis.github.io/vbartalis/vers/2022/11/27/ossze-vagyok-torve"/>
         <updated>2022-11-27T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Össze vagyok törve,]]></summary>
-        <content type="html"><![CDATA[<p>Össze vagyok törve,
-Már alig lélegzem.
-És még mindig egy árny van a szívemben. Egy alak akit soha nem eresztek.</p><p>Az időm lejár,
-Mégis várom az órát,
-Amikor találkozunk, s végre láthatom az arcát.</p><p>A kínokat, a vágyakat,
-Nélküle átélni vajon szabad?
-Mégis mit tegyek ha felkel majd a nap?</p><p>A felhőkben, a plafonon,
-Még a csillagokra nézve is őt látom,
-De akkor az utcán vele miért nem találkozom?</p><p>Vajon gyenge vagyok?
-Vajon túl sokat akarok?
-Vajon mindenki más szerencsés? Vagy lehet tényleg velem van a gond?</p><p>Jobb lenne nem is belegondolni,
-Jobb lenne csak úgy elfelejteni
-Az összes gondot.</p>]]></content>
+        <content type="html"><![CDATA[<p>Össze vagyok törve,<br>
+<!-- -->Már alig lélegzem.<br>
+<!-- -->És még mindig egy árny van a szívemben. Egy alak akit soha nem eresztek.</p><p>Az időm lejár,<br>
+<!-- -->Mégis várom az órát,<br>
+<!-- -->Amikor találkozunk, s végre láthatom az arcát.</p><p>A kínokat, a vágyakat,<br>
+<!-- -->Nélküle átélni vajon szabad?<br>
+<!-- -->Mégis mit tegyek ha felkel majd a nap?</p><p>A felhőkben, a plafonon,<br>
+<!-- -->Még a csillagokra nézve is őt látom,<br>
+<!-- -->De akkor az utcán vele miért nem találkozom?</p><p>Vajon gyenge vagyok?<br>
+<!-- -->Vajon túl sokat akarok?<br>
+<!-- -->Vajon mindenki más szerencsés? Vagy lehet tényleg velem van a gond?</p><p>Jobb lenne nem is belegondolni,<br>
+<!-- -->Jobb lenne csak úgy elfelejteni<br>
+<!-- -->Az összes gondot.</p>]]></content>
         <category label="vers" term="vers"/>
     </entry>
     <entry>
