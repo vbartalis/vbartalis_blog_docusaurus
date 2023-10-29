@@ -2,11 +2,72 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vbartalis.github.io/vbartalis/vers</id>
     <title>Bartalis Vilmos Blog</title>
-    <updated>2023-05-11T00:00:00.000Z</updated>
+    <updated>2023-09-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vbartalis.github.io/vbartalis/vers"/>
     <subtitle>Bartalis Vilmos Blog</subtitle>
     <icon>https://vbartalis.github.io/vbartalis/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Én megyek]]></title>
+        <id>/2023/09/03/en-megyek</id>
+        <link href="https://vbartalis.github.io/vbartalis/vers/2023/09/03/en-megyek"/>
+        <updated>2023-09-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Növök s fogyok.]]></summary>
+        <content type="html"><![CDATA[<p>Növök s fogyok.<br>
+<!-- -->Közeledek s távolodok.<br>
+<!-- -->Nem jobb vagy rosszabb irányba.<br>
+<!-- -->Egyszerűen csak haladok.</p><p>Talán minden egyes lépés kicsikét elszakít tőled.<br>
+<!-- -->Talán minden egyes lépés valaki más irányába visz.<br>
+<!-- -->Azt sem tudom lassan, hogy vajon te más irányába mész vagy csak egyhelyben állsz.<br>
+<!-- -->Csak azt tudom, hogy én megyek.</p>]]></content>
+        <category label="vers" term="vers"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Imbolygok]]></title>
+        <id>/2023/09/03/imbolygok</id>
+        <link href="https://vbartalis.github.io/vbartalis/vers/2023/09/03/imbolygok"/>
+        <updated>2023-09-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Az ég felettem sötétlik]]></summary>
+        <content type="html"><![CDATA[<p>Az ég felettem sötétlik<br>
+<!-- -->A föld alattam hullámzik<br>
+<!-- -->Egy lyuk tátong a lényemben<br>
+<!-- -->Valahogy el imbolygok az életben</p>]]></content>
+        <category label="vers" term="vers"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Remény]]></title>
+        <id>/2023/07/25/remeny</id>
+        <link href="https://vbartalis.github.io/vbartalis/vers/2023/07/25/remeny"/>
+        <updated>2023-07-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nincs jobb annál e földön]]></summary>
+        <content type="html"><![CDATA[<p>Nincs jobb annál e földön
+Mint mikor van ki átölelne.
+Hallod hangját a szélben,
+Látod vonalait az égen.
+Kezét mégsem foghatod soha
+S nem tudod hogyan néz ki arca.
+De ha egyszer mégis hozzád bújna
+Tudod, hogy nem eresztenéd soha.</p>]]></content>
+        <category label="vers" term="vers"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Többet én már nem várok]]></title>
+        <id>/2023/06/04/tobbe-en-mar-nem-varok</id>
+        <link href="https://vbartalis.github.io/vbartalis/vers/2023/06/04/tobbe-en-mar-nem-varok"/>
+        <updated>2023-06-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Többet én már nem várok]]></summary>
+        <content type="html"><![CDATA[<p>Többet én már nem várok<br>
+<!-- -->Jobb ha új utakon járok.<br>
+<!-- -->Felejtem az ábrándot<br>
+<!-- -->Új tájak felé vágyok.</p><p>Többet én már nem várok<br>
+<!-- -->Jobb ha új utakon járok.<br>
+<!-- -->Ne kísértsen mint átok<br>
+<!-- -->Foszoljanak az árnyak.</p><p>Többet én már nem várok<br>
+<!-- -->Jobb ha új utakon járok.<br>
+<!-- -->Könnyű felejteni arcot, hangot<br>
+<!-- -->Ha többé nem látom, hallom.</p><p>Majd csak lesz más ki hozzám szól.</p>]]></content>
+        <category label="vers" term="vers"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Epiphany]]></title>
         <id>/2023/05/11/epiphany</id>
