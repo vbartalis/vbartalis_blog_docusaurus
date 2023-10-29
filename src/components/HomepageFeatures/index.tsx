@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     description: <></>,
   },
   {
-    title: "Képek",
+    title: "Gondolatok",
     Svg: require("@site/static/img/svg/moose.svg").default,
     description: <></>,
   },

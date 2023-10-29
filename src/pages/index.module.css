@@ -8,11 +8,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* height: 100vh; */
-  /* height: 30vh; */
-  height: 40vh;
+  /* height: 40vh; */
+  /* 16:9 aspect ratio*/
+  /* padding-top: 56.25%;  */
+  padding-top: 35% !important;
   background-image: url(/static/img/RiverValleysAndACrow.webp);
-  background-position: 50%;
+  background-position: bottom;
   background-size: cover;
   background-color: #91a028;
 }

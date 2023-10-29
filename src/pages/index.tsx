@@ -13,7 +13,9 @@ type HeroImg = {
 const svg: HeroImg = { Svg: require("@site/static/img/birds-2.svg").default };
 
 function ShowSvg({ Svg }) {
-  return <Svg className={styles.featureSvg} role="img" />;
+  return (
+    <Svg className={styles.featureSvg} role="img" transform="scale(-1, 1)" />
+  );
 }
 
 function HomepageHeader() {
@@ -23,7 +25,7 @@ function HomepageHeader() {
       <div className={styles.heroTextContainer}>
         <ShowSvg {...svg}></ShowSvg>
         <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
-        <h2 className={styles.heroSubitle}>Üdvözöllek az oldalamon!</h2>
+        {/* <h2 className={styles.heroSubitle}>Üdvözöllek az oldalamon!</h2> */}
       </div>
     </header>
   );
