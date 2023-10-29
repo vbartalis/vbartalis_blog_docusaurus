@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Bartalis Vilmos Blog</title>
-        <link>https://vbartalis.github.io/vbartalis/blog</link>
+        <link>https://vbartalis.xyz/vbartalis/blog</link>
         <description>Bartalis Vilmos Blog</description>
         <lastBuildDate>Wed, 22 Mar 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>hu</language>
         <item>
             <title><![CDATA[intro]]></title>
-            <link>https://vbartalis.github.io/vbartalis/blog/2023/03/22/intro</link>
+            <link>https://vbartalis.xyz/vbartalis/blog/2023/03/22/intro</link>
             <guid>/2023/03/22/intro</guid>
             <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Még nincsenek Posztok.]]></description>
