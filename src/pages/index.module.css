@@ -11,7 +11,8 @@
   /* height: 40vh; */
   /* 16:9 aspect ratio*/
   /* padding-top: 56.25%;  */
-  padding-top: 35% !important;
+  padding-top: 41% !important;
+  /* padding-top: 35% !important; */
   background-image: url(/static/img/RiverValleysAndACrow.webp);
   background-position: bottom;
   background-size: cover;
