@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Bartalis Vilmos",
   // tagline: "Welcome to my site! Üdvözöllek az oldalamon!",
-  url: "https://vbartalis.github.io",
+  url: "https://vbartalis.xyz",
   baseUrl: "/vbartalis",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
