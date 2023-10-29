@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /img/
+Disallow: /blog/
+Disallow: /vers/page/
+Disallow: /vers/tags/
+
+Sitemap: https://vbartalis.github.io/vbartalis/sitemap.xml
