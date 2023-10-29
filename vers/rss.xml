@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Bartalis Vilmos Blog</title>
-        <link>https://vbartalis.xyz/vbartalis/vers</link>
+        <link>https://vbartalis.xyz/vers</link>
         <description>Bartalis Vilmos Blog</description>
         <lastBuildDate>Sun, 03 Sep 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>hu</language>
         <item>
             <title><![CDATA[Én megyek]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/09/03/en-megyek</link>
+            <link>https://vbartalis.xyz/vers/2023/09/03/en-megyek</link>
             <guid>/2023/09/03/en-megyek</guid>
             <pubDate>Sun, 03 Sep 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Növök s fogyok.]]></description>
@@ -25,7 +25,7 @@
         </item>
         <item>
             <title><![CDATA[Imbolygok]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/09/03/imbolygok</link>
+            <link>https://vbartalis.xyz/vers/2023/09/03/imbolygok</link>
             <guid>/2023/09/03/imbolygok</guid>
             <pubDate>Sun, 03 Sep 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Az ég felettem sötétlik]]></description>
@@ -37,7 +37,7 @@
         </item>
         <item>
             <title><![CDATA[Remény]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/07/25/remeny</link>
+            <link>https://vbartalis.xyz/vers/2023/07/25/remeny</link>
             <guid>/2023/07/25/remeny</guid>
             <pubDate>Tue, 25 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Nincs jobb annál e földön]]></description>
@@ -53,7 +53,7 @@
         </item>
         <item>
             <title><![CDATA[Többet én már nem várok]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/06/04/tobbe-en-mar-nem-varok</link>
+            <link>https://vbartalis.xyz/vers/2023/06/04/tobbe-en-mar-nem-varok</link>
             <guid>/2023/06/04/tobbe-en-mar-nem-varok</guid>
             <pubDate>Sun, 04 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Többet én már nem várok]]></description>
@@ -71,7 +71,7 @@
         </item>
         <item>
             <title><![CDATA[Epiphany]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/05/11/epiphany</link>
+            <link>https://vbartalis.xyz/vers/2023/05/11/epiphany</link>
             <guid>/2023/05/11/epiphany</guid>
             <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Egy idolt láttam,]]></description>
@@ -89,7 +89,7 @@
         </item>
         <item>
             <title><![CDATA[Gondolok vagy érzek]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/05/11/gondolok-vagy-erzek</link>
+            <link>https://vbartalis.xyz/vers/2023/05/11/gondolok-vagy-erzek</link>
             <guid>/2023/05/11/gondolok-vagy-erzek</guid>
             <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Vagy gondolok]]></description>
@@ -100,7 +100,7 @@
         </item>
         <item>
             <title><![CDATA[Egy újabb nap eltelt]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/05/04/egy-ujabb-nap-eltelt</link>
+            <link>https://vbartalis.xyz/vers/2023/05/04/egy-ujabb-nap-eltelt</link>
             <guid>/2023/05/04/egy-ujabb-nap-eltelt</guid>
             <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Démonok kúsznak talpaim alatt.]]></description>
@@ -115,7 +115,7 @@
         </item>
         <item>
             <title><![CDATA[Hol van?]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/05/04/hol-van</link>
+            <link>https://vbartalis.xyz/vers/2023/05/04/hol-van</link>
             <guid>/2023/05/04/hol-van</guid>
             <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Egy Istenhez beszélek akiben nem hiszek.]]></description>
@@ -127,7 +127,7 @@
         </item>
         <item>
             <title><![CDATA[Lehullott egy újabb csillag]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/04/30/lehullott-egy-ujabb-csillag</link>
+            <link>https://vbartalis.xyz/vers/2023/04/30/lehullott-egy-ujabb-csillag</link>
             <guid>/2023/04/30/lehullott-egy-ujabb-csillag</guid>
             <pubDate>Sun, 30 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Lehullott egy újabb csillag]]></description>
@@ -140,7 +140,7 @@
         </item>
         <item>
             <title><![CDATA[Időtlen]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/03/21/idotlen</link>
+            <link>https://vbartalis.xyz/vers/2023/03/21/idotlen</link>
             <guid>/2023/03/21/idotlen</guid>
             <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Még gyötör, de annyira már nem fáj mint régen.]]></description>
@@ -152,7 +152,7 @@
         </item>
         <item>
             <title><![CDATA[Maradnék, de nem lehet]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/03/21/maradnek-de-nem-lehet</link>
+            <link>https://vbartalis.xyz/vers/2023/03/21/maradnek-de-nem-lehet</link>
             <guid>/2023/03/21/maradnek-de-nem-lehet</guid>
             <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Maradnék, de nem lehet]]></description>
@@ -162,7 +162,7 @@
         </item>
         <item>
             <title><![CDATA[Mégis mit akarok]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/03/21/megis-mit-akarok</link>
+            <link>https://vbartalis.xyz/vers/2023/03/21/megis-mit-akarok</link>
             <guid>/2023/03/21/megis-mit-akarok</guid>
             <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Ahogy a lélegzetem visszatartom,]]></description>
@@ -174,7 +174,7 @@
         </item>
         <item>
             <title><![CDATA[Halandó]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/02/05/halando</link>
+            <link>https://vbartalis.xyz/vers/2023/02/05/halando</link>
             <guid>/2023/02/05/halando</guid>
             <pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Miért van ezer és egy célom?]]></description>
@@ -184,7 +184,7 @@
         </item>
         <item>
             <title><![CDATA[Nem rímel]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2023/02/02/nem-rimel</link>
+            <link>https://vbartalis.xyz/vers/2023/02/02/nem-rimel</link>
             <guid>/2023/02/02/nem-rimel</guid>
             <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Vajon vers e az ami nem rímel?]]></description>
@@ -194,7 +194,7 @@
         </item>
         <item>
             <title><![CDATA[Máskor, máshol, mással talán]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/12/17/maskor-mashol-massal</link>
+            <link>https://vbartalis.xyz/vers/2022/12/17/maskor-mashol-massal</link>
             <guid>/2022/12/17/maskor-mashol-massal</guid>
             <pubDate>Sat, 17 Dec 2022 00:51:00 GMT</pubDate>
             <description><![CDATA[Máskor, máshol, mással talán.]]></description>
@@ -206,7 +206,7 @@
         </item>
         <item>
             <title><![CDATA[Össze vagyok törve]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/11/27/ossze-vagyok-torve</link>
+            <link>https://vbartalis.xyz/vers/2022/11/27/ossze-vagyok-torve</link>
             <guid>/2022/11/27/ossze-vagyok-torve</guid>
             <pubDate>Sun, 27 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Össze vagyok törve,]]></description>
@@ -227,7 +227,7 @@
         </item>
         <item>
             <title><![CDATA[Keresem a tökéletest]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/09/21/keresem-a-tokeletest</link>
+            <link>https://vbartalis.xyz/vers/2022/09/21/keresem-a-tokeletest</link>
             <guid>/2022/09/21/keresem-a-tokeletest</guid>
             <pubDate>Wed, 21 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Keresem a tökéletest,]]></description>
@@ -239,7 +239,7 @@
         </item>
         <item>
             <title><![CDATA[Égő vágy]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/09/20/ego-vagy</link>
+            <link>https://vbartalis.xyz/vers/2022/09/20/ego-vagy</link>
             <guid>/2022/09/20/ego-vagy</guid>
             <pubDate>Tue, 20 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Ha egy életen át, égne ez a vágy]]></description>
@@ -249,7 +249,7 @@
         </item>
         <item>
             <title><![CDATA[Késő van már]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/08/21/keso-van-mar</link>
+            <link>https://vbartalis.xyz/vers/2022/08/21/keso-van-mar</link>
             <guid>/2022/08/21/keso-van-mar</guid>
             <pubDate>Sun, 21 Aug 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Ideje lenne már álmodni.]]></description>
@@ -260,7 +260,7 @@
         </item>
         <item>
             <title><![CDATA[A szellem szétválasztása]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/08/15/a-szellem-szetvallasztasa</link>
+            <link>https://vbartalis.xyz/vers/2022/08/15/a-szellem-szetvallasztasa</link>
             <guid>/2022/08/15/a-szellem-szetvallasztasa</guid>
             <pubDate>Mon, 15 Aug 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Ki lehet-e vágni]]></description>
@@ -275,7 +275,7 @@
         </item>
         <item>
             <title><![CDATA[Csak egy okot adj, hogy maradjak]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/16/csak-egy-okot-adj</link>
+            <link>https://vbartalis.xyz/vers/2022/07/16/csak-egy-okot-adj</link>
             <guid>/2022/07/16/csak-egy-okot-adj</guid>
             <pubDate>Sat, 16 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Csak egy okot adj, hogy maradjak.]]></description>
@@ -287,7 +287,7 @@
         </item>
         <item>
             <title><![CDATA[Csalódás]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/16/csalodas</link>
+            <link>https://vbartalis.xyz/vers/2022/07/16/csalodas</link>
             <guid>/2022/07/16/csalodas</guid>
             <pubDate>Sat, 16 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Csak zsibbaszt, már nem fáj.]]></description>
@@ -297,7 +297,7 @@
         </item>
         <item>
             <title><![CDATA[Bábel]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/15/babel</link>
+            <link>https://vbartalis.xyz/vers/2022/07/15/babel</link>
             <guid>/2022/07/15/babel</guid>
             <pubDate>Fri, 15 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Ahogy lemegy a nap a horizonton.]]></description>
@@ -308,7 +308,7 @@
         </item>
         <item>
             <title><![CDATA[Letértem a járt útról]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/15/letertem-a-jart-utrol</link>
+            <link>https://vbartalis.xyz/vers/2022/07/15/letertem-a-jart-utrol</link>
             <guid>/2022/07/15/letertem-a-jart-utrol</guid>
             <pubDate>Fri, 15 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Letértem a járt útról,]]></description>
@@ -319,7 +319,7 @@
         </item>
         <item>
             <title><![CDATA[Már nem tudom hol kezdődött]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/15/mar-nem-tudom-hol-kezdodott</link>
+            <link>https://vbartalis.xyz/vers/2022/07/15/mar-nem-tudom-hol-kezdodott</link>
             <guid>/2022/07/15/mar-nem-tudom-hol-kezdodott</guid>
             <pubDate>Fri, 15 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Már nem tudom hol kezdődött.]]></description>
@@ -331,7 +331,7 @@
         </item>
         <item>
             <title><![CDATA[Merre vagy?]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/07/15/merre-vagy</link>
+            <link>https://vbartalis.xyz/vers/2022/07/15/merre-vagy</link>
             <guid>/2022/07/15/merre-vagy</guid>
             <pubDate>Fri, 15 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Merre vagy?]]></description>
@@ -344,7 +344,7 @@
         </item>
         <item>
             <title><![CDATA[Egy pillantás]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/06/29/egy-pillanat</link>
+            <link>https://vbartalis.xyz/vers/2022/06/29/egy-pillanat</link>
             <guid>/2022/06/29/egy-pillanat</guid>
             <pubDate>Wed, 29 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Egy perc sem volt talán,]]></description>
@@ -364,7 +364,7 @@
         </item>
         <item>
             <title><![CDATA[Fáj a naplemente]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/06/29/faj-a-naplemente</link>
+            <link>https://vbartalis.xyz/vers/2022/06/29/faj-a-naplemente</link>
             <guid>/2022/06/29/faj-a-naplemente</guid>
             <pubDate>Wed, 29 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Fáj, úgy fáj a nap lemente.]]></description>
@@ -379,7 +379,7 @@
         </item>
         <item>
             <title><![CDATA[Naplemente egy sziklás tengerparton]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/06/21/naplemente-egy-sziklas-tengerparton</link>
+            <link>https://vbartalis.xyz/vers/2022/06/21/naplemente-egy-sziklas-tengerparton</link>
             <guid>/2022/06/21/naplemente-egy-sziklas-tengerparton</guid>
             <pubDate>Tue, 21 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[A hullámok lágy ölén nyugodtam én,]]></description>
@@ -392,7 +392,7 @@
         </item>
         <item>
             <title><![CDATA[Nevén nevezve mégsem az igazi]]></title>
-            <link>https://vbartalis.xyz/vbartalis/vers/2022/06/21/neven-nevezve-megsem-az-igazi</link>
+            <link>https://vbartalis.xyz/vers/2022/06/21/neven-nevezve-megsem-az-igazi</link>
             <guid>/2022/06/21/neven-nevezve-megsem-az-igazi</guid>
             <pubDate>Tue, 21 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Van egy név ami mindig velem van,]]></description>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://vbartalis.xyz/vbartalis/blog</id>
+    <id>https://vbartalis.xyz/blog</id>
     <title>Bartalis Vilmos Blog</title>
     <updated>2023-03-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://vbartalis.xyz/vbartalis/blog"/>
+    <link rel="alternate" href="https://vbartalis.xyz/blog"/>
     <subtitle>Bartalis Vilmos Blog</subtitle>
-    <icon>https://vbartalis.xyz/vbartalis/img/favicon.ico</icon>
+    <icon>https://vbartalis.xyz/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[intro]]></title>
         <id>/2023/03/22/intro</id>
-        <link href="https://vbartalis.xyz/vbartalis/blog/2023/03/22/intro"/>
+        <link href="https://vbartalis.xyz/blog/2023/03/22/intro"/>
         <updated>2023-03-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Még nincsenek Posztok.]]></summary>
         <content type="html"><![CDATA[<h1>Intro</h1><p>Még nincsenek Posztok.</p>]]></content>

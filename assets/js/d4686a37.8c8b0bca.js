@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3751],{7232:e=>{e.exports=JSON.parse('{"permalink":"/vers","page":1,"postsPerPage":10,"totalPages":3,"totalCount":30,"nextPage":"/vers/page/2","blogDescription":"Az \xf6sszes versem egy helyen \xf6sszegy\xfcjtve.","blogTitle":"Versek"}')}}]);
