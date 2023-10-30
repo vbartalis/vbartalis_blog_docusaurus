@@ -13,7 +13,8 @@
   /* padding-top: 56.25%;  */
   padding-top: 41% !important;
   /* padding-top: 35% !important; */
-  background-image: url(/static/img/RiverValleysAndACrow.webp);
+  /* background-image: url(/static/img/RiverValleysAndACrow.webp); */
+  background-image: url(/static/img/svg/RiverValleysAndACrow.svg);
   background-position: bottom;
   background-size: cover;
   background-color: #91a028;
