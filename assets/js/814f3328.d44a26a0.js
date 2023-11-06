@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Minden Post","items":[{"title":"Eszt\xe9tikus ide\xe1lok nyom\xe1ban","permalink":"/blog/2023/03/22/intro"}]}')}}]);
